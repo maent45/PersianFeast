@@ -1,0 +1,109 @@
+body{
+    font-family: 'Lora', serif;
+}
+/*==================================================================INDEX PAGE CSS=====================================================================*/
+/*===========NAVBAR CSS===========*/
+.navbar{
+    background-color: white;
+    padding: 0px !important;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.navbar-default{
+    border-bottom-color: lightgray !important;
+    border-color: transparent;
+    width: 84.6%;
+    margin: auto;
+}
+.navbar-nav>li>a{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.contactLink{
+    margin-right: 0px;
+}
+    /*-----------MODAL CSS----------*/
+.modal-body{
+    overflow-y: auto;
+}
+.modal-body h4{
+    color: orangered;
+    font-weight: bold;
+    border-left: 4px solid orangered;
+    padding: 10px;
+}
+.modalTableInfoSections{
+    border-left: 2px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+.modalTableInfoSections p{
+    padding: 10px;
+    border-top: 1px solid lightgray;
+    margin-left: 3px;
+}
+/*==========CAROUSEL CSS==========*/
+.carouselContainer{
+    margin-top: 3%;
+}
+/*==========FOOTER CSS=========*/
+footer{
+    margin-top: 7.3%;
+    background-color: orangered;
+    padding: 1%;
+}
+footer h4{
+    font-weight: bold;
+    text-align: center;
+}
+/*==================================================================PRODUCTS PAGE CSS=====================================================================*/
+.productsContainerControls{
+    text-align: center;
+    margin: auto;
+    padding: 15px;
+}
+/*---mixItUp css---*/
+#productsContainer .mix{
+    display: none;
+}
+#productsContainer{
+    width: 100%;
+    padding: 0px;
+}
+.mix img{
+    width: 90%;
+    margin-top: 10px;
+}
+.productPriceContainer{
+    border: 1px solid lightgray;
+    text-align: center;
+    width: 90%;
+    padding: 20px;
+    margin-bottom: 0px !important;
+    height: 224px !important;
+}
+.productPriceButtons{
+    background-color: yellow !important;
+    width: 100%;
+    border-top: 1px solid lightgray;
+}
+.productPriceButtons i{
+    font-size: 2.3em;
+    color: orangered;
+}
+.addToCartDiv{
+    padding: 10px;
+    width: 50%;
+    float: left;
+    border-right: 1px solid lightgray;
+}
+.showDetailsCartDiv{
+    padding: 10px;
+    width: 50%;
+    float: right;
+}
+.addToCartDiv :hover{
+    cursor: pointer;
+}
+.showDetailsCartDiv :hover{
+    cursor: pointer;
+}
