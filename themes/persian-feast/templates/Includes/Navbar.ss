@@ -17,7 +17,7 @@
             <ul class="nav navbar-nav navbar-right">
 			<!--- dynamically loops pages and adds them to navbar --->
 			<% loop $Menu(1) %>
-                <li><a class"$LinkingMode" href="$Link">$MenuTitle</a></li>
+                <li><a class="$LinkingMode" href="$Link">$MenuTitle</a></li>
 			<% end_loop %>
             </ul>
         </div><!-- /.navbar-collapse -->

@@ -48,12 +48,19 @@ body{
 /*==========FOOTER CSS=========*/
 footer{
     margin-top: 7.3%;
-    background-color: orangered;
-    padding: 1%;
+    border-top: lightgrey 1px solid;
+    width: 82% !important;
+    margin-left: 10%;
+    padding: 2%;
 }
 footer h4{
     font-weight: bold;
     text-align: center;
+}
+footer i{
+    font-size: 2em !important;
+    margin-left: 15px;
+    margin-top: 5px;
 }
 
 /*==================================================================ABOUT PAGE CSS========================================================================*/
@@ -112,4 +119,24 @@ footer h4{
 }
 .showDetailsCartDiv :hover{
     cursor: pointer;
+}
+/*=====================================CONTACT PAGE CSS====================================*/
+.contactDetails{
+    margin-top: 2%;
+}
+.contactDetails i{
+    margin-left: 5%;
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+.contactDetails h4{
+    margin-left: 14%;
+}
+/*======================================BLOG PAGE CSS======================================*/
+.blogContainer{
+    margin-top: 3%;
+}
+.blogDescContainer span{
+    color: lightgrey;
+    font-size: 13px;
 }
