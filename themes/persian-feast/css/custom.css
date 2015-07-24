@@ -136,7 +136,13 @@ footer i{
 .blogContainer{
     margin-top: 3%;
 }
+.blogImgContainer{
+    margin-top: 1.5%;
+}
 .blogDescContainer span{
-    color: lightgrey;
+    color: #555;
     font-size: 13px;
+}
+.blogDescContainer p{
+    margin-top: 7px;
 }

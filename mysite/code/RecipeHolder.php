@@ -20,7 +20,7 @@ class RecipeHolder extends Page {
     }
 
     /*--- disable for this page to be a root page ---*/
-    /*private static $can_be_root = false;*/
+    private static $can_be_root = false;
 
 }
 

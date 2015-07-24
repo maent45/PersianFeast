@@ -2,12 +2,14 @@
 <div class="container">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blogContainer">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 blogImgContainer">
-            <img src="$ThemeDir/images/foodcollage.png" class="img-responsive">
+            $BlogImage.CroppedImage(270,270)
         </div>
         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12 blogDescContainer">
-            <h3>Some blog title</h3>
-            <span>24th July 2015</span>
-            <p>Some blog description goes here!!.......</p>
+            <h3>$Title</h3>
+            <!--- the .Nice will display the date in this format "25th July 2015" --->
+            <span><i class="fa fa-calendar"></i>&nbsp;$BlogDate.Long</span>
+            <!--- the .FirstParagraph will only pull the first sentence of the blog and display it on this page as a teaser. --->
+            <p>$BlogDescription.FirstParagraph ...</p>
             <a href="$Link"><span>Read More</span></a>
         </div>
     </div>
