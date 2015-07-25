@@ -1,4 +1,3 @@
-## holding place for persianfeast silverstripe tempalte
+## Persianfeast Silverstripe Template
 
-Licensed under GNU Affero General Public License v3.0
-please read the License file
+Contains a full silverstripe install
