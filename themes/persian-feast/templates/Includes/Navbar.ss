@@ -15,10 +15,24 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-			<!--- dynamically loops pages and adds them to navbar --->
-			<% loop $Menu(1) %>
-                <li><a class="$LinkingMode" href="$Link">$MenuTitle</a></li>
-			<% end_loop %>
+                <!--- dynamically loops pages and adds them to navbar --->
+                <% loop $Menu(1) %>
+                    <% if $Children %>
+                        <li class="dropdown">
+                            <div class="secondaryNav">
+                                <a href="$Link" class="$LinkingMode">$MenuTitle</a>
+                            </div>
+                            <span class="dropdown-toggle caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>
+                            <ul class="dropdown-menu">
+                                <% loop $Children %>
+                                    <li><a href="$Link" class="$LinkingMode"><span>$MenuTitle</span></a></li>
+                                <% end_loop %>
+                            </ul>
+                        </li>
+                    <% else %>
+                        <li class="$LinkingMode"><a href="$Link"><b>$MenuTitle</b></a></li>
+                    <% end_if %>
+                <% end_loop %>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

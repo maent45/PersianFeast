@@ -22,6 +22,12 @@ body{
 .contactLink{
     margin-right: 0px;
 }
+.secondaryNav{
+    margin-top: 43px;
+}
+.secondaryNav span{
+    margin-left: 70px !important;
+}
     /*-----------MODAL CSS----------*/
 .modal-body{
     overflow-y: auto;

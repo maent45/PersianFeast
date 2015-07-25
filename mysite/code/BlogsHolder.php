@@ -14,7 +14,6 @@ class BlogsHolder extends Page {
         /*--- remove the default HTML editor section from CMS ---*/
         $fields->removeFieldFromTab("Root.Main","Content");
 
-
         return $fields;
     }
 

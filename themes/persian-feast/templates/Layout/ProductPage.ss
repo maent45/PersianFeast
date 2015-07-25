@@ -1,10 +1,4 @@
-
-
-
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productsContainerControls">
-    <div class="container">
-        <hr>
-    </div>
     <button class="btn btn-warning filter active" data-filter="all" type="button">All</button>
     <button class="btn btn-warning filter" data-filter=".catOne" type="button">Category 1</button>
     <button class="btn btn-warning filter" data-filter=".catTwo" type="button">Category 2</button>
@@ -13,7 +7,7 @@
 
 <div class="container">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="productsContainer">
-        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mix catOne">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catOne">
             <img src="$ThemeDir/images/food/chicken_grill.jpg" width="30%">
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
@@ -81,7 +75,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mix catTwo">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catTwo">
             <img src="$ThemeDir/images/food/alad_cress.jpg">
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
@@ -97,7 +91,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mix catThree">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catThree">
             <img src="$ThemeDir/images/food/baghale1.jpg">
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
@@ -114,7 +108,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mix catOne">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catOne">
             <img src="$ThemeDir/images/food/baghale1.jpg">
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
@@ -130,7 +124,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mix catTwo">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catTwo">
             <img src="$ThemeDir/images/food/chicken_grill.jpg">
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
@@ -146,7 +140,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mix catThree">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catThree">
             <img src="$ThemeDir/images/food/alad_cress.jpg">
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
@@ -164,14 +158,3 @@
         </div>
     </div>
 </div>
-
-<script src="$ThemeDir/javascript/jquery-1.11.1.js"></script>
-<!------------jquery plugins---------->
-<script src="$ThemeDir/javascript/mixItUp.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        // Start mixitup
-        $('#productsContainer').mixItUp();
-    });
-
-</script>
