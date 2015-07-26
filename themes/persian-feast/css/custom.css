@@ -18,7 +18,6 @@ body{
 .navbar-nav>li>a{
     margin-top: 30px;
     margin-bottom: 20px;
-    width: 100%;
 }
 .contactLink{
     margin-right: 0px;
@@ -31,6 +30,10 @@ body{
 }
 .linkLists a:hover{
     color: #444;
+    text-decoration: none;
+}
+.linkLists span:hover{
+    cursor: pointer !important;
 }
     /*-----------MODAL CSS----------*/
 .modal-body{
@@ -155,4 +158,23 @@ footer i{
 }
 .blogDescContainer p{
     margin-top: 7px;
+}
+/*===================================ENQUIRY PAGE CSS=======================================*/
+.enquiryRightContainer{
+    border: 1px solid lightgrey;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.enquriyForm{
+    background-color: yellow;
+    padding-left: 0px;
+}
+.formHeader{
+    background-color: lightgrey;
+    padding: 18px;
+}
+.formHeader i{
+    margin-top: 8px;
+    font-size: 1.5em;
+    color: #5bc0de;
 }
