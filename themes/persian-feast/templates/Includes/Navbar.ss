@@ -18,7 +18,7 @@
                 <!--- dynamically loops pages and adds them to navbar --->
                 <% loop $Menu(1) %>
                     <% if $Children %>
-                        <li class="dropdown">
+                        <li class="dropdown linkLists">
                             <div class="secondaryNav">
                                 <a href="$Link" class="$LinkingMode">$MenuTitle</a>
                             </div>
