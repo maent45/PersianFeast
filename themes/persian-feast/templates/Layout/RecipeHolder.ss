@@ -7,17 +7,19 @@
         <hr/>
         <div class="col-lg-12 col-md-12 col-md-12 col-sm-12 col-xs-12 recipesCatOne">
 		<% loop $Children %>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-				<a href="$Link"><h3>&nbsp;&nbsp;$Title</h3></a>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<a href="$Link"><h3>$Title</h3></a>
                 <a href="$Link">
-                    <div class="col-lg-3 img-responsive">
-                        $RecipeImage.SetHeight(370)
-                    </div>
+                    $RecipeImage.CroppedImage(250,270)
+                    <br/>
+                    <a href="$Link" class="readMoreLink">
+                        <span>Read More</span>
+                    </a>
+
 				</a>
-				<a href="$Link">
-					<span>&nbsp;&nbsp;Read More</span>
-				</a>
+
             </div>
+
 		<% end_loop %>
             <!---<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 				<h3>$Title</h3>

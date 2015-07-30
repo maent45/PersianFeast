@@ -2,6 +2,9 @@
 
 class ProductPage extends Page {
 
+    /*--- restrict user from adding other pages ---*/
+    static $allowed_children = array('');
+
     /*--- adding fields to cms interface ---*/
     public function getCMSFields() {
         $fields = parent::getCMSFields();

@@ -1,11 +1,14 @@
+html, body{
+    height: 100% !important;
+}
 body{
     font-family: 'Lora', serif;
 }
 /*==================================================================INDEX PAGE CSS=====================================================================*/
 /*===========NAVBAR CSS===========*/
 .navbar{
+    padding-bottom: 10px;
     background-color: white;
-    padding: 0px !important;
     font-weight: bold;
     font-size: 1.2em;
 }
@@ -19,11 +22,15 @@ body{
     margin-top: 30px;
     margin-bottom: 20px;
 }
+.navbar-default .navbar-nav>li>a{
+    margin-left: 0px;
+    padding: 5px;
+}
 .contactLink{
     margin-right: 0px;
 }
 .secondaryNav{
-    margin-top: 43px;
+    margin-top: 33.4px;
 }
 .linkLists a{
     color: #777;
@@ -31,6 +38,9 @@ body{
 .linkLists a:hover{
     color: #444;
     text-decoration: none;
+}
+.linkLists span{
+    margin-top: 0px;
 }
 .linkLists span:hover{
     cursor: pointer !important;
@@ -97,7 +107,7 @@ footer i{
 }
 .mix img{
     width: 90%;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 .productPriceContainer{
     border: 1px solid lightgray;
@@ -105,7 +115,7 @@ footer i{
     width: 90%;
     padding: 20px;
     margin-bottom: 0px !important;
-    height: 224px !important;
+    height: 180px !important;
 }
 .productPriceButtons{
     background-color: yellow !important;
@@ -177,4 +187,18 @@ footer i{
     margin-top: 8px;
     font-size: 1.5em;
     color: #5bc0de;
+}
+/*===============================RECIPES HOLDER PAGES CSS================================*/
+.recipesDescDiv h3{
+    margin-left: 0px;
+    text-decoration: none!important;
+}
+.recipesDescDiv h3:hover{
+    text-decoration: none!important;
+}
+.imageHolder{
+    margin-top: 0px;
+}
+.readMoreLink span{
+    margin-top: 40px !important;
 }

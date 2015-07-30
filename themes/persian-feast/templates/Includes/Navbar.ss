@@ -20,7 +20,7 @@
                     <% if $Children %>
                         <li class="dropdown linkLists">
                             <div class="secondaryNav">
-                                <a href="$Link" class="$LinkingMode">$MenuTitle</a>
+                                <a href="$Link" class="$LinkingMode">$MenuTitle&nbsp;&nbsp;</a>
                             </div>
                             <span class="dropdown-toggle caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>
                             <ul class="dropdown-menu">
@@ -30,7 +30,7 @@
                             </ul>
                         </li>
                     <% else %>
-                        <li class="$LinkingMode"><a href="$Link"><b>$MenuTitle</b></a></li>
+                        <li class="$LinkingMode"><a href="$Link"><b>$MenuTitle&nbsp;</b></a></li>
                     <% end_if %>
                 <% end_loop %>
             </ul>

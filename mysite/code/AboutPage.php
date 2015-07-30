@@ -2,6 +2,9 @@
 
 class AboutPage extends Page {
 
+    /*--- restrict user from adding other pages ---*/
+    static $allowed_children = array('');
+
     private static $db = array(
         'AboutHeader' => 'Varchar',
         'AboutDescription' => 'Text'
