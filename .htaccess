@@ -1,3 +1,4 @@
+php_value    date.timezone    Pacific/Auckland
 ### SILVERSTRIPE START ###
 # Deny access to templates (but allow from localhost)
 <Files *.ss>
@@ -25,7 +26,7 @@ ErrorDocument 500 /assets/error-500.html
 <IfModule mod_rewrite.c>
 	SetEnv HTTP_MOD_REWRITE On
 	RewriteEngine On
-	RewriteBase '/silverstripe'
+	RewriteBase '/'
 
 	
 
