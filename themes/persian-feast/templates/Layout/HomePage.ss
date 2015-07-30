@@ -11,15 +11,11 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="$ThemeDir/images/food/sliderImages/1.jpg" alt="Chania">
+                <img src="$ThemeDir/images/sliderImages/1.jpeg" alt="Chania" width="100%">
             </div>
 
             <div class="item">
-                <img src="$ThemeDir/images/food/sliderImages/2.jpg" alt="Chania">
-            </div>
-
-            <div class="item">
-                <img src="$ThemeDir/images/food/sliderImages/3.jpg" alt="Flower">
+                <img src="$ThemeDir/images/sliderImages/2.jpeg" alt="Chania" width="100%">
             </div>
         </div>
 
@@ -32,5 +28,15 @@
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 homePageParagraph">
+        <h2>Welcome to Persian Feast</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     </div>
 </div>

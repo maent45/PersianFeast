@@ -12,7 +12,6 @@
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
                 <p>Lorem ipsum dolor.</p>
-                <h3>$7.00</h3>
                 <div class="productPriceButtons">
                     <div class="addToCartDiv">
                         <i class="fa fa-shopping-cart pull-left"></i><p>Add To Cart</p>
@@ -80,7 +79,6 @@
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
                 <p>Lorem ipsum dolor.</p>
-                <h3>$7.00</h3>
                 <div class="productPriceButtons">
                     <div class="addToCartDiv">
                         <i class="fa fa-shopping-cart pull-left"></i><p>Add To Cart</p>
@@ -96,7 +94,6 @@
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
                 <p>Lorem ipsum dolor.</p>
-                <h3>$7.00</h3>
                 <div class="productPriceButtons">
                     <div class="addToCartDiv">
                         <i class="fa fa-shopping-cart pull-left"></i><p>Add To Cart</p>
@@ -113,7 +110,6 @@
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
                 <p>Lorem ipsum dolor.</p>
-                <h3>$7.00</h3>
                 <div class="productPriceButtons">
                     <div class="addToCartDiv">
                         <i class="fa fa-shopping-cart pull-left"></i><p>Add To Cart</p>
@@ -129,7 +125,6 @@
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
                 <p>Lorem ipsum dolor.</p>
-                <h3>$7.00</h3>
                 <div class="productPriceButtons">
                     <div class="addToCartDiv">
                         <i class="fa fa-shopping-cart pull-left"></i><p>Add To Cart</p>
@@ -145,7 +140,6 @@
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
                 <p>Lorem ipsum dolor.</p>
-                <h3>$7.00</h3>
                 <div class="productPriceButtons">
                     <div class="addToCartDiv">
                         <i class="fa fa-shopping-cart pull-left"></i><p>Add To Cart</p>
