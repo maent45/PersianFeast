@@ -18,18 +18,32 @@ class AboutPage extends Page {
     public function getCMSFields() {
         $fields = parent::getCMSFields();
 
-		/*--- adding new fields to CMS ---*/
-        $fields->addFieldToTab('Root.Main', TextareaField::create('AboutHeader','Header'));
+        //below read only fields for home page
+        $fields->removeFieldFromTab('Root.Content.Metadata', 'URL');
+        $fields->addFieldToTab("Root.Content.Metadata", new ReadonlyField('URLSegment','URL'));
+
+        $fields->removeFieldFromTab('Root.Content.Metadata', 'MenuTitle');
+        $fields->addFieldToTab("Root.Content.Metadata", new ReadonlyField('MenuTitle','URL'));
+
+        $fields->removeFieldFromTab('Root.Content.Metadata', 'MenuTitle');
+        $fields->addFieldToTab("Root.Content.Metadata", new ReadonlyField('MenuTitle','URL'));
+
+
+        /*--- adding new fields to CMS ---*/
+        $fields->addFieldToTab('Root.Main', TextField::create('AboutHeader','Header'));
         $fields->addFieldToTab('Root.Main', TextareaField::create('AboutDescription','Description'));
 
         /*--- adding upload fields for image ---*/
-        $fields->addFieldToTab('Root.Main', $aboutImage = new UploadField('aboutImage', 'Image'),'AboutHeader');
+        $fields->addFieldToTab('Root.Main', $aboutImage = new UploadField('aboutImage', 'Heading Image'),'AboutHeader');
 
         /*--- remove the default HTML editor section from CMS ---*/
         $fields->removeFieldFromTab("Root.Main","Content");
 
         /*--- validations for image file types only to be uploaded ---*/
         $aboutImage->getValidator()->setAllowedExtensions(array('png','gif','jpg','jpeg'));
+
+        //remove meta data we will add a tab
+        $fields->removeByName('Metadata');
 
         return $fields;
     }
