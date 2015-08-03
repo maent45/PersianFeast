@@ -5,7 +5,6 @@ class HomePage extends Page {
 
 
     private static $db = array(
-        'Mailto' => 'Varchar(100)',
         'WelcomeHeader' => 'text',
         'WelcomeIntro' => 'HTMLText'
     );
@@ -39,8 +38,7 @@ class HomePage extends Page {
         $gridField = new GridField("Banner", "Main Page Banners", $this->Banners(), $gridFieldConfig);
         $fields->addFieldToTab("Root.Banners.Banner", $gridField);
 
-        //email to for contact form
-        $fields->addFieldToTab("Root.Content.Contact", new TextField('Mailto', 'Form Email Sent To :'));
+        
 
         //welcome header
         $fields->addFieldToTab("Root.Content.Main", new TextField('WelcomeHeader', 'Welcome Header'));
