@@ -12,6 +12,9 @@ body{
     font-weight: bold;
     font-size: 1.2em;
 }
+.navbar-nav>li{
+    color: #222 !important;
+}
 .navbar-default{
     border-bottom-color: lightgray !important;
     border-color: transparent;
@@ -20,6 +23,7 @@ body{
 }
 .navbar-nav>li>a{
     margin-top: 30px;
+    color: #222 !important;
     margin-bottom: 20px;
 }
 .navbar-default .navbar-nav>li>a{
@@ -33,7 +37,7 @@ body{
     margin-top: 33.4px;
 }
 .linkLists a{
-    color: #777;
+    color: #222;
 }
 .linkLists a:hover{
     color: #444;
@@ -44,6 +48,9 @@ body{
 }
 .linkLists span:hover{
     cursor: pointer !important;
+}
+.homePageParagraph{
+    text-align: center;
 }
     /*-----------MODAL CSS----------*/
 .modal-body{
@@ -65,6 +72,10 @@ body{
     margin-left: 3px;
 }
 /*==========CAROUSEL CSS==========*/
+.carousel{
+    width: 80%;
+    margin: auto;
+}
 .carouselContainer{
     margin-top: 1%;
 }
@@ -76,9 +87,8 @@ footer{
     margin-left: 7.5%;
     padding: 2%;
 }
-footer h4{
+footer h5{
     font-weight: bold;
-    text-align: center;
 }
 .socialIconsHolder{
     text-align: center;
@@ -86,13 +96,21 @@ footer h4{
 footer i{
     font-size: 2em !important;
     margin-top: 5px;
+    margin-left: 20px;
 }
-
+.facebook{
+    color: #0066bb;
+}
+.twitter{
+    color: #005b98;
+}
 /*==================================================================ABOUT PAGE CSS========================================================================*/
 .aboutSection{
     margin-top: 3%;
 }
-
+.aboutImage{
+    margin-top: 7%;
+}
 /*==================================================================PRODUCTS PAGE CSS=====================================================================*/
 .productsContainerControls{
     text-align: center;
