@@ -1,14 +1,27 @@
+<div class="container">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <p>Persian Feast is proud to offer you a range of gourmet Organic Hummus that will give you the taste of some traditional foods from Eastern Mediterranean Region.
+            <br/>
+            We are a Wellington based, organic hummus manufacturer.
+<br/>
+            We pride ourselves on handcrafting the best quality, gourmet and traditional way of making organic hummus.
+<br/>
+            Our organic hummus creates wonderful social occasions, as they are ready to consume as dip, spread or side dish.
+        </p>
+    </div>
+</div>
+
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productsContainerControls">
     <button class="btn btn-warning filter active" data-filter="all" type="button">All</button>
-    <button class="btn btn-warning filter" data-filter=".catOne" type="button">Category 1</button>
-    <button class="btn btn-warning filter" data-filter=".catTwo" type="button">Category 2</button>
-    <button class="btn btn-warning filter" data-filter=".catThree" type="button">Category 3</button>
+    <button class="btn btn-warning filter" data-filter=".hummusAndDips" type="button">Hummus & Dips</button>
+    <button class="btn btn-warning filter" data-filter=".driedFruits" type="button">Dried Fruits</button>
+    <!--<button class="btn btn-warning filter" data-filter=".catThree" type="button">Category 3</button>-->
 </div>
 
 <div class="container">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="productsContainer">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catOne">
-            <img src="$ThemeDir/images/food/chicken_grill.jpg" width="30%">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix hummusAndDips">
+            <img src="$ThemeDir/images/food/productImages/Hummus Photo_2.png" width="30%">
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
                 <p>Lorem ipsum dolor.</p>
@@ -74,7 +87,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catTwo">
+        <!--<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix driedFruits">
             <img src="$ThemeDir/images/food/alad_cress.jpg">
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
@@ -88,8 +101,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catThree">
+        </div>-->
+        <!--<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catThree">
             <img src="$ThemeDir/images/food/baghale1.jpg">
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
@@ -103,10 +116,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catOne">
-            <img src="$ThemeDir/images/food/baghale1.jpg">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix hummusAndDips">
+            <img src="$ThemeDir/images/food/productImages/Hummus_Original.png">
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
                 <p>Lorem ipsum dolor.</p>
@@ -120,8 +133,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catTwo">
-            <img src="$ThemeDir/images/food/chicken_grill.jpg">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix driedFruits">
+            <img src="$ThemeDir/images/food/productImages/Dried_Lime.png">
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
                 <p>Lorem ipsum dolor.</p>
@@ -135,7 +148,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catThree">
+        <!--<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix catThree">
             <img src="$ThemeDir/images/food/alad_cress.jpg">
             <div class="productPriceContainer">
                 <h3>KOFTEH MEAT BALLS</h3>
@@ -149,6 +162,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
