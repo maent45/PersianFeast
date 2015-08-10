@@ -3,7 +3,9 @@
 #assets folder
 assets/_combinedfiles/
 assets/Uploads/
-
+.idea/workspace.xml
+mysite/_config.php
+assets/
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -47,6 +49,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-mysite/_config.php
+
+
 .idea/workspace.xml
-mysite/_config.php
