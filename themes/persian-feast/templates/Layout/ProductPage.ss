@@ -13,14 +13,10 @@
 
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productsContainerControls">
         <button class="btn btn-warning filter active" data-filter="all" type="button">All</button>
+        <!--loop our category as buttons!-->
         <% loop $Categories %>
             <button class="btn btn-warning filter" data-filter=".product_filter_$ID" type="button">$Title</button>
         <% end_loop %>
-    <!--
-
-    <button class="btn btn-warning filter" data-filter=".hummusAndDips" type="button">Hummus & Dips</button>
-    <button class="btn btn-warning filter" data-filter=".driedFruits" type="button">Dried Fruits</button>
-    <!--<button class="btn btn-warning filter" data-filter=".catThree" type="button">Category 3</button>-->
 </div>
 
 <div class="container">
@@ -71,37 +67,6 @@
                                 <br/>
                             </div>
 
-                                <!--
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 modalTableInfoSections">
-                                    <h5>Average Quantity</h5>
-                                    <p>Energy</p>
-                                    <p>Energy</p>
-                                    <p>Energy</p>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 modalTableInfoSections">
-                                    <h5>Per Serving</h5>
-                                    <p>Energy</p>
-                                    <p>Energy</p>
-                                    <p>Energy</p>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 modalTableInfoSections">
-                                    <h5>Per 100g</h5>
-                                    <p>Energy</p>
-                                    <p>Energy</p>
-                                    <p>Energy</p>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12 container">
-                                <hr/>
-                                <h4>Allergen Information</h4>
-                                <p>This section will hold information about the product's allergen information to concerned readers.</p>
-                                <hr/>
-                                <h4>Other Information</h4>
-                                <p>This area or section will hold any other random or miscelanious information to a reader who may be
-                                concred about understanding or knowing more about the product.</p>
-                            </div>
-                            !-->
                         </div>
                     </div>
                     <!--modal content end!-->
