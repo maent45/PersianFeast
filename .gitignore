@@ -3,9 +3,12 @@
 #assets folder
 assets/_combinedfiles/
 assets/Uploads/
-.idea/workspace.xml
+workspace.xml
 mysite/_config.php
 assets/
+silverstripe-gridfield-betterbuttons-master/
+.idea/workspace.xml
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -51,4 +54,4 @@ Temporary Items
 .apdisk
 
 
-.idea/workspace.xml
+

@@ -30,8 +30,8 @@ class Product extends DataObject {
 
     private static $summary_fields = array(
         'Thumbnail' => 'Thumbnail',
-        'InternalItemId' => 'InternalItemId',
         'Title' => 'Title',
+        'Category.Title' => 'Category',
         //'Price' => 'Price'
     );
     public function fieldLabels($includerelations = true) {
