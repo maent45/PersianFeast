@@ -10,6 +10,7 @@ class HomePage extends Page {
     );
     static $many_many = array(
         'Banners' => 'Banners'
+
     );
     /*--- restrict user from adding other pages ---*/
     static $allowed_children = array('');

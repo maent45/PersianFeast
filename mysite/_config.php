@@ -7,9 +7,9 @@ global $databaseConfig;
 $databaseConfig = array(
 	"type" => 'MySQLDatabase',
 	"server" => 'localhost',
-	"username" => 'root',
-	"password" => '',
-	"database" => 'SS_mysite',
+	"username" => 'persianfeast',
+	"password" => 'persianfeast',
+	"database" => 'persianfeast',
 	"path" => '',
 );
 
