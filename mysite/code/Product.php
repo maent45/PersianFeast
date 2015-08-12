@@ -27,15 +27,12 @@ class Product extends DataObject {
         'Photo' => 'Image'
     );
 
-    static $belongs_many_many = array(
-        'ProductPages' => 'ProductPage'
-    );
 
     private static $summary_fields = array(
         'Thumbnail' => 'Thumbnail',
         'InternalItemId' => 'InternalItemId',
         'Title' => 'Title',
-        'Price' => 'Price'
+        //'Price' => 'Price'
     );
     public function fieldLabels($includerelations = true) {
         $labels = parent::fieldLabels($includerelations);
