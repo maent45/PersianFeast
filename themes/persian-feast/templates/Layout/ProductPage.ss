@@ -32,7 +32,7 @@
             $getPhotoForTemplate
             <div class="productPriceContainer">
                 <h3>$Title</h3>
-                <p>$Description</p>
+                <p>$Description.LimitWordCount(10)</p>
                 <div class="productPriceButtons">
                     <div class="addToCartDiv">
                         <i class="fa fa-shopping-cart pull-left"></i><p>Enquire</p>
