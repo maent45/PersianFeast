@@ -8,8 +8,8 @@
  */
 class Category extends DataObject {
     private static $db = array (
-        'Title' => 'Varchar',
-        'SortOrder' => 'Int'
+        'Title' => 'Varchar'
+       // 'SortOrder' => 'Int'
     );
 
     private static $has_many = array (
@@ -17,8 +17,8 @@ class Category extends DataObject {
     );
 
     private static $summary_fields = array(
-        'Title' => 'Title',
-        'SortOrder' => 'Sort Order'
+        'Title' => 'Title'
+       // 'SortOrder' => 'Sort Order'
     );
 
     public function fieldLabels($includerelations = true) {
