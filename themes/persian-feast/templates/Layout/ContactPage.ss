@@ -27,17 +27,26 @@
             </form>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contactDetails">
-            <i class="fa fa-mobile-phone pull-left" style="font-size: 2.3em;"></i>
-            <h4>(021) 189-7411</h4>
-            <br/>
-            <i class="fa fa-phone pull-left" style="margin-top: 10px;"></i>
-            <h4>(04)238-9609</h4>
-            <br/>
-            <i class="fa fa-envelope pull-left" style="margin-top: 10px;"></i>
-            <h4>info@persianfeast.co.nz</h4>
-            <br/>
-            <i class="fa fa-map-marker pull-left" style="margin-top: 8px;"></i>
-            <h4>147 Onepu Rd Lyall Bay, Wellington</h4>
+            <% if $MobilePhone %>
+                <i class="fa fa-mobile-phone pull-left" style="font-size: 2.3em;"></i>
+                <h4>$MobilePhone</h4>
+                <br/>
+            <% end_if %>
+            <% if $BusinessPhone %>
+                <i class="fa fa-phone pull-left" style="margin-top: 10px;"></i>
+                <h4>$BusinessPhone</h4>
+                <br/>
+                <br/>
+            <% end_if %>
+            <% if $Mailto %>
+                <i class="fa fa-envelope pull-left" style="margin-top: 10px;"></i>
+                <h4>$Mailto</h4>
+                <br/>
+            <% end_if %>
+            <% if $PhysicalAddress %>
+                <i class="fa fa-map-marker pull-left" style="margin-top: 8px;"></i>
+                <h4>$PhysicalAddress</h4>
+            <% end_if %>
         </div>
     </div>
 </div>
