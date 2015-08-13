@@ -1,13 +1,6 @@
 <div class="container">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <p>Persian Feast is proud to offer you a range of gourmet Organic Hummus that will give you the taste of some traditional foods from Eastern Mediterranean Region.
-            <br/>
-            We are a Wellington based, organic hummus manufacturer.
-<br/>
-            We pride ourselves on handcrafting the best quality, gourmet and traditional way of making organic hummus.
-<br/>
-            Our organic hummus creates wonderful social occasions, as they are ready to consume as dip, spread or side dish.
-        </p>
+        <p>$ProductMainDescription</p>
     </div>
 </div>
 
