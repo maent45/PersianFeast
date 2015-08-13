@@ -12,6 +12,9 @@ body{
     font-weight: bold;
     font-size: 1.2em;
 }
+.navbar-right{
+    margin-top: 1%;
+}
 .navbar-nav>li{
     color: #222 !important;
 }
@@ -49,6 +52,9 @@ body{
 .linkLists span:hover{
     cursor: pointer !important;
 }
+.dropdown-toggle{
+    display: none;
+}
 .homePageParagraph{
     text-align: center;
 }
@@ -73,7 +79,7 @@ body{
 }
 /*==========MEDIA QUERIES FOR MOBILE DEVICES=========*/
 @media screen and (max-width: 300px) {
-    
+
 }
 /*==========CAROUSEL CSS==========*/
 .carousel{
@@ -89,7 +95,7 @@ footer{
     border-top: lightgrey 1px solid;
     width: 85% !important;
     margin-left: 7.5%;
-    padding: 2%;
+    padding: 1%;
 }
 footer h5{
     font-weight: bold;
@@ -99,7 +105,7 @@ footer h5{
 }
 footer i{
     font-size: 2em !important;
-    margin-top: 5px;
+    margin-top: 0px;
     margin-left: 20px;
 }
 .facebook{
@@ -130,41 +136,28 @@ footer i{
     padding: 0px;
 }
 .mix img{
-    width: 90%;
+    width: 100%;
     margin-top: 30px;
 }
 .productPriceContainer{
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
     border: 1px solid lightgray;
     text-align: center;
-    width: 90%;
-    padding: 20px;
     margin-bottom: 0px !important;
-    height: 180px !important;
+    height: auto !important;
+    padding: 10px;
+    width: auto;
 }
 .productPriceButtons{
-    background-color: yellow !important;
+    background-color: green !important;
     width: 100%;
     border-top: 1px solid lightgray;
 }
-.productPriceButtons i{
+.productPriceContainer i{
+    color: orange;
     font-size: 2.3em;
-    color: orangered;
 }
-.addToCartDiv{
-    padding: 10px;
-    width: 50%;
-    float: left;
-    border-right: 1px solid lightgray;
-}
-.showDetailsCartDiv{
-    padding: 10px;
-    width: 50%;
-    float: right;
-}
-.addToCartDiv :hover{
-    cursor: pointer;
-}
-.showDetailsCartDiv :hover{
+.addToCartDiv, .showDetailsCartDiv :hover{
     cursor: pointer;
 }
 /*=====================================CONTACT PAGE CSS====================================*/
@@ -192,6 +185,12 @@ footer i{
 }
 .blogDescContainer p{
     margin-top: 7px;
+}
+.blogArchiveContainer{
+    margin-top: 3% !important;
+}
+.blogArchiveContainer h4{
+    border-bottom: 1px solid lightgrey;
 }
 /*===================================ENQUIRY PAGE CSS=======================================*/
 .enquiryRightContainer{

@@ -3,6 +3,20 @@
 <script src="$ThemeDir/javascript/bootstrap.min.js"></script>
 <!------------jquery plugins---------->
 <script src="$ThemeDir/javascript/mixItUp.js"></script>
+<script>
+    $(document).ready(function(){
+
+        $('.dropdown').hover(function(){
+          $('.dropdown-toggle', this).trigger('click');
+        });
+
+        /*$(".dropDownSubLink").hide();
+
+        $(".parentLink").hover(function(){
+            $(".dropDownSubLink").show();
+        });*/
+    });
+</script>
 <script type="text/javascript">
     $(document).ready(function(){
         // Start mixitup
@@ -18,6 +32,7 @@
             alert('Please provide a valid email address');
             email.focus;
             return false;
-        }}
+        }
+    }
 
 </script>

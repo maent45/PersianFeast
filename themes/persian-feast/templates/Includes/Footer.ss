@@ -5,7 +5,6 @@
     </div>
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 socialIconsHolder">
         <i class="fa fa-facebook facebook"></i>
-        <i class="fa fa-instagram instagram"></i>
         <i class="fa fa-twitter twitter"></i>
     </div>
 </footer>

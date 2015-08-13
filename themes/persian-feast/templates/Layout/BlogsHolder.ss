@@ -1,5 +1,7 @@
-<% loop $Children %>
 <div class="container">
+
+<div class="col-lg-10">
+<% loop $Children %>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blogContainer">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 blogImgContainer">
             <a href="$Link">$BlogImage.CroppedImage(270,270)</a>
@@ -13,5 +15,15 @@
             <a href="$Link"><span>Read More</span></a>
         </div>
     </div>
-</div>
+
 <% end_loop %>
+</div>
+    <div class="col-lg-2 col-md-2 blogArchiveContainer">
+        <h4>Blog Archive</h4>
+        <p><i class="fa fa-caret-right"></i>&nbsp;2015 (3)</p>
+        <p><i class="fa fa-caret-right"></i>&nbsp;2014 (0)</p>
+        <p><i class="fa fa-caret-right"></i>&nbsp;2013 (0)</p>
+    </div>
+
+</div>
+

@@ -18,12 +18,13 @@
                 <!--- dynamically loops pages and adds them to navbar --->
                 <% loop $Menu(1) %>
                     <% if $Children %>
-                        <li class="dropdown linkLists">
+                        <li class="dropdown linkLists dropdown-toggle">
                             <div class="secondaryNav">
                                 <a href="$Link" class="$LinkingMode">$MenuTitle&nbsp;&nbsp;</a>
                             </div>
                             <span class="dropdown-toggle caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>
-                            <ul class="dropdown-menu">
+
+                            <ul class="dropdown-menu dropDownSubLink">
                                 <% loop $Children %>
                                     <li><a href="$Link" class="$LinkingMode"><span>$MenuTitle</span></a></li>
                                 <% end_loop %>
