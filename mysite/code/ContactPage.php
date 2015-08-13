@@ -2,7 +2,7 @@
 
 class ContactPage extends Page {
 
- private static $db = array(
+    private static $db = array(
         'Mailto' => 'text',
         'PhysicalAddress' => 'text',
         'MobilePhone' => 'text',
