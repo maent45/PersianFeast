@@ -20,6 +20,17 @@ class BlogsHolder extends Page {
     /*--- disable for this page to be a root page ---*/
     private static $can_be_root = false;
 
+    public function BlogMonths() {
+        //return the products
+        $blogs = BlogsPage::get();
+
+        return $blogs;
+    }
+
+    public function getGroupedModulesByDate() {
+        return GroupedList::create(BlogsPage::get()->sort('BlogDate'));
+    }
+
 }
 
 class BlogsHolder_Controller extends Page_Controller {
