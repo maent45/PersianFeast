@@ -38,10 +38,12 @@ class BlogsPage extends Page {
     private static $can_be_root = false;
 
     //http://php.net/manual/en/function.date.php
+
+    //Get Month Created
     public function getMonthCreated() {
         return date('F', strtotime($this->BlogDate));
     }
-
+    //Get Year Created
     public function getYearCreated() {
         return date('Y', strtotime($this->BlogDate));
     }
