@@ -27,9 +27,16 @@
 		var theYear = $(this).attr('year');
 		//toggle carrot and dropdown results
 		var dropdown = $("#drop_down_" + theYear);
-		
-		dropdown.removeClass("fa-caret-down").addClass("fa-caret-bottom");
-		$("#blogs_"+ theYear).removeClass("hide");
+
+		//check if we already dropped down
+		if (dropdown.hasClass('fa-caret-down')){
+            dropdown.removeClass("fa-caret-down").addClass("fa-caret-right");
+            $("#blogs_"+ theYear).addClass("hide");
+		}
+		else if (dropdown.hasClass('fa-caret-right')){
+            dropdown.removeClass("fa-caret-right").addClass("fa-caret-down");
+            $("#blogs_"+ theYear).removeClass("hide");
+        }
 
     }));
 </script>
