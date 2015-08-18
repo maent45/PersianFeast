@@ -23,7 +23,7 @@
         <h4>Blog Archive</h4>
         <% loop $GroupedModulesByDate.GroupedBy(YearCreated) %>
             <p><i id="drop_down_$YearCreated" class="fa fa-caret-right"></i>&nbsp;<a class="blog_archive_btn" year="$YearCreated" href="#">$YearCreated</a> <small>($Children.Count)</small></p>
-            <ul class="year_$YearCreated">
+            <ul id="blogs_$YearCreated" class="hide">
                 <% loop $Children %>
                     <li>$BlogDate.Nice : <small><a href="$URLSegment">$Title</a></small></li>
                 <% end_loop %>
@@ -34,9 +34,3 @@
 
 
 </div>
-
-<script>
-    $(document).ready(function(){
-        //$('.blog_archive_btn')
-    })
-</script>
