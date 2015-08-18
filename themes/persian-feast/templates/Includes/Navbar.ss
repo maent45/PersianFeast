@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="$AbsoluteBaseURL"><img src="$ThemeDir/images/logos/logo_2.png" width="270"></a>
+            <a class="navbar-brand" href="$AbsoluteBaseURL"><img src="$ThemeDir/images/logos/logo.png" width="320"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
