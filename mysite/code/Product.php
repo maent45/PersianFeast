@@ -59,19 +59,12 @@ class Product extends DataObject {
 
     public function getCMSFields() {
         $fields = parent::getCMSFields();
-        //set our html
-        //$description = HtmlEditorField::create('Description','Description')->setRows(10);
-        //$ingredients = HtmlEditorField::create('Ingredients','Ingredients')->setRows(10);
-        //$howtouse    = HtmlEditorField::create('HowToUse','How To Use')->setRows(10);
-        //$price = CurrencyField::create('Price','Price');
+        //add paypal tab
+
+
+
         $category = DropdownField::create('CategoryID','Category', Category::get()->map('ID', 'Title'));
         $photo = UploadField::create('Photo','Photo')->setFolderName('Products');
-
-        //add our fields
-        //$fields->replaceField('Description', $description);
-        //$fields->replaceField('Ingredients', $ingredients);
-        //$fields->replaceField('HowToUse', $howtouse);
-        //$fields->replaceField('Price', $price);
 
         $fields->replaceField('Photo', $photo);
         $fields->insertBefore($photo,'InternalItemId');
@@ -130,4 +123,6 @@ class Product extends DataObject {
     public function getCMSValidator() {
         return new RequiredFields('Title');
     }
+
+
 }

@@ -7,7 +7,10 @@
 class ProductPage extends Page
 {
     private static $db = array(
-        'ProductMainDescription' => 'text'
+        'ProductMainDescription' => 'text',
+        'PaypalApiUsername' => 'text',
+        'PaypalApiKey' => 'text',
+        'Sandbox' => 'Boolean'
     );
     public function getCMSFields()
     {
@@ -28,8 +31,13 @@ class ProductPage extends Page
             //remove meta data we will add a tab
             $fields->removeByName('Metadata');
 
+            $fields->addFieldToTab("Root.Content.Paypal", new TextareaField('PaypalApiUsername', 'Paypal Username'));
+            $fields->addFieldToTab("Root.Content.Paypal", new TextareaField('PaypalApiKey', 'Paypal API Key'));
+            $fields->addFieldToTab("Root.Content.Paypal", new CheckboxField('Sandbox', 'Sandbox Mode'));
+
             return $fields;
     }
+
 
 }
 
@@ -78,4 +86,6 @@ class ProductPage_Controller extends Page_Controller
         $categories = Category::get()->sort('SortOrder');
         return $categories;
     }
+
+
 }
