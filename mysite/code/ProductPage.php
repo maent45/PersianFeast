@@ -9,7 +9,8 @@ class ProductPage extends Page
     private static $db = array(
         'ProductMainDescription' => 'text',
         'PaypalApiUsername' => 'text',
-        'PaypalApiKey' => 'text',
+        'PaypalApiPassword' => 'text',
+        'PaypalApiSignature' => 'text',
         'Sandbox' => 'Boolean'
     );
     public function getCMSFields()
@@ -30,9 +31,10 @@ class ProductPage extends Page
             $fields->removeFieldFromTab("Root.Main", "Content");
             //remove meta data we will add a tab
             $fields->removeByName('Metadata');
-
+            //paypal information
             $fields->addFieldToTab("Root.Content.Paypal", new TextareaField('PaypalApiUsername', 'Paypal Username'));
-            $fields->addFieldToTab("Root.Content.Paypal", new TextareaField('PaypalApiKey', 'Paypal API Key'));
+            $fields->addFieldToTab("Root.Content.Paypal", new TextareaField('PaypalApiPassword', 'Paypal API Password'));
+            $fields->addFieldToTab("Root.Content.Paypal", new TextareaField('PaypalApiSignature', 'Paypal API Signature'));
             $fields->addFieldToTab("Root.Content.Paypal", new CheckboxField('Sandbox', 'Sandbox Mode'));
 
             return $fields;
