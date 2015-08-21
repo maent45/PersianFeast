@@ -1,0 +1,41 @@
+---
+Name: payment
+---
+Payment:
+    allowed_gateways:
+        - 'PayPal_Express'
+        - 'PaymentExpress_PxPay'
+        - 'Manual'
+    parameters:
+        PayPal_Express:
+            username: 'example.username.test'
+            password: 'txjjllae802325'
+            signature: 'wk32hkimhacsdfa'
+        PaymentExpress_PxPost:
+            username: 'EXAMPLEUSER'
+            password: '235llgwxle4tol23l'
+---
+Except:
+    environment: 'live'
+---
+Payment:
+    file_logging: 1
+    allowed_gateways:
+        - 'Dummy'
+    parameters:
+        Paypal_Express:
+            testMode: true
+---
+Only:
+    environment: 'live'
+---
+Payment:
+    parameters:
+        PayPal_Express:
+            username: 'liveexample.test'
+            password: 'livepassawe23'
+            signature: 'laivfe23235235'
+        PaymentExpress_PxPost:
+            username: 'LIVEUSER'
+            password: 'n23nl2ltwlwjle'
+---
