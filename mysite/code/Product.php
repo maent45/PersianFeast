@@ -14,11 +14,13 @@ class Product extends DataObject {
 
         //'Model' => 'Varchar',
         'HowToUse' => 'text',
-        //'Price' => 'Currency(8,2)',
+        //
         'Ingredients' => 'text',
         'SortOrder' => 'Int',
         //'FeaturedProduct' => 'Boolean',
-        'Hidden' => 'Boolean'
+        'Hidden' => 'Boolean',
+        'UsePaypal' => 'Boolean',
+        'Price' => 'Currency(8,2)'
         //'URLSegment' => 'Varchar(255)'
     );
 
@@ -80,8 +82,10 @@ class Product extends DataObject {
        // $fields->renameField('Price',_t('Product.PRICE','Price'));
         $fields->renameField('Description',_t('Product.DESCRIPTION','Description'));
         $fields->renameField('SortOrder',_t('Product.SORTORDER','Sort Order'));
-        $fields->renameField('FeaturedProduct',_t('Product.FEATUREDPRODUCT','Featured Product'));
-        $fields->renameField('Hidden',_t('Product.HIDDEN','Hidden'));
+        //$fields->renameField('FeaturedProduct',_t('Product.FEATUREDPRODUCT','Featured Product'));
+        $fields->renameField('Hidden',_t('Product.HIDDEN','Hidden (not visible to users)'));
+        $fields->renameField('Price',_t('Product.Price','Price'));
+        $fields->renameField('UsePaypal',_t('Product.UsePaypal','Use Paypal'));
 
         return $fields;
     }
