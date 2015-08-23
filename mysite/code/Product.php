@@ -97,6 +97,20 @@ class Product extends DataObject {
             return '<img src="productcatalog/images/no-image-available-th.png" width="100" height="100" />';
     }
 
+    /**
+     * Returns a hide class if element is meant to be showing
+     */
+    public function getIsHidden(){
+        return $this->Hidden ? "hide" : "";
+    }
+
+    /**
+     * Returns a hide class if element is meant to be showing
+     */
+    public function getUsePaypal(){
+        return $this->UsePaypal  ? "Find Store" : "Order Online";
+    }
+
     public function getThumbnail()
     {
         if($this->PhotoID)

@@ -10,4 +10,8 @@
             </div>
 		</div>
 	</div>
+
+	<!--- temp fix, remove later --->
+	<div class="col-lg-12" style="margin-bottom: 24%;"></div>
+
 </div>
