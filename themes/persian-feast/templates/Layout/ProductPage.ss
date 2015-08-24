@@ -30,8 +30,7 @@
                         <span style="margin-left: 0px;">$getUsePaypal</span>
                     </div>
                     <div class="col-lg-4 showDetailsCartDiv" style="border-left: 1px solid lightgrey; border-top: 1px solid lightgrey; padding: 5px;">
-                        <i class="fa fa-dollar" style="margin-top: 7px;"></i>
-                        <span>Price</span>
+                        $getShowPrice
                     </div>
                     <div class="col-lg-4 showDetailsCartDiv" style="border-left: 1px solid lightgrey; border-top: 1px solid lightgrey; padding: 10px;" data-toggle="modal" data-target="#details_$ID">
                         <i class="fa fa-book"></i>
