@@ -25,11 +25,14 @@
                     <p>$Description.LimitCharacters(55,'....')</p>
 
 
-                    <div class="col-lg-6 addToCartDiv" style="border-top: 1px solid lightgrey; padding: 10px;">
-                        <i class="fa fa-shopping-cart" style="padding-top: 0px;"></i>
-                        <span style="margin-left: 10px;">Add To Cart</span>
+                    <div class="col-lg-4 addToCartDiv" style="border-top: 1px solid lightgrey; padding: 0px;">
+                        <i class="fa fa-shopping-cart" style="padding-top: 0px; margin-right: 5px; margin-top: 10px;"></i>
+                        <span style="margin-left: 0px;">$getUsePaypal</span>
                     </div>
-                    <div class="col-lg-6 showDetailsCartDiv" style="border-left: 1px solid lightgrey; border-top: 1px solid lightgrey; padding: 10px;" data-toggle="modal" data-target="#details_$ID">
+                    <div class="col-lg-4 showDetailsCartDiv" style="border-left: 1px solid lightgrey; border-top: 1px solid lightgrey; padding: 5px;">
+                        $getShowPrice
+                    </div>
+                    <div class="col-lg-4 showDetailsCartDiv" style="border-left: 1px solid lightgrey; border-top: 1px solid lightgrey; padding: 10px;" data-toggle="modal" data-target="#details_$ID">
                         <i class="fa fa-book"></i>
                         <span>Details</span>
                     </div>
@@ -40,6 +43,7 @@
                     <!--<button class="btn btn-default"><i class="fa fa-shopping-cart pull-left"></i>Add To Cart</button>
                     <button class="btn btn-default" data-toggle="modal" data-target="#myModal"><i class="fa fa-book pull-left"></i><span>Details</span></button>-->
                 </div>
+
                 <!-- Modal -->
                 <div id="details_$ID" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-lg">
@@ -51,7 +55,7 @@
                             </div>
                             <div class="modal-body">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
-                                    $getPhotoForTemplate
+
                                 </div>
                                 <div class="col-lg-12 container">
                                     <h4>Overview</h4>
@@ -69,8 +73,11 @@
                         </div>
                         <!--modal content end!-->
                     </div>
-                </div><!--mobal end!-->
+                </div><!--modal end!-->
+
         </div>
+
+
         <% end_loop %>
 
     </div>

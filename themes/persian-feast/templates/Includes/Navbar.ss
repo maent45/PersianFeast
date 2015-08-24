@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="$AbsoluteBaseURL"><img src="$ThemeDir/images/logos/logo.png" width="320"></a>
+            <a class="navbar-brand" href="$AbsoluteBaseURL"><img class="img-responsive" src="$ThemeDir/images/logos/logo.png" width="320"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,7 +18,7 @@
                 <!--- dynamically loops pages and adds them to navbar --->
                 <% loop $Menu(1) %>
                     <% if $Children %>
-                        <li class="dropdown linkLists dropdown-toggle">
+                        <li class="dropdown active linkLists dropdown-toggle">
                             <div class="secondaryNav">
                                 <a href="$Link" class="$LinkingMode">$MenuTitle&nbsp;&nbsp;</a>
                             </div>
@@ -34,7 +34,11 @@
                         <li class="$LinkingMode"><a href="$Link"><b>$MenuTitle&nbsp;</b></a></li>
                     <% end_if %>
                 <% end_loop %>
+
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<div class="container" style="margin-top: 10px;">
+    <span style="font-size: 13px;">$BreadCrumbs</span>
+</div>

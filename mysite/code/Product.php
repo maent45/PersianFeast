@@ -19,7 +19,7 @@ class Product extends DataObject {
         'SortOrder' => 'Int',
         //'FeaturedProduct' => 'Boolean',
         'Hidden' => 'Boolean',
-        'UsePaypal' => 'Boolean',
+        'Paypal' => 'Boolean',
         'Price' => 'Currency(8,2)'
         //'URLSegment' => 'Varchar(255)'
     );
@@ -85,7 +85,7 @@ class Product extends DataObject {
         //$fields->renameField('FeaturedProduct',_t('Product.FEATUREDPRODUCT','Featured Product'));
         $fields->renameField('Hidden',_t('Product.HIDDEN','Hidden (not visible to users)'));
         $fields->renameField('Price',_t('Product.Price','Price'));
-        $fields->renameField('UsePaypal',_t('Product.UsePaypal','Use Paypal'));
+       // $fields->renameField('Hidden',_t('Product.Hidden','Use Paypal'));
 
         return $fields;
     }
@@ -97,6 +97,29 @@ class Product extends DataObject {
             return '<img src="productcatalog/images/no-image-available-th.png" width="100" height="100" />';
     }
 
+    /**
+     * Returns a hide class if element is meant to be showing
+     */
+    public function getIsHidden(){
+        return $this->Hidden ? "hide" : "";
+    }
+
+    /**
+     * Returns a hide class if element is meant to be showing
+     */
+    public function getUsePaypal(){
+        //Product.Paypal:
+        return ($this->Paypal == true) ?  "Buy Online" : "Find Store";
+    }
+    public function getShowPrice(){
+        $price = '<i class="fa fa-dollar" style="margin-top: 7px;"></i>
+                        <span>'.$this->Price.'</span>';
+
+        $span = '<i class="fa" style="margin-top: 7px;"></i>
+                        <span></span>';
+
+        return $this->Price > 0  ? $price : $span;
+    }
     public function getThumbnail()
     {
         if($this->PhotoID)

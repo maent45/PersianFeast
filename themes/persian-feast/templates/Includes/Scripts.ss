@@ -15,6 +15,23 @@
         $(".parentLink").hover(function(){
             $(".dropDownSubLink").show();
         });*/
+
+
+        /*$(".nav a").on("click", function(){
+            $(".nav").find(".active").removeClass("active");
+            $(this).parent().addClass("active");
+        });*/
+
+        /*--- SCRIPT FOR SHOWING ACTIVE LINKS ---*/
+        var url = window.location;
+        // Will only work if string in href matches with location
+        $('ul.nav a[href="'+ url +'"]').parent().addClass('active');
+
+        // Will also work for relative and absolute hrefs
+        $('ul.nav a').filter(function() {
+            return this.href == url;
+        }).parent().addClass('active');
+
     });
 </script>
 <script type="text/javascript">
