@@ -17,7 +17,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <!--- dynamically loops pages and adds them to navbar --->
                 <% loop $Menu(1) %>
-                    <% if $Children %>
+                    <% if $Children && $ClassName != "BlogsHolder" %>
                         <li class="dropdown active linkLists dropdown-toggle">
                             <div class="secondaryNav">
                                 <a href="$Link" class="$LinkingMode">$MenuTitle&nbsp;&nbsp;</a>

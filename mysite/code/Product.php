@@ -109,7 +109,7 @@ class Product extends DataObject {
      */
     public function getUsePaypal(){
         //Product.Paypal:
-        return ($this->Paypal == true) ?  "Buy Online" : "Find Store";
+        return ($this->Paypal == true) ?  '<a href="#prepaylink'.$this->ID.'">Buy Online</a>' : "Find Store";
     }
     public function getShowPrice(){
         $price = '<i class="fa fa-dollar" style="margin-top: 7px;"></i>
