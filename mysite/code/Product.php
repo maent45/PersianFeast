@@ -85,7 +85,7 @@ class Product extends DataObject {
 
         $fields->renameField('Hidden',_t('Product.HIDDEN','Hidden (not visible to users)'));
         $fields->renameField('Price',_t('Product.Price','Price'));
- 
+
 
         return $fields;
     }
