@@ -77,15 +77,15 @@ class Product extends DataObject {
         $fields->renameField('InternalItemId',_t('Product.INTERNALITEMID','Item Id'));
         $fields->renameField('Title',_t('Product.TITLE','Title'));
         $fields->renameField('CategoryID',_t('Product.CATEGORY','Category'));
-        //$fields->renameField('URLSegment',_t('Product.URLSEGMENT','Url Segment'));
+
         $fields->renameField('Photo',_t('Product.PHOTO','Photo'));
-       // $fields->renameField('Price',_t('Product.PRICE','Price'));
+
         $fields->renameField('Description',_t('Product.DESCRIPTION','Description'));
         $fields->renameField('SortOrder',_t('Product.SORTORDER','Sort Order'));
-        //$fields->renameField('FeaturedProduct',_t('Product.FEATUREDPRODUCT','Featured Product'));
+
         $fields->renameField('Hidden',_t('Product.HIDDEN','Hidden (not visible to users)'));
         $fields->renameField('Price',_t('Product.Price','Price'));
-       // $fields->renameField('Hidden',_t('Product.Hidden','Use Paypal'));
+ 
 
         return $fields;
     }

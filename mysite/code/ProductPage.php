@@ -15,7 +15,7 @@ class ProductPage extends Page
     );
     public function getCMSFields()
     {
-        /*--- adding fields to cms interface ---*/
+         /*--- adding fields to cms interface ---*/
             $fields = parent::getCMSFields();
             //below read only fields for home page
             $fields->removeFieldFromTab('Root.Content.Metadata', 'URL');
