@@ -15,7 +15,6 @@
 	
 	<!--- the layout variable tells silverstripe to look in layout directory for the matching template --->
 	$Layout
-
 <% include Footer %>
 
 <% include Scripts %>

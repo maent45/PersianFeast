@@ -6,6 +6,9 @@
  * Date: 25/07/2015
  * Time: 9:54 PM
  */
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(-1);
 class Product extends DataObject {
     private static $db = array (
         'InternalItemId' => 'Varchar',
@@ -108,10 +111,18 @@ class Product extends DataObject {
      * Returns a hide class if element is meant to be showing
      */
     public function getUsePaypal(){
-        //Product.Paypal:
-        return ($this->Paypal == true) ?  '<a href="#prepaylink'.$this->ID.'">Buy Online</a>' : "Find Store";
+        $prams = array(
+            "name"  => $this->InternalItemId."_".$this->ID,
+            "price" => $this->Price
+        );
+        $paypal =  MiniCart::MiniCartItemShortcodeHandler($prams);
+        //'<a href="#prepaylink'.$this->ID.'">Buy Online</a>'
+        return ($this->Paypal == true) ?  $paypal : "Find Store";
     }
     public function getShowPrice(){
+
+
+       // print_r($paypal);exit;
         $price = '<i class="fa fa-dollar" style="margin-top: 7px;"></i>
                         <span>'.$this->Price.'</span>';
 

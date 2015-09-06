@@ -28,6 +28,7 @@
                     <div class="col-lg-4 addToCartDiv" style="border-top: 1px solid lightgrey; padding: 0px;">
                         <i class="fa fa-shopping-cart" style="padding-top: 0px; margin-right: 5px; margin-top: 10px;"></i>
                         <span style="margin-left: 0px;">$getUsePaypal</span>
+
                     </div>
                     <div class="col-lg-4 showDetailsCartDiv" style="border-left: 1px solid lightgrey; border-top: 1px solid lightgrey; padding: 5px;">
                         $getShowPrice
