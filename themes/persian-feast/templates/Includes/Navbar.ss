@@ -9,7 +9,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="$AbsoluteBaseURL"><img class="img-responsive" src="$ThemeDir/images/logos/logo.png" width="320"></a>
+            <a class="navbar-brand" href="$AbsoluteBaseURL">
+                <img class="img-responsive" src="$ThemeDir/images/logos/logo.png">
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -24,9 +26,9 @@
                             </div>
                             <span class="dropdown-toggle caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>
 
-                            <ul class="dropdown-menu dropDownSubLink">
+                            <ul class="dropdown-menu">
                                 <% loop $Children %>
-                                    <li><a href="$Link" class="$LinkingMode"><span>$MenuTitle</span></a></li>
+                                    <li class="linkLists"><a href="$Link" class="$LinkingMode"><span>$MenuTitle</span></a></li>
                                 <% end_loop %>
                             </ul>
                         </li>
@@ -36,9 +38,19 @@
                 <% end_loop %>
 
             </ul>
+
+
+
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<!-- border underneath navbar -->
+<div style="height: 1px; background-color: rgb(198,104,18); width: 73%; margin: auto;">
+
+</div>
+
+<!--
 <div class="container" style="margin-top: 10px;">
     <span style="font-size: 13px;">$BreadCrumbs</span>
 </div>
+-->

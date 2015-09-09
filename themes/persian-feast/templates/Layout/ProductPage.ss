@@ -19,23 +19,29 @@
     <% loop $Product %>
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix outerMainProductContainer product_filter_$CategoryID">
                 <!--<img src="$ThemeDir/images/food/productImages/Hummus_Original.png">!-->
-                $getPhotoForTemplate
+                $getPhotoForTemplate.CroppedImage(270,270)
                 <div class="productPriceContainer">
                     <h3>$Title</h3>
-                    <p>$Description.LimitCharacters(55,'....')</p>
+                    <p style="min-height: 40px;">$Description.LimitCharacters(55,'....')</p>
 
-
-                    <div class="col-lg-4 addToCartDiv" style="border-top: 1px solid lightgrey; padding: 0px;">
-                        <i class="fa fa-shopping-cart" style="padding-top: 0px; margin-right: 5px; margin-top: 10px;"></i>
-                        <span style="margin-left: 0px;">$getUsePaypal</span>
-
+                    <!-- border between product description and bottom icons -->
+                    <div style="padding: 1px; background-color: lightgrey; margin-bottom: 15px;">
                     </div>
-                    <div class="col-lg-4 showDetailsCartDiv" style="border-left: 1px solid lightgrey; border-top: 1px solid lightgrey; padding: 5px;">
+
+                    <div class="row">
+                    <div class="col-lg-4 addToCartDiv">
+                        <i class="fa fa-shopping-cart"></i>
+                        <br/>
+                        <span style="margin-left: 0px;">$getUsePaypal</span>
+                    </div>
+                    <div class="col-lg-4 showDetailsCartDiv">
                         $getShowPrice
                     </div>
-                    <div class="col-lg-4 showDetailsCartDiv" style="border-left: 1px solid lightgrey; border-top: 1px solid lightgrey; padding: 10px;" data-toggle="modal" data-target="#details_$ID">
+                    <div class="col-lg-4 showDetailsCartDiv" data-toggle="modal" data-target="#details_$ID">
                         <i class="fa fa-book"></i>
+                        <br/>
                         <span>Details</span>
+                    </div>
                     </div>
 
                     <!-------- DO NOT REMOVE THE P TAG BELOW, NEVER EVER!!! ------------->
