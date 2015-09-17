@@ -180,6 +180,12 @@ footer i{
 .addToCartDiv, .showDetailsCartDiv :hover{
     cursor: pointer;
 }
+
+/*** just temporary area for paypal cart.... nice work maen great commenting ***/
+#paypal_holder {
+    position: fixed; float: left;
+}
+
 /*=====================================CONTACT PAGE CSS====================================*/
 .contactDetails{
     margin-top: 2%;
