@@ -9,3 +9,4 @@ Contains a full silverstripe install.
 ###Working on 
 * PayPal intergration into products
 * Review System
+* Shopping Cart
