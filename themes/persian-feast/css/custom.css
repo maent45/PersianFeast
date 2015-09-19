@@ -185,6 +185,19 @@ footer i{
 #paypal_holder {
     position: fixed; float: left;
 }
+/*--- SHOPPING CART CSS ---*/
+.shoppingCartContainer{
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+.shoppingCartContainer h4{
+    border-bottom: 2px dashed orange;
+    padding: 10px;
+}
+.subtotalsContainer{
+    padding: 5px;
+    border-top: 2px dashed orange;
+}
 
 /*=====================================CONTACT PAGE CSS====================================*/
 .contactDetails{

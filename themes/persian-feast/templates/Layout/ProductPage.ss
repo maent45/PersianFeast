@@ -15,9 +15,11 @@
 
 <div class="container">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="productsContainer">
-    <!-- loop our products!-->
-    <% loop $Product %>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mix outerMainProductContainer product_filter_$CategoryID">
+
+    <div class="col-lg-8">
+        <!-- loop our products!-->
+        <% loop $Product %>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mix outerMainProductContainer product_filter_$CategoryID">
                 <!--<img src="$ThemeDir/images/food/productImages/Hummus_Original.png">!-->
                 $getPhotoForTemplate.CroppedImage(270,270)
                 <div class="productPriceContainer">
@@ -29,19 +31,19 @@
                     </div>
 
                     <div class="row">
-                    <div class="col-lg-4 addToCartDiv">
-                        <i class="fa fa-shopping-cart"></i>
-                        <br/>
-                        <span style="margin-left: 0px;">$getUsePaypal</span>
-                    </div>
-                    <div class="col-lg-4 showDetailsCartDiv">
-                        $getShowPrice
-                    </div>
-                    <div class="col-lg-4 showDetailsCartDiv" data-toggle="modal" data-target="#details_$ID">
-                        <i class="fa fa-book"></i>
-                        <br/>
-                        <span>Details</span>
-                    </div>
+                        <div class="col-lg-4 addToCartDiv">
+                            <i class="fa fa-shopping-cart"></i>
+                            <br/>
+                            <span style="margin-left: 0px;">$getUsePaypal</span>
+                        </div>
+                        <div class="col-lg-4 showDetailsCartDiv">
+                            $getShowPrice
+                        </div>
+                        <div class="col-lg-4 showDetailsCartDiv" data-toggle="modal" data-target="#details_$ID">
+                            <i class="fa fa-book"></i>
+                            <br/>
+                            <span>Details</span>
+                        </div>
                     </div>
 
                     <!-------- DO NOT REMOVE THE P TAG BELOW, NEVER EVER!!! ------------->
@@ -81,11 +83,36 @@
                         <!--modal content end!-->
                     </div>
                 </div><!--modal end!-->
-
-        </div>
-
-
+            </div>
         <% end_loop %>
+    </div>
+
+    <div class="col-lg-4 shoppingCartContainer">
+        <h4>Your Shopping Cart</h4>
+        <div class="col-lg-6">
+            <span style="color: black">Item Name:</span>
+            <p style="color: #555">Dried Barberries</p>
+            <p style="color: #555">Organic Hummus Cumin & Lime</p>
+        </div>
+        <div class="col-lg-3">
+            <span>Quantity</span>
+            <p>2</p>
+            <p>1</p>
+        </div>
+        <div class="col-lg-2">
+            <span>Price</span>
+            <p>$12.00</p>
+            <p>$14.95</p>
+        </div>
+        <!--- subtotals container --->
+        <div class="col-lg-12 subtotalsContainer">
+            <span class="pull-right">Subtotal: $26.95</span>
+            <br/>
+            <span class="pull-right">Shipping: $4.00</span>
+            <br/>
+            <span class="pull-right">Total: $30.95</span>
+        </div>
+    </div>
 
     </div>
 </div>
