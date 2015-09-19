@@ -117,7 +117,7 @@ class Product extends DataObject {
         );
         $paypal =  MiniCart::MiniCartItemShortcodeHandler($prams);
         //'<a href="#prepaylink'.$this->ID.'">Buy Online</a>'
-        return ($this->Paypal == true) ?  $paypal : "Find Store";
+        return ($this->Paypal == true) ?  "Add Cart" : "Find Store";
     }
     public function getShowPrice(){
 
@@ -142,7 +142,7 @@ class Product extends DataObject {
     public function getPhotoForTemplate()
     {
         if($this->PhotoID)
-            return $this->Photo()->setWidth(300)->setHeight(300);
+            return $this->Photo()->setWidth(300);
         else
             return '<img src="productcatalog/images/no-image-available-th.png" width="300" height="300" />';
     }
