@@ -16,7 +16,7 @@
 <div class="container">
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="productsContainer">
 
-    <div class="col-lg-8">
+    <div class="col-lg-9">
         <!-- loop our products!-->
         <% loop $Product %>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mix outerMainProductContainer product_filter_$CategoryID">
@@ -87,30 +87,40 @@
         <% end_loop %>
     </div>
 
-    <div class="col-lg-4 shoppingCartContainer">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 shoppingCartContainer">
         <h4>Your Shopping Cart</h4>
-        <div class="col-lg-6">
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
             <span style="color: black">Item Name:</span>
             <p style="color: #555">Dried Barberries</p>
             <p style="color: #555">Organic Hummus Cumin & Lime</p>
         </div>
-        <div class="col-lg-3">
-            <span>Quantity</span>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <span style="color: black">Quantity</span>
             <p>2</p>
+            <br/>
             <p>1</p>
         </div>
-        <div class="col-lg-2">
-            <span>Price</span>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <span style="color: black">Price</span>
             <p>$12.00</p>
+            <br/>
             <p>$14.95</p>
         </div>
+        <div class="col-lg-1">
+            <br/>
+            <p><i class="fa fa-remove"></i></p>
+            <br/>
+            <p><i class="fa fa-remove"></i></p>
+        </div>
         <!--- subtotals container --->
-        <div class="col-lg-12 subtotalsContainer">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 subtotalsContainer">
             <span class="pull-right">Subtotal: $26.95</span>
             <br/>
             <span class="pull-right">Shipping: $4.00</span>
             <br/>
             <span class="pull-right">Total: $30.95</span>
+            <br/>
+            <button class="btn btn-default pull-right">Check Out</button>
         </div>
     </div>
 

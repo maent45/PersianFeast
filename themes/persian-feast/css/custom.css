@@ -198,6 +198,12 @@ footer i{
     padding: 5px;
     border-top: 2px dashed orange;
 }
+.shoppingCartContainer i{
+    color: #FF4040;
+}
+.shoppingCartContainer i:hover{
+    cursor: pointer;
+}
 
 /*=====================================CONTACT PAGE CSS====================================*/
 .contactDetails{
