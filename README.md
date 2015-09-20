@@ -1,3 +1,12 @@
-## Persianfeast Silverstripe Template
+###Silverstripe Template
+Contains a full silverstripe install.
 
-Contains a full silverstripe install with a custom built theme using Bootstrap.
+###Contains 
+* Bootstrap Custom Theme.
+* Products & Catalog system
+* Blog & Post System
+
+###Working on 
+* PayPal intergration into products
+* Review System
+* Shopping Cart

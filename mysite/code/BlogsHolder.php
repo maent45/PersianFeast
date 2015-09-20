@@ -20,8 +20,18 @@ class BlogsHolder extends Page {
     /*--- disable for this page to be a root page ---*/
     private static $can_be_root = false;
 
+    //get Grouped ModulesByDate
+    public function getGroupedBlogsByDate() {
+        return GroupedList::create(BlogsPage::get()->sort('BlogDate'));
+    }
+
 }
 
 class BlogsHolder_Controller extends Page_Controller {
+    public function init()
+    {
+        Requirements::javascript("themes/persian-feast/javascript/blogpost.js");
 
+        parent::init();
+    }
 }

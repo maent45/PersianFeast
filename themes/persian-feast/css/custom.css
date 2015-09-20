@@ -6,17 +6,34 @@ body{
 }
 /*==================================================================INDEX PAGE CSS=====================================================================*/
 /*===========NAVBAR CSS===========*/
+
+/*mobile resolution css*/
+@media screen and (max-width: 500px) {
+    .navbar-brand img{
+        width: 120px !important;
+    }
+    .navbar-right{
+        margin-top: 0% !important;
+    }
+}
+
+.navbar-brand img{
+    width: 320px;
+}
 .navbar{
     padding-bottom: 20px;
     background-color: white;
-    font-weight: bold;
     font-size: 1.2em;
+    font-weight: bold;
+}
+.navbar-right{
+    margin-top: 2.3%;
 }
 .navbar-nav>li{
     color: #222 !important;
+
 }
 .navbar-default{
-    border-bottom-color: lightgray !important;
     border-color: transparent;
     width: 84.6%;
     margin: auto;
@@ -25,6 +42,10 @@ body{
     margin-top: 30px;
     color: #222 !important;
     margin-bottom: 20px;
+}
+.navbar-default .navbar-nav>.active>a{
+    background-color: transparent;
+    border-bottom: 2px dashed rgb(198,104,18);
 }
 .navbar-default .navbar-nav>li>a{
     margin-left: 0px;
@@ -48,6 +69,9 @@ body{
 }
 .linkLists span:hover{
     cursor: pointer !important;
+}
+.dropdown-toggle{
+    display: none;
 }
 .homePageParagraph{
     text-align: center;
@@ -73,7 +97,7 @@ body{
 }
 /*==========MEDIA QUERIES FOR MOBILE DEVICES=========*/
 @media screen and (max-width: 300px) {
-    
+
 }
 /*==========CAROUSEL CSS==========*/
 .carousel{
@@ -85,11 +109,10 @@ body{
 }
 /*==========FOOTER CSS=========*/
 footer{
-    margin-top: 7.3%;
-    border-top: lightgrey 1px solid;
+    margin-top: 1.3%;
     width: 85% !important;
     margin-left: 7.5%;
-    padding: 2%;
+    padding: 1%;
 }
 footer h5{
     font-weight: bold;
@@ -99,7 +122,7 @@ footer h5{
 }
 footer i{
     font-size: 2em !important;
-    margin-top: 5px;
+    margin-top: 0px;
     margin-left: 20px;
 }
 .facebook{
@@ -113,7 +136,10 @@ footer i{
     margin-top: 3%;
 }
 .aboutImage{
-    margin-top: 7%;
+    margin-top: 14%;
+}
+.aboutPageContainer p{
+    text-align: justify;
 }
 /*==================================================================PRODUCTS PAGE CSS=====================================================================*/
 .productsContainerControls{
@@ -130,43 +156,56 @@ footer i{
     padding: 0px;
 }
 .mix img{
-    width: 90%;
+    width: 100%;
     margin-top: 30px;
 }
 .productPriceContainer{
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
     border: 1px solid lightgray;
     text-align: center;
-    width: 90%;
-    padding: 20px;
     margin-bottom: 0px !important;
-    height: 180px !important;
+    height: auto !important;
+    padding: 10px;
+    width: auto;
 }
 .productPriceButtons{
-    background-color: yellow !important;
+    background-color: green !important;
     width: 100%;
     border-top: 1px solid lightgray;
 }
-.productPriceButtons i{
+.productPriceContainer i{
+    color: orange;
     font-size: 2.3em;
-    color: orangered;
 }
-.addToCartDiv{
-    padding: 10px;
-    width: 50%;
-    float: left;
-    border-right: 1px solid lightgray;
-}
-.showDetailsCartDiv{
-    padding: 10px;
-    width: 50%;
-    float: right;
-}
-.addToCartDiv :hover{
+.addToCartDiv, .showDetailsCartDiv :hover{
     cursor: pointer;
 }
-.showDetailsCartDiv :hover{
+
+/*** just temporary area for paypal cart.... nice work maen great commenting ***/
+#paypal_holder {
+    position: fixed; float: left;
+}
+/*--- SHOPPING CART CSS ---*/
+.shoppingCartContainer{
+    background-color: lightgrey;
+    border-radius: 5px;
+    margin-top: 2.8%;
+}
+.shoppingCartContainer h4{
+    border-bottom: 2px dashed orange;
+    padding: 10px;
+}
+.subtotalsContainer{
+    padding: 5px;
+    border-top: 2px dashed orange;
+}
+.shoppingCartContainer i{
+    color: #FF4040;
+}
+.shoppingCartContainer i:hover{
     cursor: pointer;
 }
+
 /*=====================================CONTACT PAGE CSS====================================*/
 .contactDetails{
     margin-top: 2%;
@@ -192,6 +231,12 @@ footer i{
 }
 .blogDescContainer p{
     margin-top: 7px;
+}
+.blogArchiveContainer{
+    margin-top: 3% !important;
+}
+.blogArchiveContainer h4{
+    border-bottom: 1px solid lightgrey;
 }
 /*===================================ENQUIRY PAGE CSS=======================================*/
 .enquiryRightContainer{

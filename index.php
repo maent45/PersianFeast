@@ -11,7 +11,7 @@
 
 /**
  * This script bolts on top of SilverStripe to allow access without the use of .htaccess
- * rewriting rules.
+ * rewriting rules
  */
 
 // This is the URL of the script that everything must be viewed with.

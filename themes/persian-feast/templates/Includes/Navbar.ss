@@ -9,7 +9,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="$AbsoluteBaseURL"><img src="$ThemeDir/images/logos/logo_2.png" width="270"></a>
+            <a class="navbar-brand" href="$AbsoluteBaseURL">
+                <img class="img-responsive" src="$ThemeDir/images/logos/logo.png">
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,15 +19,16 @@
             <ul class="nav navbar-nav navbar-right">
                 <!--- dynamically loops pages and adds them to navbar --->
                 <% loop $Menu(1) %>
-                    <% if $Children %>
-                        <li class="dropdown linkLists">
+                    <% if $Children && $ClassName != "BlogsHolder" %>
+                        <li class="dropdown active linkLists dropdown-toggle">
                             <div class="secondaryNav">
                                 <a href="$Link" class="$LinkingMode">$MenuTitle&nbsp;&nbsp;</a>
                             </div>
                             <span class="dropdown-toggle caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>
+
                             <ul class="dropdown-menu">
                                 <% loop $Children %>
-                                    <li><a href="$Link" class="$LinkingMode"><span>$MenuTitle</span></a></li>
+                                    <li class="linkLists"><a href="$Link" class="$LinkingMode"><span>$MenuTitle</span></a></li>
                                 <% end_loop %>
                             </ul>
                         </li>
@@ -33,7 +36,21 @@
                         <li class="$LinkingMode"><a href="$Link"><b>$MenuTitle&nbsp;</b></a></li>
                     <% end_if %>
                 <% end_loop %>
+
             </ul>
+
+
+
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<!-- border underneath navbar -->
+<div style="height: 1px; background-color: rgb(198,104,18); width: 73%; margin: auto;">
+
+</div>
+
+<!--
+<div class="container" style="margin-top: 10px;">
+    <span style="font-size: 13px;">$BreadCrumbs</span>
+</div>
+-->

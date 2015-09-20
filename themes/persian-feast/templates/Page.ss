@@ -2,7 +2,7 @@
 <html lang="en">
 
 <% include Head %>
-
+<script src="$ThemeDir/javascript/jquery-1.11.1.js"></script>
 <body>
 
 <% include Navbar %>
@@ -15,10 +15,8 @@
 	
 	<!--- the layout variable tells silverstripe to look in layout directory for the matching template --->
 	$Layout
-
 <% include Footer %>
 
 <% include Scripts %>
-
 </body>
 </html>

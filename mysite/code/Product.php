@@ -6,6 +6,9 @@
  * Date: 25/07/2015
  * Time: 9:54 PM
  */
+ini_set('display_errors',1);
+ini_set('display_startup_errors',1);
+error_reporting(-1);
 class Product extends DataObject {
     private static $db = array (
         'InternalItemId' => 'Varchar',
@@ -14,11 +17,13 @@ class Product extends DataObject {
 
         //'Model' => 'Varchar',
         'HowToUse' => 'text',
-        //'Price' => 'Currency(8,2)',
+        //
         'Ingredients' => 'text',
         'SortOrder' => 'Int',
         //'FeaturedProduct' => 'Boolean',
-        'Hidden' => 'Boolean'
+        'Hidden' => 'Boolean',
+        'Paypal' => 'Boolean',
+        'Price' => 'Currency(8,2)'
         //'URLSegment' => 'Varchar(255)'
     );
 
@@ -59,19 +64,12 @@ class Product extends DataObject {
 
     public function getCMSFields() {
         $fields = parent::getCMSFields();
-        //set our html
-        //$description = HtmlEditorField::create('Description','Description')->setRows(10);
-        //$ingredients = HtmlEditorField::create('Ingredients','Ingredients')->setRows(10);
-        //$howtouse    = HtmlEditorField::create('HowToUse','How To Use')->setRows(10);
-        //$price = CurrencyField::create('Price','Price');
+        //add paypal tab
+
+
+
         $category = DropdownField::create('CategoryID','Category', Category::get()->map('ID', 'Title'));
         $photo = UploadField::create('Photo','Photo')->setFolderName('Products');
-
-        //add our fields
-        //$fields->replaceField('Description', $description);
-        //$fields->replaceField('Ingredients', $ingredients);
-        //$fields->replaceField('HowToUse', $howtouse);
-        //$fields->replaceField('Price', $price);
 
         $fields->replaceField('Photo', $photo);
         $fields->insertBefore($photo,'InternalItemId');
@@ -82,13 +80,15 @@ class Product extends DataObject {
         $fields->renameField('InternalItemId',_t('Product.INTERNALITEMID','Item Id'));
         $fields->renameField('Title',_t('Product.TITLE','Title'));
         $fields->renameField('CategoryID',_t('Product.CATEGORY','Category'));
-        //$fields->renameField('URLSegment',_t('Product.URLSEGMENT','Url Segment'));
+
         $fields->renameField('Photo',_t('Product.PHOTO','Photo'));
-       // $fields->renameField('Price',_t('Product.PRICE','Price'));
+
         $fields->renameField('Description',_t('Product.DESCRIPTION','Description'));
         $fields->renameField('SortOrder',_t('Product.SORTORDER','Sort Order'));
-        $fields->renameField('FeaturedProduct',_t('Product.FEATUREDPRODUCT','Featured Product'));
-        $fields->renameField('Hidden',_t('Product.HIDDEN','Hidden'));
+
+        $fields->renameField('Hidden',_t('Product.HIDDEN','Hidden (not visible to users)'));
+        $fields->renameField('Price',_t('Product.Price','Price'));
+
 
         return $fields;
     }
@@ -100,6 +100,33 @@ class Product extends DataObject {
             return '<img src="productcatalog/images/no-image-available-th.png" width="100" height="100" />';
     }
 
+    /**
+     * Returns a hide class if element is meant to be showing
+     */
+    public function getIsHidden(){
+        return $this->Hidden ? "hide" : "";
+    }
+
+    /**
+     * Returns a hide class if element is meant to be showing
+     */
+    public function getUsePaypal(){
+
+        //$paypal =  MiniCart::MiniCartItemShortcodeHandler($prams);
+        //'<a href="#prepaylink'.$this->ID.'">Buy Online</a>'
+        return ($this->Paypal == true) ? "<span class='item' data-item='" . $this->getItemPayPalData() . "'>Add Cart</span>" : "Find Store";
+    }
+    public function getShowPrice(){
+
+       // print_r($paypal);exit;
+        $price = '<i class="fa fa-dollar" style="margin-top: 7px;"></i>
+                        <span>'.$this->Price.'</span>';
+
+        $span = '<i class="fa" style="margin-top: 7px;"></i>
+                        <span></span>';
+
+        return $this->Price > 0  ? $price : $span;
+    }
     public function getThumbnail()
     {
         if($this->PhotoID)
@@ -111,7 +138,7 @@ class Product extends DataObject {
     public function getPhotoForTemplate()
     {
         if($this->PhotoID)
-            return $this->Photo()->setWidth(300)->setHeight(300);
+            return $this->Photo()->setWidth(300);
         else
             return '<img src="productcatalog/images/no-image-available-th.png" width="300" height="300" />';
     }
@@ -130,4 +157,16 @@ class Product extends DataObject {
     public function getCMSValidator() {
         return new RequiredFields('Title');
     }
+
+    //returns the item data for product in json_encode
+    public function getItemPayPalData()
+    {
+        $prams = array(
+            "title" => $this->Title,
+            "item_id" => $this->InternalItemId . "_" . $this->ID,
+            "price" => $this->Price
+        );
+        return json_encode($prams);
+    }
+
 }

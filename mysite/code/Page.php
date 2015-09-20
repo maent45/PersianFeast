@@ -1,11 +1,19 @@
 <?php
 class Page extends SiteTree {
-
+	/*
 	private static $db = array(
 	);
 
 	private static $has_one = array(
 	);
+	*/
+	private static $casting = array(
+		'MyShortCodeMethod' => 'HTMLText'
+	);
+
+	public static function MyShortCodeMethod($arguments, $content = null, $parser = null, $tagName) {
+		return "<em>" . $tagName . "</em> " . $content . "; " . count($arguments) . " arguments.";
+	}
 
 }
 class Page_Controller extends ContentController {
@@ -33,5 +41,7 @@ class Page_Controller extends ContentController {
 		// You can include any CSS or JS required by your project here.
 		// See: http://doc.silverstripe.org/framework/en/reference/requirements
 	}
+
+
 
 }

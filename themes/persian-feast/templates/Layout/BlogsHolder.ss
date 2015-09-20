@@ -1,5 +1,7 @@
-<% loop $Children %>
 <div class="container">
+
+<div class="col-lg-10">
+<% loop $Children %>
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 blogContainer">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 blogImgContainer">
             <a href="$Link">$BlogImage.CroppedImage(270,270)</a>
@@ -13,5 +15,22 @@
             <a href="$Link"><span>Read More</span></a>
         </div>
     </div>
-</div>
+
 <% end_loop %>
+</div>
+    <div class="col-lg-2 col-md-2 blogArchiveContainer">
+
+        <h4>Blog Archive</h4>
+        <% loop $GroupedBlogsByDate.GroupedBy(YearCreated) %>
+            <p><i id="drop_down_$YearCreated" class="fa fa-caret-right"></i>&nbsp;<a class="blog_archive_btn" year="$YearCreated" href="#">$YearCreated</a> <small>($Children.Count)</small></p>
+            <ul id="blogs_$YearCreated" class="hide">
+                <% loop $Children %>
+                    <li>$BlogDate.Nice : <small><a href="$URLSegment">$Title</a></small></li>
+                <% end_loop %>
+            </ul>
+        <% end_loop %>
+    </div>
+
+
+
+</div>
