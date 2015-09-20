@@ -1,5 +1,6 @@
+/.htaccess
 #phpstorm
-.idea/
+/.idea/
 #assets folder
 assets/_combinedfiles/
 assets/Uploads/
@@ -7,7 +8,7 @@ workspace.xml
 mysite/_config.php
 assets/
 silverstripe-gridfield-betterbuttons-master/
-.idea/workspace.xml
+/.idea/workspace.xml
 
 # Windows image file caches
 Thumbs.db
