@@ -84,15 +84,20 @@
                     </div>
                 </div><!--modal end!-->
             </div>
+
         <% end_loop %>
     </div>
 
+    <!-- shopping cart paypal start!-->
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 shoppingCartContainer">
+
         <h4>Your Shopping Cart</h4>
-        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" id="item">
             <span style="color: black">Item Name:</span>
+            <!-- append item
             <p style="color: #555">Dried Barberries</p>
-            <p style="color: #555">Organic Hummus Cumin & Lime</p>
+            <p style="color: #555">Organic Hummus Cumin & Lime</p>!-->
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
             <span style="color: black">Quantity</span>
@@ -123,6 +128,7 @@
             <button class="btn btn-default pull-right">Check Out</button>
         </div>
     </div>
+    <!-- shopping cart paypal END!-->
 
     </div>
 </div>

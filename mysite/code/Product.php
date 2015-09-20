@@ -111,16 +111,12 @@ class Product extends DataObject {
      * Returns a hide class if element is meant to be showing
      */
     public function getUsePaypal(){
-        $prams = array(
-            "name"  => $this->InternalItemId."_".$this->ID,
-            "price" => $this->Price
-        );
-        $paypal =  MiniCart::MiniCartItemShortcodeHandler($prams);
+
+        //$paypal =  MiniCart::MiniCartItemShortcodeHandler($prams);
         //'<a href="#prepaylink'.$this->ID.'">Buy Online</a>'
-        return ($this->Paypal == true) ?  "Add Cart" : "Find Store";
+        return ($this->Paypal == true) ? "<span class='item' data-item='" . $this->getItemPayPalData() . "'>Add Cart</span>" : "Find Store";
     }
     public function getShowPrice(){
-
 
        // print_r($paypal);exit;
         $price = '<i class="fa fa-dollar" style="margin-top: 7px;"></i>
@@ -162,5 +158,15 @@ class Product extends DataObject {
         return new RequiredFields('Title');
     }
 
+    //returns the item data for product in json_encode
+    public function getItemPayPalData()
+    {
+        $prams = array(
+            "title" => $this->Title,
+            "item_id" => $this->InternalItemId . "_" . $this->ID,
+            "price" => $this->Price
+        );
+        return json_encode($prams);
+    }
 
 }

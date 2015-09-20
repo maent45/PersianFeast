@@ -53,4 +53,5 @@ class BlogsPage extends Page {
 
 class BlogsPage_Controller extends Page_Controller {
 
+
 }
