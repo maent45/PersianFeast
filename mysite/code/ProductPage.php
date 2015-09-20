@@ -52,8 +52,12 @@ class ProductPage_Controller extends Page_Controller
     );
 
     public function init() {
-
+        //Requirements::javascript('themes/' . SSViewer::current_theme() . '/javascript/jquery-1.2.6.pack.js');
+        Requirements::javascript("themes/persian-feast/javascript/paypal.js");
+        
         parent::init();
+
+        //themes/persian-feast/javascript/paypal.js
 
         //Requirements::css('productcatalog/css/productcatalog.css');
     }

@@ -28,5 +28,10 @@ class BlogsHolder extends Page {
 }
 
 class BlogsHolder_Controller extends Page_Controller {
+    public function init()
+    {
+        Requirements::javascript("themes/persian-feast/javascript/blogpost.js");
 
+        parent::init();
+    }
 }

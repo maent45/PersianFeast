@@ -115,7 +115,7 @@ class Product extends DataObject {
             "name"  => $this->InternalItemId."_".$this->ID,
             "price" => $this->Price
         );
-        $paypal =  MiniCart::MiniCartItemShortcodeHandler($prams);
+        //$paypal =  MiniCart::MiniCartItemShortcodeHandler($prams);
         //'<a href="#prepaylink'.$this->ID.'">Buy Online</a>'
         return ($this->Paypal == true) ?  "Add Cart" : "Find Store";
     }

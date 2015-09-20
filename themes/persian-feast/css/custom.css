@@ -189,6 +189,7 @@ footer i{
 .shoppingCartContainer{
     background-color: lightgrey;
     border-radius: 5px;
+    margin-top: 2.8%;
 }
 .shoppingCartContainer h4{
     border-bottom: 2px dashed orange;
