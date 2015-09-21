@@ -99,33 +99,41 @@
             <p style="color: #555">Dried Barberries</p>
             <p style="color: #555">Organic Hummus Cumin & Lime</p>!-->
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="quantity">
             <span style="color: black">Quantity</span>
+            <!--
             <p>2</p>
             <br/>
             <p>1</p>
+            !-->
         </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="price">
             <span style="color: black">Price</span>
+            <!--
             <p>$12.00</p>
             <br/>
             <p>$14.95</p>
+            !-->
         </div>
-        <div class="col-lg-1">
+        <div class="col-lg-1" id="options">
+            <!--
             <br/>
             <p><i class="fa fa-remove"></i></p>
             <br/>
             <p><i class="fa fa-remove"></i></p>
+            !-->
         </div>
         <!--- subtotals container --->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 subtotalsContainer">
+            <!--
             <span class="pull-right">Subtotal: $26.95</span>
             <br/>
             <span class="pull-right">Shipping: $4.00</span>
             <br/>
             <span class="pull-right">Total: $30.95</span>
             <br/>
-            <button class="btn btn-default pull-right">Check Out</button>
+            !-->
+            <button id="checkOut" class="btn btn-default pull-right">Check Out</button>
         </div>
     </div>
     <!-- shopping cart paypal END!-->
