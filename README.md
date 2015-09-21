@@ -10,3 +10,6 @@ Contains a full silverstripe install.
 * PayPal intergration into products
 * Review System
 * Shopping Cart
+* 
+###Plugins:
+* Mixitup
