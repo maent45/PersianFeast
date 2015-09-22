@@ -11,13 +11,18 @@ var ordering = [], $shoppingCart = null;
 $(document).ready(function () {
 
     //declare our shopping cart element
-    $shoppingCart = $(".shoppingCartContainer #cart");
-    throw new Error("Error missing shopping cart container");
+    $shoppingCart = $("#shoppingCart");
 
+    //check cart
     if ($shoppingCart.length < 0)
+        throw new Error("paypal.js Error missing shopping cart container");
+
+    if (!$shoppingCart.is(':visible'))
+        console.log("paypal.js cart is hidden")
 
     //adding item to cart
-    $(".addToCartDiv").click(addToCart);
+    $(".addToCartDiv").click(addToCart)
+
     $("#checkOut").click(function () {
         alert("Sorry not complete yet.");
     })
@@ -27,6 +32,10 @@ $(document).ready(function () {
 
 
 function addToCart() {
+    //check if showing
+    if (!$shoppingCart.is(':visible'))
+        $(".shoppingCartContainer").show();
+
     //lets get the data
     var data = $('.item', this).data('item');
 
@@ -56,6 +65,16 @@ function addToCart() {
      */
     //Remove above soon just adding by table now
 
-    console.log("click adding", data);
-    console.log("ordering", ordering);
+    //define our cart row
+    var cartRow = '<tr>' +
+        '<td width="70px"><p style="color: #555">' + data.title + '</p></td>' +
+        '<td width="20" style="padding-left: 10px;"><p style="color: #555;">1</p></td>' +
+        '<td width="10" style="padding-left: 10px;"><p style="color: #555">$' + data.price + '</p></td>' +
+        '<td width="10"><i class="fa fa-remove"></i></td>' +
+        '</tr>';
+    //append to last
+    $("tr:last", $shoppingCart).after(cartRow);
+
+    console.log("paypal.js click adding", data);
+    console.log("paypal.js ordering", ordering);
 }
