@@ -25,11 +25,24 @@ $(document).ready(function () {
 
     $("#checkOut").click(function () {
         alert("Sorry not complete yet.");
-    })
+    });
+
+
+
 
 
 });
 
+//bind to non existing class
+$(document.body).on('click', '.cartRemove', function () {
+    //get product item
+    var item_id = $(this).data('item_id');
+    //@todo remove to a proper function this is visual prototyping at this stage
+    $("#" + item_id).remove();
+
+    if ($('tr', $shoppingCart).length <= 1)   //hide shopping cart no items
+        $(".shoppingCartContainer").hide();
+});
 
 function addToCart() {
     //check if showing
@@ -66,11 +79,11 @@ function addToCart() {
     //Remove above soon just adding by table now
 
     //define our cart row
-    var cartRow = '<tr>' +
+    var cartRow = '<tr id="' + data.item_id + '">' +
         '<td width="70px"><p style="color: #555">' + data.title + '</p></td>' +
         '<td width="20" style="padding-left: 10px;"><p style="color: #555;">1</p></td>' +
         '<td width="10" style="padding-left: 10px;"><p style="color: #555">$' + data.price + '</p></td>' +
-        '<td width="10"><i class="fa fa-remove"></i></td>' +
+        '<td width="10"><i data-item_id="' + data.item_id + '" class="fa fa-remove cartRemove"></i></td>' +
         '</tr>';
     //append to last
     $("tr:last", $shoppingCart).after(cartRow);
