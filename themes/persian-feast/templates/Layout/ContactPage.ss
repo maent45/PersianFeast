@@ -23,7 +23,7 @@
                     <label for="usr">Email:</label>
                     <input type="text" class="form-control" id="txtEmail">
                     <br/>
-                    <label for="comment">Have something to say? Leave us a message.</label>
+                    <label for="comment">Leave us a message and we'll get in touch shortly.</label>
                     <textarea class="form-control" rows="5" id="comment"></textarea>
                     <br/>
                     <button class="btn btn-warning" type="submit" name="submit" onclick="checkEmail()">Send</button>
