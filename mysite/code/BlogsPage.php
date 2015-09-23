@@ -34,8 +34,8 @@ class BlogsPage extends Page {
         return $fields;
     }
 
-    /*--- disable for this page to be a root page ---*/
-    private static $can_be_root = false;
+    /*--- disable for this page to be a root page
+    private static $can_be_root = false;---*/
 
     //http://php.net/manual/en/function.date.php
 
