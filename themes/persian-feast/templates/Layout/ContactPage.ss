@@ -31,21 +31,26 @@
             </form>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contactDetails">
-            <% if $MobilePhone %>
-                <i class="fa fa-mobile-phone pull-left" style="font-size: 2.3em;"></i>
-                <h4>$MobilePhone</h4>
+            <% if $Mailto %>
+                <i class="fa fa-envelope pull-left" style="margin-top: 7px;"></i>
+                <h4 style="margin-top: 9px;">$Mailto</h4>
                 <br/>
+            <% end_if %>
+            <% if $MobilePhone %>
+                <i class="fa fa-mobile-phone pull-left" style="margin-top: 7px; font-size: 2.3em;"></i>
+                <h4 style="margin-top: 12px;">$MobilePhone</h4>
+                <br/>
+            <% end_if %>
+            <% if $Fax %>
+                <i class="fa fa-fax pull-left" style="margin-top: 4px;"></i>
+                <h4 style="margin-top: 6px;">$Fax</h4>
             <% end_if %>
             <% if $BusinessPhone %>
                 <i class="fa fa-phone pull-left" style="margin-top: 10px;"></i>
                 <h4>$BusinessPhone</h4>
                 <br/>
             <% end_if %>
-            <% if $Mailto %>
-                <i class="fa fa-envelope pull-left" style="margin-top: 10px;"></i>
-                <h4>$Mailto</h4>
-                <br/>
-            <% end_if %>
+
             <% if $PhysicalAddress %>
                 <i class="fa fa-map-marker pull-left" style="margin-top: 8px;"></i>
                 <h4>$PhysicalAddress</h4>

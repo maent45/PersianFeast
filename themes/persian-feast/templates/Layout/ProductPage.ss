@@ -53,7 +53,7 @@
                     <button class="btn btn-default" data-toggle="modal" data-target="#myModal"><i class="fa fa-book pull-left"></i><span>Details</span></button>-->
                 </div>
 
-                <!-- Modal -->
+                <!-- Product Detail Modal -->
                 <div id="details_$ID" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <!-- Modal content start -->
@@ -75,6 +75,37 @@
                                     <br/>
                                     <h4>Nutritional Information</h4>
                                     <p>$Ingredients</p>
+                                    <br/>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--modal content end!-->
+                    </div>
+                </div><!--modal end!-->
+
+                <!-- Product Store Modal -->
+                <div id="storeModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <!-- Modal content start -->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Store Details</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+
+                                </div>
+                                <div class="col-lg-12 container">
+                                    <h4>Store Details</h4>
+                                    <p>sold at</p>
+                                    <hr/>
+                                    <h4>How To Use</h4>
+                                    <p>sdfsdf</p>
+                                    <br/>
+                                    <h4>Nutritional Information</h4>
+                                    <p>somewhere</p>
                                     <br/>
                                 </div>
 

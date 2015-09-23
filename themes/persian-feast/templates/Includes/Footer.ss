@@ -1,5 +1,5 @@
 <!-- border before footer -->
-<div style="height: 1px; background-color: rgb(198,104,18); width: 73%; margin: auto; margin-top: 4%;">
+<div style="height: 1px; background-color: rgb(198,104,18); width: 73%; margin: auto; margin-top: 2%;">
 
 </div>
 

@@ -109,10 +109,10 @@ body{
 }
 /*==========FOOTER CSS=========*/
 footer{
-    margin-top: 1.3%;
+    margin-top: 0.8%;
     width: 85% !important;
     margin-left: 7.5%;
-    padding: 1%;
+    padding: 0.2%;
 }
 footer h5{
     font-weight: bold;
@@ -258,6 +258,10 @@ footer i{
     color: #5bc0de;
 }
 /*===============================RECIPES HOLDER PAGES CSS================================*/
+.recipeTitleHolder{
+    height: 50px;
+    margin-bottom: 2.9%;
+}
 .recipesDescDiv h3{
     margin-left: 0px;
     text-decoration: none!important;

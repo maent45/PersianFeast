@@ -6,6 +6,7 @@ class ContactPage extends Page {
         'Mailto' => 'text',
         'PhysicalAddress' => 'text',
         'MobilePhone' => 'text',
+        'Fax' => 'text',
         'BusinessPhone' => 'text',
     );
     /*--- restrict user from adding other pages ---*/
@@ -24,6 +25,7 @@ class ContactPage extends Page {
 		//email to for contact form
         $fields->addFieldToTab("Root.Content.Main", new TextField('Mailto', 'Form Email Sent To :'));
         $fields->addFieldToTab("Root.Content.Main", new TextField('MobilePhone', 'Mobile Phone :'));
+        $fields->addFieldToTab("Root.Content.Main", new TextField('Fax', 'Fax Number :'));
         $fields->addFieldToTab("Root.Content.Main", new TextField('BusinessPhone', 'Business Phone :'));
         $fields->addFieldToTab("Root.Content.Main", new TextareaField('PhysicalAddress', 'Physical Address :'));
 
