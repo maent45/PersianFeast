@@ -31,15 +31,18 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-4 addToCartDiv">
-                            <i class="fa fa-shopping-cart"></i>
+                        <div class="col-lg-6 addToCartDiv">
+                            <a><i class="fa fa-building"></i></a>
                             <br/>
-                            <span style="margin-left: 0px;">$getUsePaypal</span>
+                            <span>Retail Info</span>
+                            <!--<i class="fa fa-shopping-cart"></i>
+                            <br/>
+                            <span style="margin-left: 0px;">$getUsePaypal</span>-->
                         </div>
-                        <div class="col-lg-4 showDetailsCartDiv">
+                        <!--<div class="col-lg-4 showDetailsCartDiv">
                             $getShowPrice
-                        </div>
-                        <div class="col-lg-4 showDetailsCartDiv" data-toggle="modal" data-target="#details_$ID">
+                        </div>-->
+                        <div class="col-lg-6 showDetailsCartDiv" data-toggle="modal" data-target="#details_$ID">
                             <i class="fa fa-book"></i>
                             <br/>
                             <span>Details</span>
@@ -98,15 +101,7 @@
 
                                 </div>
                                 <div class="col-lg-12 container">
-                                    <h4>Store Details</h4>
-                                    <p>sold at</p>
-                                    <hr/>
-                                    <h4>How To Use</h4>
-                                    <p>sdfsdf</p>
-                                    <br/>
-                                    <h4>Nutritional Information</h4>
-                                    <p>somewhere</p>
-                                    <br/>
+
                                 </div>
 
                             </div>
