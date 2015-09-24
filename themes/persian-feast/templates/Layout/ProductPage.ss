@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-6 addToCartDiv">
+                        <div class="col-lg-6 addToCartDiv" data-toggle="modal" data-target="#storeModal">
                             <a><i class="fa fa-building"></i></a>
                             <br/>
                             <span>Retail Info</span>
@@ -100,10 +100,14 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
 
                                 </div>
-                                <div class="col-lg-12 container">
-
+                                <div class="col-lg-12 container prodRetailInfo">
+                                    <h4>Shop:</h4>
+                                    <h5>Commonsense Organics</h5>
+                                    <h4>Address:</h4>
+                                    <h5>260 Wakefield Street, Wellington</h5>
+                                    <h5>Postal address: PO Box 19287</h5>
+                                    <h5>Courtenay Place, Wellington 6149</h5>
                                 </div>
-
                             </div>
                         </div>
                         <!--modal content end!-->
