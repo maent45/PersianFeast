@@ -6,7 +6,10 @@ class HomePage extends Page {
 
     private static $db = array(
         'WelcomeHeader' => 'text',
-        'WelcomeIntro' => 'HTMLText'
+        'WelcomeIntro' => 'HTMLText',
+        //social media link
+        'socialFacebook' => 'text',
+        'socialTwitter' => 'text'
     );
     static $many_many = array(
         'Banners' => 'Banners'
@@ -39,7 +42,9 @@ class HomePage extends Page {
         $gridField = new GridField("Banner", "Main Page Banners", $this->Banners(), $gridFieldConfig);
         $fields->addFieldToTab("Root.Banners.Banner", $gridField);
 
-        
+        //social fields
+        $fields->addFieldToTab("Root.SocialLinks", new TextField('socialFacebook', 'Facebook Link'));
+        $fields->addFieldToTab("Root.SocialLinks", new TextField('socialTwitter', 'Twitter Link'));
 
         //welcome header
         $fields->addFieldToTab("Root.Content.Main", new TextField('WelcomeHeader', 'Welcome Header'));
