@@ -24,7 +24,7 @@ class Category extends DataObject {
     public function fieldLabels($includerelations = true) {
         $labels = parent::fieldLabels($includerelations);
         $labels['Title'] = _t('Category.TITLE','Title');
-        $labels['SortOrder'] = _t('Product.SORTORDER','Sort Order');
+        //$labels['SortOrder'] = _t('Product.SORTORDER','Sort Order');
         return $labels;
     }
     /*
