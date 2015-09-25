@@ -24,6 +24,7 @@
                 $getPhotoForTemplate.CroppedImage(270,270)
                 <div class="productPriceContainer">
                     <h3>$Title</h3>
+
                     <p style="min-height: 40px;">$Description.LimitCharacters(55,'....')</p>
 
                     <!-- border between product description and bottom icons -->
@@ -64,6 +65,7 @@
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">$Title</h4>
+                                $getPhotoForTemplate
                             </div>
                             <div class="modal-body">
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">

@@ -77,6 +77,10 @@ body{
     text-align: center;
 }
     /*-----------MODAL CSS----------*/
+.modal img {
+    width: 45% !important;
+    margin-left: 27% !important;
+}
 .modal-body{
     overflow-y: auto;
 }
