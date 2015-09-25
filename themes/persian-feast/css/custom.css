@@ -107,6 +107,10 @@ body{
 .carouselContainer{
     margin-top: 1%;
 }
+.carousel-inner{
+    height: 600px !important;
+    overflow: hidden;
+}
 /*==========FOOTER CSS=========*/
 footer{
     margin-top: 0.8%;
