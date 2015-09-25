@@ -34,6 +34,8 @@ class RetailInformation extends DataObject
         $labels['Street'] = _t('RetailInformation.Street', 'Street');
         $labels['PostalAddress'] = _t('RetailInformation.PostalAddress', 'PostalAddress');
         $labels['Location'] = _t('RetailInformation.StoreName', 'Location');
+
+        return $labels;
     }
 
     //return link to view prod address
@@ -41,6 +43,17 @@ class RetailInformation extends DataObject
     {
         return 'address/' . $this->ID;
         //return $addressAction;
+    }
+
+    public function LinkingMode(){
+        $paramsAddress = Controller::curr()->getURLParams();
+        if ( is_numeric($paramsAddress['OtherAddressId'] )) {
+            $addressID = (int)$paramsAddress['OtherAddressId'];
+        }
+        else{
+            $addressID = (int)$paramsAddress['ID'];
+        }
+        return ($this->ID == $addressID) ? 'pc-current' : 'link';
     }
 
     //set validation
