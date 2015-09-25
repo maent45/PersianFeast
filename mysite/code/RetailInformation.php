@@ -1,11 +1,13 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: 21103436
  * Date: 25/09/2015
  * Time: 2:26 AM
  */
-class RetailInformation extends DataObject {
+class RetailInformation extends DataObject
+{
     private static $db = array(
         //create new db columns
         'StoreName' => 'Varchar',
@@ -25,18 +27,20 @@ class RetailInformation extends DataObject {
         'Location' => 'Location',
     );
 
-    public function fieldLabels($includerelations = true) {
+    public function fieldLabels($includerelations = true)
+    {
         $labels = parent::fieldLabels($includerelations);
-        $labels['StoreName'] = _t('RetailInformation.StoreName','StoreName');
-        $labels['Street'] = _t('RetailInformation.Street','Street');
-        $labels['PostalAddress'] = _t('RetailInformation.PostalAddress','PostalAddress');
-        $labels['Location'] = _t('RetailInformation.StoreName','Location');
+        $labels['StoreName'] = _t('RetailInformation.StoreName', 'StoreName');
+        $labels['Street'] = _t('RetailInformation.Street', 'Street');
+        $labels['PostalAddress'] = _t('RetailInformation.PostalAddress', 'PostalAddress');
+        $labels['Location'] = _t('RetailInformation.StoreName', 'Location');
     }
 
     //return link to view prod address
-    public function AddressLink() {
-        $addressAction = 'address/' . $this->ID;
-        return $addressAction;
+    public function AddressLink()
+    {
+        return 'address/' . $this->ID;
+        //return $addressAction;
     }
 
     //set validation
