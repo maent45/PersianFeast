@@ -98,14 +98,24 @@
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <h4 class="modal-title">Store Details</h4>
                             </div>
-                            <div class="modal-body">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
+                            <div class="modal-body retailInfoModal">
+                                <h4>Location:</h4>
+                                <h4>Shop:</h4>
+                                <div class="col-lg-6 container prodRetailInfo">
+                                    <h5 style="margin-left: 25%;">Commonsense Organics - Wellington</h5>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h5>Commonsense Organics - Lower Hutt</h5>
 
                                 </div>
-                                <div class="col-lg-12 container prodRetailInfo">
-                                    <h4>Shop:</h4>
-                                    <h5>Commonsense Organics</h5>
-                                    <h4>Address:</h4>
+                                <br/>
+                                <h4>Address:</h4>
+                                <div class="col-lg-6">
+                                    <h5 style="margin-left: 25%;">260 Wakefield Street, Wellington</h5>
+                                    <h5 style="margin-left: 25%;">Postal address: PO Box 19287</h5>
+                                    <h5 style="margin-left: 25%;">Courtenay Place, Wellington 6149</h5>
+                                </div>
+                                <div class="col-lg-6">
                                     <h5>260 Wakefield Street, Wellington</h5>
                                     <h5>Postal address: PO Box 19287</h5>
                                     <h5>Courtenay Place, Wellington 6149</h5>

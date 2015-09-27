@@ -79,7 +79,6 @@ body{
     /*-----------MODAL CSS----------*/
 .modal img {
     width: 45% !important;
-    margin-left: 27% !important;
 }
 .modal-body{
     overflow-y: auto;
@@ -188,7 +187,7 @@ footer i{
 .addToCartDiv, .showDetailsCartDiv :hover{
     cursor: pointer;
 }
-.prodRetailInfo h5{
+.retailInfoModal h5{
     margin-left: 3%;
 }
 
