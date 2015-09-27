@@ -99,10 +99,13 @@
                                 <h4 class="modal-title">Store Details</h4>
                             </div>
                             <div class="modal-body retailInfoModal">
-                                <h4>Location:</h4>
+
+                                <!--<h4>Location:</h4>
+                                <div id="googleMap" style="width:500px;height:380px;"></div>
+                                <br/><br/>-->
                                 <h4>Shop:</h4>
                                 <div class="col-lg-6 container prodRetailInfo">
-                                    <h5 style="margin-left: 25%;">Commonsense Organics - Wellington</h5>
+                                    <h5 style="margin-left: 23%;">Commonsense Organics - Wellington</h5>
                                 </div>
                                 <div class="col-lg-6">
                                     <h5>Commonsense Organics - Lower Hutt</h5>
@@ -116,9 +119,9 @@
                                     <h5 style="margin-left: 25%;">Courtenay Place, Wellington 6149</h5>
                                 </div>
                                 <div class="col-lg-6">
-                                    <h5>260 Wakefield Street, Wellington</h5>
-                                    <h5>Postal address: PO Box 19287</h5>
-                                    <h5>Courtenay Place, Wellington 6149</h5>
+                                    <h5>37 Waterloo Rd, Lower Hutt</h5>
+                                    <h5>Postal address: PO Box 31592</h5>
+                                    <h5>Lower Hutt 5040</h5>
                                 </div>
                             </div>
                         </div>
@@ -126,9 +129,10 @@
                     </div>
                 </div><!--modal end!-->
             </div>
-
         <% end_loop %>
     </div>
+
+
 
     <!-- shopping cart paypal start!-->
     <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 shoppingCartContainer" style="display:none">
