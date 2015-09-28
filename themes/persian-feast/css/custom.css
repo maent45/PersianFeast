@@ -16,9 +16,15 @@ body{
         margin-top: 0% !important;
     }
 }
+@media screen and (max-width: 1200px) {
+    .carousel-inner{
+        height: 20px !important;
+        overflow: hidden;
+    }
+}
 
 .navbar-brand img{
-    width: 320px;
+    width: 380px;
 }
 .navbar{
     padding-bottom: 20px;

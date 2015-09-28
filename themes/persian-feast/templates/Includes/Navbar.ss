@@ -10,7 +10,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="$AbsoluteBaseURL">
-                <img class="img-responsive" src="$ThemeDir/images/logos/logo.png">
+                <img class="img-responsive" src="$ThemeDir/images/logos/logo_main_orange_line.png">
             </a>
         </div>
 
