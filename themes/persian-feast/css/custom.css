@@ -10,17 +10,18 @@ body{
 /*mobile resolution css*/
 @media screen and (max-width: 500px) {
     .navbar-brand img{
-        width: 120px !important;
+        width: 160px !important;
     }
     .navbar-right{
         margin-top: 0% !important;
     }
-}
-@media screen and (max-width: 1200px) {
     .carousel-inner{
-        height: 20px !important;
+        height: 156px !important;
         overflow: hidden;
     }
+}
+@media screen and (max-width: 1200px) {
+
 }
 
 .navbar-brand img{
@@ -117,7 +118,7 @@ body{
     margin-top: 1%;
 }
 .carousel-inner{
-    height: 530px !important;
+    height: 530px;
     overflow: hidden;
 }
 /*==========FOOTER CSS=========*/
