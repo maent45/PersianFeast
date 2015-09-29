@@ -178,8 +178,8 @@ footer i{
     border: 1px solid lightgray;
     text-align: center;
     margin-bottom: 0px !important;
-    height: auto !important;
-    padding: 10px;
+    padding: 0px !important;
+    height: 190px;
     width: auto;
 }
 .productPriceButtons{
@@ -189,13 +189,10 @@ footer i{
 }
 .productPriceContainer i{
     color: orange;
-    font-size: 2.3em;
+    font-size: 2.1em;
 }
 .addToCartDiv, .showDetailsCartDiv :hover{
     cursor: pointer;
-}
-.retailInfoModal h5{
-
 }
 
 /*** just temporary area for paypal cart.... nice work maen great commenting ***/
