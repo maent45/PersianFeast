@@ -32,7 +32,9 @@ class Product extends DataObject {
         'Category' => 'Category',
         'Photo' => 'Image'
     );
-
+    public static $many_many = array(
+        'Stores' => 'RetailInformation'
+    );
 
     private static $summary_fields = array(
         'Thumbnail' => 'Thumbnail',
@@ -67,7 +69,7 @@ class Product extends DataObject {
         //add paypal tab
 
 
-        $store = DropdownField::create('StoreID', 'RetailInformation', RetailInformation::get()->map('ID', 'StoreName'));
+        $store = ListboxField::create('Stores', 'RetailInformation', RetailInformation::get()->map('ID', 'StoreName')->toArray())->setMultiple(true);
 
         $category = DropdownField::create('CategoryID','Category', Category::get()->map('ID', 'Title'));
 
@@ -85,7 +87,7 @@ class Product extends DataObject {
         $fields->renameField('Title',_t('Product.TITLE','Title'));
 
         $fields->renameField('CategoryID',_t('Product.CATEGORY','Category'));
-        $fields->renameField('StoreID', _t('Product.RETAILINFORMATION', 'RetailInformation'));
+        $fields->renameField('Stores', _t('Product.RETAILINFORMATION', 'Retail Information'));
 
         $fields->renameField('Photo',_t('Product.PHOTO','Photo'));
 
@@ -124,13 +126,11 @@ class Product extends DataObject {
     }
     public function getShowPrice(){
 
-       // print_r($paypal);exit;
-        $price = '<i class="fa fa-dollar" style="margin-top: 7px;"></i>
+        $price = '<i class="fa fa-dollar" style="margin-top: 0px;"></i>
+                        <br/>
                         <span>'.$this->Price.'</span>';
-
         $span = '<i class="fa" style="margin-top: 7px;"></i>
                         <span></span>';
-
         return $this->Price > 0  ? $price : $span;
     }
     public function getThumbnail()
@@ -174,5 +174,6 @@ class Product extends DataObject {
         );
         return json_encode($prams);
     }
+
 
 }
