@@ -24,6 +24,7 @@ class Product extends DataObject {
         'Hidden' => 'Boolean',
         'Paypal' => 'Boolean',
         'Price' => 'Currency(8,2)'
+
         //'URLSegment' => 'Varchar(255)'
     );
 
@@ -49,17 +50,16 @@ class Product extends DataObject {
     }
 
 
-
     public function canEdit($member = null) {
-        return Permission::check('CMS_ACCESS_CMSMain', 'any', $member);
+        return true;
     }
 
     public function canDelete($member = null) {
-        return Permission::check('CMS_ACCESS_CMSMain', 'any', $member);
+        return true;
     }
 
     public function canCreate($member = null) {
-        return Permission::check('CMS_ACCESS_CMSMain', 'any', $member);
+        return true;
     }
 
     public function getCMSFields() {
@@ -67,8 +67,10 @@ class Product extends DataObject {
         //add paypal tab
 
 
+        $store = DropdownField::create('StoreID', 'RetailInformation', RetailInformation::get()->map('ID', 'StoreName'));
 
         $category = DropdownField::create('CategoryID','Category', Category::get()->map('ID', 'Title'));
+
         $photo = UploadField::create('Photo','Photo')->setFolderName('Products');
 
         $fields->replaceField('Photo', $photo);
@@ -77,9 +79,13 @@ class Product extends DataObject {
         //remove catogory
         $fields->removeByName('CategoryID');
         $fields->insertAfter($category,'InternalItemId');
+        $fields->insertAfter($store, 'CategoryID');
+
         $fields->renameField('InternalItemId',_t('Product.INTERNALITEMID','Item Id'));
         $fields->renameField('Title',_t('Product.TITLE','Title'));
+
         $fields->renameField('CategoryID',_t('Product.CATEGORY','Category'));
+        $fields->renameField('StoreID', _t('Product.RETAILINFORMATION', 'RetailInformation'));
 
         $fields->renameField('Photo',_t('Product.PHOTO','Photo'));
 

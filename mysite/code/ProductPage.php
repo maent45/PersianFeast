@@ -88,10 +88,43 @@ class ProductPage_Controller extends Page_Controller
         }
     }
 
-    public function Categories() {
-        $categories = Category::get()->sort('SortOrder');
-        return $categories;
+    //return all retail information on product
+    public function retailinformation()
+    {
+        $params = $this->getURLParams();
+        if (is_numeric($params['ID']) &&
+            $stores = RetailInformation::get()->filter(array('StoreID' => (int)$params['ID'], 'Hidden' => false))
+        ) {
+            $data = array(
+                'RetailInformation' => $stores
+            );
+            return $this->Customise($data);
+        }
     }
 
+    public function RetailInformations()
+    {
+        //RetailInformation
+        return RetailInformation::get()->sort('SortOrder');
+    }
 
+    public function Categories() {
+        return Category::get()->sort('SortOrder');
+
+    }
+
+    public function canEdit($member = null)
+    {
+        return true;
+    }
+
+    public function canDelete($member = null)
+    {
+        return true;
+    }
+
+    public function canCreate($member = null)
+    {
+        return true;
+    }
 }
