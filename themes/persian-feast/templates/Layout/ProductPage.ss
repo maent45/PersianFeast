@@ -21,7 +21,7 @@
         <% loop $Product %>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mix outerMainProductContainer product_filter_$CategoryID">
                 <!--<img src="$ThemeDir/images/food/productImages/Hummus_Original.png">!-->
-                $getPhotoForTemplate.CroppedImage(270,270)
+                $getPhotoForTemplate.CroppedImage(400,280)
                 <div class="productPriceContainer">
                     <h3>$Title</h3>
 
@@ -31,7 +31,6 @@
                     <div style="padding: 1px; background-color: lightgrey; margin-bottom: 15px;">
                     </div>
 
-                    <div class="row">
                         <div class="col-lg-6 addToCartDiv" data-toggle="modal" data-target="#storeModal">
                             <a><i class="fa fa-building"></i></a>
                             <br/>
@@ -48,10 +47,7 @@
                             <br/>
                             <span>Details</span>
                         </div>
-                    </div>
 
-                    <!-------- DO NOT REMOVE THE P TAG BELOW, NEVER EVER!!! ------------->
-                    <p style="color: transparent">.</p>
 
                     <!--<button class="btn btn-default"><i class="fa fa-shopping-cart pull-left"></i>Add To Cart</button>
                     <button class="btn btn-default" data-toggle="modal" data-target="#myModal"><i class="fa fa-book pull-left"></i><span>Details</span></button>-->
