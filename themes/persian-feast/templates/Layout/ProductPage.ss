@@ -21,11 +21,11 @@
         <% loop $Product %>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mix outerMainProductContainer product_filter_$CategoryID">
                 <!--<img src="$ThemeDir/images/food/productImages/Hummus_Original.png">!-->
-                <a class="productImage" data-toggle="modal" data-target="#details_$ID">$getPhotoForTemplate.CroppedImage(400,280)</a>
+                <a class="productImage" data-toggle="modal" data-target="#details_$ID">$getPhotoForTemplate.CroppedImage(450,280)</a>
                 <div class="productPriceContainer">
                     <h3>$Title</h3>
 
-                    <p style="min-height: 40px;">$Description.LimitCharacters(55,'....')</p>
+                    <p style="min-height: 10px;">$Description.LimitCharacters(55,'....')</p>
 
                     <!-- border between product description and bottom icons -->
                     <div style="padding: 1px; background-color: lightgrey; margin-bottom: 15px;">
@@ -42,7 +42,7 @@
                         </div>
 
 
-                        <div class="col-lg-4 showDetailsCartDiv">
+                        <div class="col-lg-4 showDetailsCartDiv priceIcon">
                             $getShowPrice
                         </div>
                         <div class="col-lg-4 showDetailsCartDiv" data-toggle="modal" data-target="#details_$ID">

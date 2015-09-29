@@ -13,16 +13,16 @@
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <form role="form">
                 <div class="form-group">
-                    <label for="usr">Name:</label>
+                    <label for="usr">Your Name:</label>
                     <input type="text" class="form-control" id="txtName">
                     <br/>
-                    <label for="usr">Phone:</label>
+                    <label for="usr">Your Phone:</label>
                     <input type="text" class="form-control" id="txtPhone">
                     <br/>
-                    <label for="usr">Email:</label>
+                    <label for="usr">Your Email:</label>
                     <input type="text" class="form-control" id="txtEmail">
                     <br/>
-                    <label for="comment">Leave us a message and we'll get in touch shortly.</label>
+                    <label for="comment">Your Message</label>
                     <textarea class="form-control" rows="5" id="comment"></textarea>
                     <br/>
                     <button class="btn btn-warning" type="submit" name="submit" onclick="checkEmail()">Send</button>
