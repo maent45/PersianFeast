@@ -182,6 +182,9 @@ footer i{
     height: 190px;
     width: auto;
 }
+.productImage :hover{
+    cursor: pointer;
+}
 .productPriceButtons{
     background-color: green !important;
     width: 100%;

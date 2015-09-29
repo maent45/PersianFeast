@@ -21,7 +21,7 @@
         <% loop $Product %>
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mix outerMainProductContainer product_filter_$CategoryID">
                 <!--<img src="$ThemeDir/images/food/productImages/Hummus_Original.png">!-->
-                $getPhotoForTemplate.CroppedImage(400,280)
+                <a class="productImage" data-toggle="modal" data-target="#details_$ID">$getPhotoForTemplate.CroppedImage(400,280)</a>
                 <div class="productPriceContainer">
                     <h3>$Title</h3>
 
@@ -31,7 +31,8 @@
                     <div style="padding: 1px; background-color: lightgrey; margin-bottom: 15px;">
                     </div>
 
-                        <div class="col-lg-4 addToCartDiv" data-toggle="modal" data-target="#storeModal">
+
+                        <div class="col-lg-4 addToCartDiv" data-toggle="modal" data-target="#storeModal_$ID">
                             <a><i class="fa fa-building"></i></a>
                             <br/>
                             <span>Buy</span>
@@ -39,6 +40,8 @@
                             <br/>
                             <span style="margin-left: 0px;">$getUsePaypal</span>-->
                         </div>
+
+
                         <div class="col-lg-4 showDetailsCartDiv">
                             $getShowPrice
                         </div>
@@ -71,7 +74,7 @@
                                     <h4>Product</h4>
                                     <p>$Description</p>
                                     <hr/>
-                                    <h4>Description/Product information</h4>
+                                    <h4>Description/Product Information</h4>
                                     <p>$HowToUse</p>
                                     <br/>
                                     <!--<h4>Nutritional Information</h4>
@@ -86,7 +89,7 @@
                 </div><!--modal end!-->
 
                 <!-- Product Store Modal -->
-                <div id="storeModal" class="modal fade" role="dialog">
+                <div id="storeModal_$ID" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <!-- Modal content start -->
                         <div class="modal-content">
@@ -97,12 +100,14 @@
                             <div class="modal-body retailInfoModal">
                                 <!--<h4>Location:</h4>
                                 <div id="map_canvas" style="width:100%;height:400px;">Google Map</div>-->
-                                <p style="margin-left: 13px;">Thank you for choosing product from our website.
-                                    Persian Feast online purchase in currently under construction.
-                                    <br/>
-                                    To purchase an item from our website, please use the contact form to place an order.
-                                    We will confirm the payment and delivery methods for now until our online shopping is operational.
-                                </p>
+                                <% if $CategoryID == 3 %>
+                                    <p style="margin-left: 13px;">Thank you for choosing this product from our website.
+                                        Persian Feast online purchase in currently under construction.
+                                        <br/>
+                                        To purchase an item from our website, please use the <a href="/PersianFeast/contact-us/">contact form</a> to place an order.
+                                        We will confirm the payment and delivery methods for now until our online shopping is operational.
+                                    </p>
+                                <% else %>
                                 <h4>Sold at the following stores:</h4>
                                 <div class="col-lg-4 container prodRetailInfo">
                                     <h5 style="font-weight: bold;">Commonsense Organics - Wellington</h5>
@@ -116,6 +121,7 @@
                                     <h5>Postal address: PO Box 31592</h5>
                                     <h5>Lower Hutt 5040</h5>
                                 </div>
+                                <% end_if %>
                             </div>
                         </div>
                         <!--modal content end!-->
