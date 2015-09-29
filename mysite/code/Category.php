@@ -27,6 +27,21 @@ class Category extends DataObject {
         //$labels['SortOrder'] = _t('Product.SORTORDER','Sort Order');
         return $labels;
     }
+
+    public function canEdit($member = null)
+    {
+        return true;
+    }
+
+    public function canDelete($member = null)
+    {
+        return true;
+    }
+
+    public function canCreate($member = null)
+    {
+        return true;
+    }
     /*
     public function canView($member = null) {
         return Permission::check('CMS_ACCESS_CMSMain', 'any', $member);

@@ -24,6 +24,7 @@ class Product extends DataObject {
         'Hidden' => 'Boolean',
         'Paypal' => 'Boolean',
         'Price' => 'Currency(8,2)'
+
         //'URLSegment' => 'Varchar(255)'
     );
 
@@ -31,7 +32,9 @@ class Product extends DataObject {
         'Category' => 'Category',
         'Photo' => 'Image'
     );
-
+    public static $many_many = array(
+        'Stores' => 'RetailInformation'
+    );
 
     private static $summary_fields = array(
         'Thumbnail' => 'Thumbnail',
@@ -49,17 +52,16 @@ class Product extends DataObject {
     }
 
 
-
     public function canEdit($member = null) {
-        return Permission::check('CMS_ACCESS_CMSMain', 'any', $member);
+        return true;
     }
 
     public function canDelete($member = null) {
-        return Permission::check('CMS_ACCESS_CMSMain', 'any', $member);
+        return true;
     }
 
     public function canCreate($member = null) {
-        return Permission::check('CMS_ACCESS_CMSMain', 'any', $member);
+        return true;
     }
 
     public function getCMSFields() {
@@ -67,8 +69,10 @@ class Product extends DataObject {
         //add paypal tab
 
 
+        $store = ListboxField::create('Stores', 'RetailInformation', RetailInformation::get()->map('ID', 'StoreName')->toArray())->setMultiple(true);
 
         $category = DropdownField::create('CategoryID','Category', Category::get()->map('ID', 'Title'));
+
         $photo = UploadField::create('Photo','Photo')->setFolderName('Products');
 
         $fields->replaceField('Photo', $photo);
@@ -77,9 +81,13 @@ class Product extends DataObject {
         //remove catogory
         $fields->removeByName('CategoryID');
         $fields->insertAfter($category,'InternalItemId');
+        $fields->insertAfter($store, 'CategoryID');
+
         $fields->renameField('InternalItemId',_t('Product.INTERNALITEMID','Item Id'));
         $fields->renameField('Title',_t('Product.TITLE','Title'));
+
         $fields->renameField('CategoryID',_t('Product.CATEGORY','Category'));
+        $fields->renameField('Stores', _t('Product.RETAILINFORMATION', 'Retail Information'));
 
         $fields->renameField('Photo',_t('Product.PHOTO','Photo'));
 
@@ -118,14 +126,11 @@ class Product extends DataObject {
     }
     public function getShowPrice(){
 
-       // print_r($paypal);exit;
         $price = '<i class="fa fa-dollar" style="margin-top: 0px;"></i>
                         <br/>
                         <span>'.$this->Price.'</span>';
-
         $span = '<i class="fa" style="margin-top: 7px;"></i>
                         <span></span>';
-
         return $this->Price > 0  ? $price : $span;
     }
     public function getThumbnail()
@@ -169,5 +174,6 @@ class Product extends DataObject {
         );
         return json_encode($prams);
     }
+
 
 }

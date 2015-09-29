@@ -7,14 +7,22 @@
  * Time: 10:00 PM
  */
 class ProductCatalogAdmin extends ModelAdmin {
-    private static $managed_models = array('Product','Category');
+    private static $managed_models = array('Product', 'Category', 'RetailInformation');
     private static $url_segment = 'products';
     private $menu_title = 'Product Admin';
-}/*
-class ProductCatalogAdmin_Controller extends ContentController implements PermissionProvider {
-    function providePermissions(){
-        return array(
-            "CMS_ACCESS_CMSMain" => "Create/edit/delete 'Products'",
-        );
+
+    public function canEdit($member = null)
+    {
+        return true;
     }
-}*/
+
+    public function canDelete($member = null)
+    {
+        return true;
+    }
+
+    public function canCreate($member = null)
+    {
+        return true;
+    }
+}
