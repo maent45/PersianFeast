@@ -4,7 +4,6 @@
 
     </div>
 
-    <h2 style="margin-left: 27px">Contact Us</h2>
     <p style="margin-left: 27px">Feel free to contact us through phone or email details provided below.</p>
 
 

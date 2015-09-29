@@ -119,7 +119,8 @@ class Product extends DataObject {
     public function getShowPrice(){
 
        // print_r($paypal);exit;
-        $price = '<i class="fa fa-dollar" style="margin-top: 7px;"></i>
+        $price = '<i class="fa fa-dollar" style="margin-top: 0px;"></i>
+                        <br/>
                         <span>'.$this->Price.'</span>';
 
         $span = '<i class="fa" style="margin-top: 7px;"></i>

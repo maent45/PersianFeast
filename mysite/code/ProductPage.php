@@ -48,7 +48,8 @@ class ProductPage_Controller extends Page_Controller
 
     //Allow our 'show' and 'category' functions as a URL actions
     private static $allowed_actions = array(
-        'show','category'
+        'show','category',
+        'show','RetailInformation'
     );
 
     public function init() {

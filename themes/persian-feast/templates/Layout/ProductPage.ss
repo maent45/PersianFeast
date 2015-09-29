@@ -31,18 +31,18 @@
                     <div style="padding: 1px; background-color: lightgrey; margin-bottom: 15px;">
                     </div>
 
-                        <div class="col-lg-6 addToCartDiv" data-toggle="modal" data-target="#storeModal">
+                        <div class="col-lg-4 addToCartDiv" data-toggle="modal" data-target="#storeModal">
                             <a><i class="fa fa-building"></i></a>
                             <br/>
-                            <span>Retail Info</span>
+                            <span>Buy</span>
                             <!--<i class="fa fa-shopping-cart"></i>
                             <br/>
                             <span style="margin-left: 0px;">$getUsePaypal</span>-->
                         </div>
-                        <!--<div class="col-lg-4 showDetailsCartDiv">
+                        <div class="col-lg-4 showDetailsCartDiv">
                             $getShowPrice
-                        </div>-->
-                        <div class="col-lg-6 showDetailsCartDiv" data-toggle="modal" data-target="#details_$ID">
+                        </div>
+                        <div class="col-lg-4 showDetailsCartDiv" data-toggle="modal" data-target="#details_$ID">
                             <i class="fa fa-book"></i>
                             <br/>
                             <span>Details</span>
@@ -68,14 +68,14 @@
 
                                 </div>
                                 <div class="col-lg-12 container">
-                                    <h4>Overview</h4>
+                                    <h4>Product</h4>
                                     <p>$Description</p>
                                     <hr/>
-                                    <h4>How To Use</h4>
+                                    <h4>Description/Product information</h4>
                                     <p>$HowToUse</p>
                                     <br/>
-                                    <h4>Nutritional Information</h4>
-                                    <p>$Ingredients</p>
+                                    <!--<h4>Nutritional Information</h4>
+                                    <p>$Ingredients</p>-->
                                     <br/>
                                 </div>
 
@@ -97,6 +97,12 @@
                             <div class="modal-body retailInfoModal">
                                 <!--<h4>Location:</h4>
                                 <div id="map_canvas" style="width:100%;height:400px;">Google Map</div>-->
+                                <p style="margin-left: 13px;">Thank you for choosing product from our website.
+                                    Persian Feast online purchase in currently under construction.
+                                    <br/>
+                                    To purchase an item from our website, please use the contact form to place an order.
+                                    We will confirm the payment and delivery methods for now until our online shopping is operational.
+                                </p>
                                 <h4>Sold at the following stores:</h4>
                                 <div class="col-lg-4 container prodRetailInfo">
                                     <h5 style="font-weight: bold;">Commonsense Organics - Wellington</h5>
