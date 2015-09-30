@@ -1,7 +1,14 @@
 <!-------------------scripts------------------->
 <script src="$ThemeDir/javascript/bootstrap.min.js"></script>
-<!------------jquery plugins---------->
+<!------------mixItUp plugin---------->
 <script src="$ThemeDir/javascript/mixItUp.js"></script>
+<!--- contact form validation js --->
+<script src="$ThemeDir/javascript/contactFormValidation.js"></script>
+<!--- call google maps api --->
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<!--- call google maps script --->
+<script src="$ThemeDir/javascript/googleMaps.js"></script>
+
 <script>
     $(document).ready(function(){
 

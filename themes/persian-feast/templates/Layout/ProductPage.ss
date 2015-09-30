@@ -31,7 +31,6 @@
                     <div style="padding: 1px; background-color: lightgrey; margin-bottom: 15px;">
                     </div>
 
-
                         <div class="col-lg-4 addToCartDiv" data-toggle="modal" data-target="#storeModal_$ID">
                             <a><i class="fa fa-building"></i></a>
                             <br/>
@@ -40,7 +39,6 @@
                             <br/>
                             <span style="margin-left: 0px;">$getUsePaypal</span>-->
                         </div>
-
 
                         <div class="col-lg-4 showDetailsCartDiv priceIcon">
                             $getShowPrice

@@ -5,7 +5,6 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <% if $Banners %>
-
                 <% loop $Banners %>
                     <% if $BannersImage %>
                         <% if Pos = 1 %>
@@ -17,7 +16,6 @@
                     </div>
                     <% end_if %>
                 <% end_loop %>
-
             <% end_if %>
         </div>
             <!--

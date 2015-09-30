@@ -1,13 +1,10 @@
 <div class="container">
 
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contactMap">
+    <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contactMap">
 
-    </div>
+    </div>-->
 
     <p style="margin-left: 27px">Feel free to contact us through phone or email details provided below.</p>
-
-
-
     <br/>
     <div class="container">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
