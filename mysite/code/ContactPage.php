@@ -1,6 +1,6 @@
 <?php
-
 class ContactPage extends Page {
+
 
     private static $db = array(
         'Mailto' => 'text',
@@ -40,8 +40,77 @@ class ContactPage extends Page {
     /*--- disable for this page to be a root page
     private static $can_be_root = false;
      ---*/
+
+
 }
 
 class ContactPage_Controller extends Page_Controller {
 
+    static $allowed_actions = array(
+        'ContactForm', 'SendContactForm'
+    );
+
+    public function ContactForm()
+    {
+        // Create fields
+
+        $fields = new FieldList(
+            new TextField('name', 'Name*'),
+            new EmailField('email', 'Email*'),
+            new TextareaField('message', 'Comments*')
+        );
+
+        // Create action
+        $actions = new FieldList(
+            new FormAction('SendContactForm', 'Send')
+        );
+
+        // Create Validators
+        $validator = new RequiredFields('Name', 'Email', 'Comments');
+
+        $fields = new FieldList();
+        $actions = new FieldList(
+            new FormAction('SendContactForm', 'Send')
+        );
+        return new Form($this, 'ContactForm', $fields, $actions, null);
+    }
+
+
+    public function SendContactForm($post, $form)
+    {
+
+        //check post data
+        if (!isset($post)) return;
+
+        $data = $post->postVars();
+
+        $email = new Email();
+        //
+        $email->setTo($this->Mailto);
+        $email->setFrom($data['email']);
+        $email->setSubject("Contact Message from {$data["name"]}");
+
+        $messageBody = "
+            <p><strong>Name:</strong> {$data['name']}</p>
+            <p><strong>email:</strong> {$data['email']}</p>
+            <p><strong>Phone:</strong> {$data['phone']}</p>
+            <p><strong>Message:</strong> {$data['comment']}</p>
+        ";
+        $email->setBody($messageBody);
+        $email->send();
+        /*
+        return array(
+            'Content' => '<p>Thank you for your feedback.</p>',
+            'Form' => ''
+        );*/
+        //return to submitted message
+        $this->redirect(Director::baseURL() . $this->URLSegment . "/?success=1");
+
+
+    }
+
+    public function Success()
+    {
+        return isset($_REQUEST['success']) && $_REQUEST['success'] == "1";
+    }
 }

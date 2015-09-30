@@ -128,4 +128,7 @@ class ProductPage_Controller extends Page_Controller
     {
         return true;
     }
+
+
 }
+

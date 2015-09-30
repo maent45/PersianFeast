@@ -8,23 +8,31 @@
     <br/>
     <div class="container">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <form role="form">
+            <form id="Form_ContactForm" action="contact-us/SendContactForm" method="post"
+                  enctype="application/x-www-form-urlencoded">
+                $SendContactForm
+                <% control $SendContactForm %>
+
+                    <% control $Fields %>
+
+                        $FieldHolder
                 <div class="form-group">
                     <label for="usr">Your Name:</label>
-                    <input type="text" class="form-control" id="txtName">
+                    <input type="text" class="form-control" id="name" name="name">
                     <br/>
                     <label for="usr">Your Phone:</label>
-                    <input type="text" class="form-control" id="txtPhone">
+                    <input type="text" class="form-control" id="phone" name="phone">
                     <br/>
                     <label for="usr">Your Email:</label>
-                    <input type="text" class="form-control" id="txtEmail">
+                    <input type="text" class="form-control" id="email" name="email">
                     <br/>
                     <label for="comment">Your Message</label>
-                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                    <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
                     <br/>
                     <button class="btn btn-warning" type="submit" name="submit" onclick="checkEmail()">Send</button>
                 </div>
-            </form>
+                    <% end_control %>
+                <% end_control %>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 contactDetails">
             <% if $Mailto %>
