@@ -6,8 +6,8 @@
 <script src="$ThemeDir/javascript/contactFormValidation.js"></script>
 <!--- call google maps api --->
 <script src="http://maps.googleapis.com/maps/api/js"></script>
-<!--- call google maps script --->
-<script src="$ThemeDir/javascript/googleMaps.js"></script>
+<!--- call google maps script
+<script src="$ThemeDir/javascript/googleMaps.js"></script>--->
 
 <script>
     $(document).ready(function(){
