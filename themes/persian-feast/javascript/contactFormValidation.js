@@ -21,6 +21,10 @@ function validateForm() {
     var emailTxtBoxValue = document.forms["contactForm"]["email"].value;
     var emailInputField = document.getElementById("email");
 
+    //email regex
+    var atpos = contactEmailTxtBox.indexOf("@");
+    var dotpos = contactEmailTxtBox.lastIndexOf(".");
+
     //comment vars
     var commentTxtBoxValue = document.forms["contactForm"]["comment"].value;
     var commentInputField = document.getElementById("comment");
@@ -32,6 +36,15 @@ function validateForm() {
         alert("Please provide your name");
 
         nameInputField.focus();
+        return false;
+    }
+
+    if(atpos<1 || dotpos<atpos+2 || dotpos+2>=emailTxtBoxValue.length) {
+        spanEmail.innerHTML = "*";
+        emailInputField.className = "requiredInput";
+        alert("Please provide a valid email address");
+
+        emailInputField.focus();
         return false;
     }
 
