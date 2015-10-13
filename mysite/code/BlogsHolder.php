@@ -22,7 +22,7 @@ class BlogsHolder extends Page {
 
     //get Grouped ModulesByDate
     public function getGroupedBlogsByDate() {
-        return GroupedList::create(BlogsPage::get()->sort('BlogDate'));
+        return GroupedList::create(BlogsPage::get()->sort('BlogDate DESC'));
     }
 
 }

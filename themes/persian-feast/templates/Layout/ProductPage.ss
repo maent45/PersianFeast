@@ -94,7 +94,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Store Details</h4>
+                                <h4 class="modal-title">Purchase Options</h4>
                             </div>
                             <div class="modal-body retailInfoModal">
                                 <!--<h4>Location:</h4>
@@ -107,7 +107,7 @@
                                         We will confirm the payment and delivery methods for now until our online shopping is operational.
                                     </p>
                                 <% else %>
-                                <h4>Sold at the following stores:</h4>
+                                <h4>Sold at the following Retail Stores:</h4>
                                 <div class="col-lg-4 container prodRetailInfo">
                                     <h5 style="font-weight: bold;">Commonsense Organics - Wellington</h5>
                                     <h5>260 Wakefield Street, Wellington</h5>

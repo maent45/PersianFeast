@@ -125,8 +125,8 @@ class Product extends DataObject {
         return ($this->Paypal == true) ? "<span class='item' data-item='" . $this->getItemPayPalData() . "'>Add Cart</span>" : "Find Store";
     }
     public function getShowPrice(){
-
-        $price = '<i class="fa fa-dollar" style="margin-top: 0px;"></i>
+        //fa-dollar
+        $price = '<i class="fa " style="margin-top: 0px;"></i>
                         <br/>
                         <span>'.$this->Price.'</span>';
         $span = '<i class="fa" style="margin-top: 7px;"></i>
