@@ -171,7 +171,7 @@ footer i{
     margin-top: 3%;
 }
 .aboutImage{
-    margin-top: 14%;
+    margin-top: 6%;
 }
 .aboutPageContainer p{
     text-align: justify;
@@ -194,13 +194,33 @@ footer i{
     width: 100%;
     margin-top: 30px;
 }
+
+
+.prodItemDiv{
+    text-align: center;
+    margin-bottom: 3%;
+}
+.prodItemDiv img{
+    width: 100%;
+}
+.prodItemInner{
+    border: 1px solid lightgrey;
+    padding: 0px;
+}
+.prodItemInner i{
+    font-size: 2em;
+    color: orange;
+}
+.prodItemDivDesc{
+    border-top: 1px solid lightgrey;
+    padding: 3.5%;
+}
 .productPriceContainer{
-    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
     border: 1px solid lightgray;
     text-align: center;
     margin-bottom: 0px !important;
     padding: 0px !important;
-    height: 160px;
+    height: auto;
     width: auto;
 }
 .productImage :hover{
