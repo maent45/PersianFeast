@@ -4,7 +4,7 @@
             <h2>$AboutHeader</h2>
             <p>$AboutDescription</p>
 		</div>
-		<div class="col-lg-5 col-md-4 col-sm-6 col-xs-12">
+		<div class="col-lg-5 col-md-4 col-sm-6 col-xs-12 img-responsive">
             <div class="img-responsive aboutImage">
                 $aboutImage.SetWidth(450)
             </div>
