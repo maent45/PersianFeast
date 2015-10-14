@@ -13,7 +13,7 @@
     <!--<button class="btn btn-warning filter" data-filter=".catThree" type="button">Category 3</button>-->
 </div>
 
-<!--<div class="container">
+<div class="container">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prodItemDiv">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 prodItemInner">
             <img src="$ThemeDir/images/food/productImages/Hummus_Original.png">
@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-</div>-->
+</div>
 
 <div class="container">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="productsContainer">
@@ -49,7 +49,20 @@
                 <div class="productPriceContainer">
                     <h3>$Title</h3>
                     <p style="min-height: 10px;">$Description.LimitCharacters(55,'....')</p>
-                    <!-- border between product description and bottom icons -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prodItemDivDesc">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-toggle="modal" data-target="#storeModal_$ID">
+                            <i class="fa fa-building-o"></i>
+                            <p>Purchase</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <p>$getShowPrice</p>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <i class="fa fa-book"></i>
+                            <p>Details</p>
+                        </div>
+                    </div>
+                    <!-- border between product description and bottom icons
                     <div style="background-color: lightgrey;">
                     </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border: 1px solid lightgrey; height: auto; padding-top: 4%; padding-bottom: 4%;">
@@ -59,7 +72,7 @@
                                 <span>Buy</span>
                                 <!--<i class="fa fa-shopping-cart"></i>
                             <br/>
-                            <span style="margin-left: 0px;">$getUsePaypal</span>-->
+                            <span style="margin-left: 0px;">$getUsePaypal</span>
                             </div>
 
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 showDetailsCartDiv priceIcon">
@@ -70,7 +83,7 @@
                                 <br/>
                                 <span>Details</span>
                             </div>
-                        </div>
+                        </div>-->
 
                     <!--<button class="btn btn-default"><i class="fa fa-shopping-cart pull-left"></i>Add To Cart</button>
                     <button class="btn btn-default" data-toggle="modal" data-target="#myModal"><i class="fa fa-book pull-left"></i><span>Details</span></button>-->

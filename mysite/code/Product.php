@@ -126,10 +126,10 @@ class Product extends DataObject {
     }
     public function getShowPrice(){
         //fa-dollar
-        $price = '<i class="fa " style="margin-top: 0px;"></i>
+        $price = '<i class="fa fa-dollar" style="visibility: hidden;"></i>
                         <br/>
                         <span>'.$this->Price.'</span>';
-        $span = '<i class="fa" style="margin-top: 7px;"></i>
+        $span = '<i class="fa"></i>
                         <span></span>';
         return $this->Price > 0  ? $price : $span;
     }
