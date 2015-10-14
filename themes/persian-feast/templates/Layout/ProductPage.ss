@@ -13,7 +13,7 @@
     <!--<button class="btn btn-warning filter" data-filter=".catThree" type="button">Category 3</button>-->
 </div>
 
-<div class="container">
+<!--<div class="container">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prodItemDiv">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 prodItemInner">
             <img src="$ThemeDir/images/food/productImages/Hummus_Original.png">
@@ -36,22 +36,21 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 <div class="container">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="productsContainer">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="productsContainer">
         <!-- loop our products!-->
-        <% loop $Product %>
+    <% loop $Product %>
 
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mix outerMainProductContainer product_filter_$CategoryID">
-                <!--<img src="$ThemeDir/images/food/productImages/Hummus_Original.png">!-->
+        <!--------------------------------------------------------------->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mix product_filter_$CategoryID">
                 <a class="productImage" data-toggle="modal" data-target="#details_$ID">$getPhotoForTemplate.CroppedImage(450,280)</a>
                 <div class="productPriceContainer">
                     <h3>$Title</h3>
                     <p style="min-height: 10px;">$Description.LimitCharacters(55,'....')</p>
                     <!-- border between product description and bottom icons -->
-                    <div style="padding: 1px; background-color: lightgrey;">
+                    <div style="background-color: lightgrey;">
                     </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border: 1px solid lightgrey; height: auto; padding-top: 4%; padding-bottom: 4%;">
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 addToCartDiv" data-toggle="modal" data-target="#storeModal_$ID">
@@ -150,9 +149,7 @@
                     </div>
                 </div><!--modal end!-->
             </div>
-        <% end_loop %>
-    </div>
-
+    <% end_loop %>
     <!-- shopping cart paypal start!-->
     <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 shoppingCartContainer" style="display:none">
 
@@ -202,6 +199,7 @@
             !-->
             <!--<button id="checkOut" class="btn btn-default pull-right">Check Out</button>
         </div>--->
-    </div>
+
     <!-- shopping cart paypal END!-->
+    </div>
 </div>
