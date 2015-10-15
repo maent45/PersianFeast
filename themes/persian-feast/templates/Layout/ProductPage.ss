@@ -13,7 +13,7 @@
     <!--<button class="btn btn-warning filter" data-filter=".catThree" type="button">Category 3</button>-->
 </div>
 
-<div class="container">
+<!--<div class="container">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prodItemDiv">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 prodItemInner">
             <img src="$ThemeDir/images/food/productImages/Hummus_Original.png">
@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 <div class="container">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="productsContainer">
