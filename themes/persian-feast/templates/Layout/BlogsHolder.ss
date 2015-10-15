@@ -18,19 +18,18 @@
 
 <% end_loop %>
 </div>
-    <div class="col-lg-2 col-md-2 blogArchiveContainer">
-
-        <h4>Blog Archive</h4>
-        <% loop $GroupedBlogsByDate.GroupedBy(YearCreated) %>
-            <p><i id="drop_down_$YearCreated" class="fa fa-caret-right"></i>&nbsp;<a class="blog_archive_btn" year="$YearCreated" href="#">$YearCreated</a> <small>($Children.Count)</small></p>
-            <ul id="blogs_$YearCreated" class="hide">
-                <% loop $Children %>
-                    <li>$BlogDate.Nice : <small><a href="$URLSegment">$Title</a></small></li>
-                <% end_loop %>
-            </ul>
-        <% end_loop %>
+    <div class="container">
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 blogArchiveContainer">
+            <h4>Blog Archive</h4>
+            <% loop $GroupedBlogsByDate.GroupedBy(YearCreated) %>
+                <p><i id="drop_down_$YearCreated" class="fa fa-caret-right"></i>&nbsp;<a class="blog_archive_btn" year="$YearCreated" href="#">$YearCreated</a> <small>($Children.Count)</small></p>
+                <ul id="blogs_$YearCreated" class="hide">
+                    <% loop $Children %>
+                        <li>$BlogDate.Nice : <small><a href="$URLSegment">$Title</a></small></li>
+                    <% end_loop %>
+                </ul>
+            <% end_loop %>
+        </div>
     </div>
-
-
 
 </div>
