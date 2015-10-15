@@ -57,7 +57,7 @@
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <p>$getShowPrice</p>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-toggle="modal" data-target="#details_$ID">
                             <i class="fa fa-book"></i>
                             <p>Details</p>
                         </div>

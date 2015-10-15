@@ -214,6 +214,9 @@ footer i{
     border: 1px solid lightgrey;
     padding: 3.5%;
 }
+.prodItemDivDesc i:hover{
+    cursor: pointer;
+}
 .productPriceContainer{
     border: 1px solid lightgray;
     text-align: center;
