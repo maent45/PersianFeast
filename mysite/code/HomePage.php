@@ -65,6 +65,8 @@ class HomePage extends Page {
     private static $can_be_root = true;
 }
 
+
+
 class HomePage_Controller extends Page_Controller {
 
 }
