@@ -164,14 +164,15 @@
             </div>
     <% end_loop %>
     <!-- shopping cart paypal start!-->
-    <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 shoppingCartContainer" style="display:none">
+    <!--!-->
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 shoppingCartContainer" style="display:none">
 
         <h4>Your Shopping Cart</h4>
 
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" id="item">
 
             <!-- append item!-->
-            <!--<table width="250" id="shoppingCart">
+            <!--!--><table width="250" id="shoppingCart">
                 <tr>
                     <td><span style="color: black">Item Name:</span></td>
                     <td><span style="color: black">Quantity:</span></td>
@@ -196,11 +197,11 @@
                     <td width="10" style="padding-left: 10px;"><p style="color: #555">$12.00</p></td>
                     <td width="10"><i class="fa fa-remove"></i></td>
                 </tr>
-
+                !-->
             </table>
-        </div>!-->
+        </div>
 
-        <!--- subtotals container
+        <!--- subtotals container --->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 subtotalsContainer">
             <!--
             <span class="pull-right">Subtotal: $26.95</span>
@@ -210,8 +211,8 @@
             <span class="pull-right">Total: $30.95</span>
             <br/>
             !-->
-            <!--<button id="checkOut" class="btn btn-default pull-right">Check Out</button>
-        </div>--->
+            <button id="checkOut" class="btn btn-default pull-right">Check Out</button>
+        </div>
 
     <!-- shopping cart paypal END!-->
     </div>

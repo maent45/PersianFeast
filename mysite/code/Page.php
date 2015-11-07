@@ -15,6 +15,16 @@ class Page extends SiteTree {
 		return "<em>" . $tagName . "</em> " . $content . "; " . count($arguments) . " arguments.";
 	}
 
+	public function facebookLink(){
+		return $this->getHomePage()->socialFacebook;
+	}
+	public function twitterLink(){
+		return $this->getHomePage()->socialTwitter;
+	}
+	function getHomePage() {
+		return DataObject::get_one('HomePage');
+	}
+
 }
 class Page_Controller extends ContentController {
 
