@@ -13,31 +13,6 @@
     <!--<button class="btn btn-warning filter" data-filter=".catThree" type="button">Category 3</button>-->
 </div>
 
-<!--<div class="container">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prodItemDiv">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 prodItemInner">
-            <img src="$ThemeDir/images/food/productImages/Hummus_Original.png">
-            <h3>Product</h3>
-            <p>Description</p>
-
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prodItemDivDesc">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <i class="fa fa-building-o"></i>
-                    <p>Purchase</p>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <i class="fa fa-dollar" style="visibility: hidden;"></i>
-                    <p>15.00</p>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <i class="fa fa-book"></i>
-                    <p>Details</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
-
 <div class="container">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="productsContainer">
         <!-- loop our products!-->
