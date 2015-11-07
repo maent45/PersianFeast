@@ -13,16 +13,17 @@ class ContactPage extends Page {
     static $allowed_children = array('');
 
     /*--- adding fields to cms interface ---*/
-    public function getCMSFields() {
+    public function getCMSFields()
+    {
         $fields = parent::getCMSFields();
-		 //below read only fields for home page
+        //below read only fields for home page
         $fields->removeFieldFromTab('Root.Content.Metadata', 'URL');
-        $fields->addFieldToTab("Root.Content.Metadata", new ReadonlyField('URLSegment','URL'));
+        $fields->addFieldToTab("Root.Content.Metadata", new ReadonlyField('URLSegment', 'URL'));
 
         $fields->removeFieldFromTab('Root.Content.Metadata', 'MenuTitle');
-        $fields->addFieldToTab("Root.Content.Metadata", new ReadonlyField('MenuTitle','MenuTitle'));
+        $fields->addFieldToTab("Root.Content.Metadata", new ReadonlyField('MenuTitle', 'MenuTitle'));
 
-		//email to for contact form
+        //email to for contact form
         $fields->addFieldToTab("Root.Content.Main", new TextField('Mailto', 'Form Email Sent To :'));
         $fields->addFieldToTab("Root.Content.Main", new TextField('MobilePhone', 'Mobile Phone :'));
         $fields->addFieldToTab("Root.Content.Main", new TextField('Fax', 'Fax Number :'));
@@ -30,19 +31,17 @@ class ContactPage extends Page {
         $fields->addFieldToTab("Root.Content.Main", new TextareaField('PhysicalAddress', 'Physical Address :'));
 
         /*--- remove the default HTML editor section from CMS ---*/
-        $fields->removeFieldFromTab("Root.Main","Content");
-		//remove meta data we will add a tab
+        $fields->removeFieldFromTab("Root.Main", "Content");
+        //remove meta data we will add a tab
         $fields->removeByName('Metadata');
 
         return $fields;
     }
 
-    /*--- disable for this page to be a root page
-    private static $can_be_root = false;
-     ---*/
-
 
 }
+
+
 
 class ContactPage_Controller extends Page_Controller {
 
@@ -113,4 +112,7 @@ class ContactPage_Controller extends Page_Controller {
     {
         return isset($_REQUEST['success']) && $_REQUEST['success'] == "1";
     }
+
+
+
 }

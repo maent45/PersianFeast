@@ -2,12 +2,10 @@
 
 class HomePage extends Page {
 
-
-
     private static $db = array(
         'WelcomeHeader' => 'text',
         'WelcomeIntro' => 'HTMLText',
-        //social media link
+        //social media links
         'socialFacebook' => 'text',
         'socialTwitter' => 'text'
     );
@@ -63,6 +61,16 @@ class HomePage extends Page {
 
     /*--- disable for this page to be a root page ---*/
     private static $can_be_root = true;
+
+
+
+}
+
+class HomeDataObject extends DataObject {
+    //function to extend local db fields to other page types
+    public function socialFacebook(){
+        return $this->socialFacebook;
+    }
 }
 
 class HomePage_Controller extends Page_Controller {
