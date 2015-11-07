@@ -14,12 +14,10 @@
 </div>
 
 <div class="container">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="productsContainer">
-        <!-- loop our products!-->
+    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" id="productsContainer">
+    <!-- loop our products!-->
     <% loop $Product %>
-
-        <!--------------------------------------------------------------->
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 mix product_filter_$CategoryID">
+            <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 mix product_filter_$CategoryID">
                 <a class="productImage" data-toggle="modal" data-target="#details_$ID">$getPhotoForTemplate.CroppedImage(450,280)</a>
                 <div class="productPriceContainer">
                     <h3>$Title</h3>
@@ -37,31 +35,6 @@
                             <p>Details</p>
                         </div>
                     </div>
-                    <!-- border between product description and bottom icons
-                    <div style="background-color: lightgrey;">
-                    </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="border: 1px solid lightgrey; height: auto; padding-top: 4%; padding-bottom: 4%;">
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 addToCartDiv" data-toggle="modal" data-target="#storeModal_$ID">
-                                <a><i class="fa fa-building"></i></a>
-                                <br/>
-                                <span>Buy</span>
-                                <!--<i class="fa fa-shopping-cart"></i>
-                            <br/>
-                            <span style="margin-left: 0px;">$getUsePaypal</span>
-                            </div>
-
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 showDetailsCartDiv priceIcon">
-                                $getShowPrice
-                            </div>
-                            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 showDetailsCartDiv" data-toggle="modal" data-target="#details_$ID">
-                                <i class="fa fa-book"></i>
-                                <br/>
-                                <span>Details</span>
-                            </div>
-                        </div>-->
-
-                    <!--<button class="btn btn-default"><i class="fa fa-shopping-cart pull-left"></i>Add To Cart</button>
-                    <button class="btn btn-default" data-toggle="modal" data-target="#myModal"><i class="fa fa-book pull-left"></i><span>Details</span></button>-->
                 </div>
 
                 <!-- Product Detail Modal -->
@@ -138,7 +111,7 @@
                 </div><!--modal end!-->
             </div>
     <% end_loop %>
-
+</div>
     <!-- shopping cart paypal start!-->
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 shoppingCartContainer">
         <h4>Your Shopping Cart</h4>
@@ -181,8 +154,6 @@
             <br/>
             <button id="checkOut" class="btn btn-default pull-right">Check Out</button>
         </div>
-
-    <!-- shopping cart paypal END!-->
+        <!-- shopping cart paypal END!-->
     </div>
-</div>
 </div>
