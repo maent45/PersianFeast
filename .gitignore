@@ -1,6 +1,6 @@
-/.htaccess
+.htaccess
 #phpstorm
-/.idea/
+.idea/
 #assets folder
 assets/_combinedfiles/
 assets/Uploads/
