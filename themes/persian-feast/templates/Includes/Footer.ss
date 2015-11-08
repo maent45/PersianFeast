@@ -9,17 +9,9 @@
         <h5 style="margin-left: 10%;">Copyright &copy; 2015 Persian Feast</h5>
     </div>
     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 socialIconsHolder">
-<<<<<<< HEAD
-        <a target="_blank" href="$socialMediaLinks"><i class="fa fa-facebook facebook"></i></a>
-        $Debug
-        <a target="_blank" href="$socialTwitter"><i class="fa fa-twitter twitter"></i></a>
-=======
-        <!-- test debug start
 
-
-        test debug end !-->
         <a target="_blank" href="$facebookLink"><i class="fa fa-facebook facebook"></i></a>
         <a target="_blank" href="$twitterLink"><i class="fa fa-twitter twitter"></i></a>
->>>>>>> 757fa8ca8bcb2200a73371ce62a1d3595d454e74
+
     </div>
 </footer>

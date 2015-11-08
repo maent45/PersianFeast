@@ -123,6 +123,7 @@
                     <td><span style="color: black">Quantity:</span></td>
                     <td><span style="color: black">Price:</span></td>
                 </tr>
+                <!--
                 <tr>
                     <td width="70px"><p style="color: #555">Dried Barberries</p></td>
                     <td width="20" style="padding-left: 10px;"><p style="color: #555;">1</p></td>
@@ -140,18 +141,20 @@
                     <td width="20" style="padding-left: 10px;"><p style="color: #555;">1</p></td>
                     <td width="10" style="padding-left: 10px;"><p style="color: #555">$12.00</p></td>
                     <td width="10"><i class="fa fa-remove"></i></td>
-                </tr>
+                </tr>!-->
             </table>
         </div>
 
         <!--- subtotals container --->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 subtotalsContainer">
+            <!--
             <span class="pull-right">Subtotal: $26.95</span>
             <br/>
             <span class="pull-right">Shipping: $4.00</span>
             <br/>
             <span class="pull-right">Total: $30.95</span>
             <br/>
+            !-->
             <button id="checkOut" class="btn btn-default pull-right">Check Out</button>
         </div>
         <!-- shopping cart paypal END!-->

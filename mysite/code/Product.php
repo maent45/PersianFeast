@@ -125,11 +125,24 @@ class Product extends DataObject {
         return ($this->Paypal == true) ? "<span class='item' data-item='" . $this->getItemPayPalData() . "'>Add Cart</span>" : "Find Store";
     }
     public function getShowPrice(){
-        //fa-dollar
-        $price = '<i class="fa fa-dollar" style="visibility: hidden;"></i>
+
+
+
+
+
+
+        $span = '<i class="fa"></i>
+                        <span></span>';
+        if ($this->Price > 0){
+            //fa-dollar
+            $ourButton = '<i class="fa fa-dollar" style=""></i>
                         <br/>
                         <span>'.$this->Price.'</span>';
-        $span = '<i class="fa"></i>
+            return SSPaypalBasic::addCartButton($this->Title,$this->Price,$this->InternalItemId,$ourButton);
+
+        }
+
+        return '<i class="fa"></i>
                         <span></span>';
         return $this->Price > 0  ? $price : $span;
     }
