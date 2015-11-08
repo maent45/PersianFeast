@@ -4,6 +4,7 @@
     </div>
 </div>
 
+
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productsContainerControls">
     <button class="btn btn-warning filter active" data-filter="all" type="button">All</button>
     <!--loop our category as buttons!-->
@@ -113,8 +114,9 @@
     <% end_loop %>
 </div>
     <!-- shopping cart paypal start!-->
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 shoppingCartContainer">
-        <h4>Your Shopping Cart</h4>
+    <div id="sticky-anchor"></div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 shoppingCartContainer" id="sticky">
+        <i class="fa fa-shopping-cart pull-left" style="font-size: 2em; margin-top: 13px; color: orange;"></i><h4>Your Shopping Cart</h4>
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" id="item">
             <!-- append item!-->
             <table width="250" id="shoppingCart">
