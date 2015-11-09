@@ -87,7 +87,7 @@
                                     <p style="margin-left: 13px;">Thank you for choosing this product from our website.
                                         Persian Feast online purchase in currently under construction.
                                         <br/>
-                                        To purchase an item from our website, please use the <a href="/PersianFeast/contact-us/">contact form</a> to place an order.
+                                        To purchase an item from our website, please use the <a href="/contact-us/">contact form</a> to place an order.
                                         We will confirm the payment and delivery methods for now until our online shopping is operational.
                                     </p>
                                 <% else %>
