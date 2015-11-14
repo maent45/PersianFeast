@@ -362,3 +362,12 @@ footer i{
 .readMoreLink span{
     margin-top: 40px !important;
 }
+/*----- Sticky Div CSS -----*/
+#sticky {
+    color: #fff;
+}
+#sticky.stick {
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+}
