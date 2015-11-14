@@ -8,22 +8,19 @@ function validateForm() {
     var spanPhone = document.getElementById("requiredFieldPhone");
     var spanEmail = document.getElementById("requiredFieldEmail");
     var spanComment = document.getElementById("requiredFieldComment");
-
     //name vars
     var nameTxtBoxValue = document.forms["contactForm"]["name"].value;
     var nameInputField = document.getElementById("name");
-
     //phone vars
     var phoneTxtBoxValue = document.forms["contactForm"]["phone"].value;
     var phoneInputField = document.getElementById("phone");
-
     //email vars
     var emailTxtBoxValue = document.forms["contactForm"]["email"].value;
     var emailInputField = document.getElementById("email");
 
     //email regex
-    var atpos = contactEmailTxtBox.indexOf("@");
-    var dotpos = contactEmailTxtBox.lastIndexOf(".");
+    var atpos = emailTxtBoxValue.indexOf("@");
+    var dotpos = emailTxtBoxValue.lastIndexOf(".");
 
     //comment vars
     var commentTxtBoxValue = document.forms["contactForm"]["comment"].value;
@@ -56,4 +53,8 @@ function validateForm() {
         commentInputField.focus();
         return false;
     }
+
+    return true;
 }
+
+console.log("contactForumValidation.js loaded");

@@ -8,33 +8,30 @@
     <br/>
     <div class="container">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <form name="contactForm" onsubmit="return validateForm()" id="Form_ContactForm" action="contact-us/SendContactForm" method="post"
-                  enctype="application/x-www-form-urlencoded">
+            <form name="contactForm" onsubmit="return window.validateForm()" id="Form_ContactForm" action="contact-us/SendContactForm" method="post" enctype="application/x-www-form-urlencoded">
                 $SendContactForm
                 <% control $SendContactForm %>
-
                     <% control $Fields %>
-
                         $FieldHolder
-                <div class="form-group">
-                    <label for="usr">Your Name:</label>
-                    <span id="requiredFieldName" style="color: #d43f3a; font-weight: bold; font-size: 1.5em;"></span>
-                    <input type="text" class="form-control" id="name" name="name">
-                    <br/>
-                    <label for="usr">Your Phone:</label>
-                    <span id="requiredFieldPhone" style="color: #d43f3a; font-weight: bold; font-size: 1.5em;"></span>
-                    <input type="text" class="form-control" id="phone" name="phone">
-                    <br/>
-                    <label for="usr">Your Email:</label>
-                    <span id="requiredFieldEmail" style="color: #d43f3a; font-weight: bold; font-size: 1.5em;"></span>
-                    <input type="text" class="form-control" id="email" name="email">
-                    <br/>
-                    <label for="comment">Your Message</label>
-                    <span id="requiredFieldComment" style="color: #d43f3a; font-weight: bold; font-size: 1.5em;"></span>
-                    <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
-                    <br/>
-                    <button class="btn btn-warning" type="submit" name="submit">Send</button>
-                </div>
+                        <div class="form-group">
+                            <label for="usr">Your Name:</label>
+                            <span id="requiredFieldName" style="color: #d43f3a; font-weight: bold; font-size: 1.5em;"></span>
+                            <input type="text" class="form-control" id="name" name="name">
+                            <br/>
+                            <label for="usr">Your Phone:</label>
+                            <span id="requiredFieldPhone" style="color: #d43f3a; font-weight: bold; font-size: 1.5em;"></span>
+                            <input type="text" class="form-control" id="phone" name="phone">
+                            <br/>
+                            <label for="usr">Your Email:</label>
+                            <span id="requiredFieldEmail" style="color: #d43f3a; font-weight: bold; font-size: 1.5em;"></span>
+                            <input type="text" class="form-control" id="email" name="email">
+                            <br/>
+                            <label for="comment">Your Message</label>
+                            <span id="requiredFieldComment" style="color: #d43f3a; font-weight: bold; font-size: 1.5em;"></span>
+                            <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+                            <br/>
+                            <button class="btn btn-warning" type="submit" name="submit">Send</button>
+                        </div>
                     <% end_control %>
                 <% end_control %>
         </div>

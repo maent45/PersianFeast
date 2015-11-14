@@ -7,7 +7,7 @@
 <!--- call google maps api --->
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 
-<script src="$ThemeDir/javascript/stickyDiv.js"></script>
+<!--<script src="$ThemeDir/javascript/stickyDiv.js"></script>-->
 <!--- call google maps script
 <script src="$ThemeDir/javascript/googleMaps.js"></script>--->
 
