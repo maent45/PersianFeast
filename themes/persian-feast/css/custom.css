@@ -5,19 +5,22 @@ body{
     font-family: 'Lora', serif;
 }
 /*==================================================================INDEX PAGE CSS=====================================================================*/
-/*===========NAVBAR CSS===========*/
-
 /*mobile resolution css*/
-@media screen and (max-width: 500px) {
-    .navbar-brand img{
-        width: 160px !important;
+@media screen and (max-width: 1470px) {
+    .shoppingCartContainer{
+        width: 20% !important;
     }
-    .navbar-right{
+}
+@media screen and (max-width: 1330px) {
+    .shoppingCartContainer{
+        width: 30% !important;
+        margin-left: 68%;
+    }
+    .prodsContainer{
         margin-top: 0% !important;
-    }
-    .carousel-inner{
-        height: 156px !important;
-        overflow: hidden;
+        margin-left: 0% !important;
+        padding: 0%;
+        width: 100% !important;
     }
 }
 @media screen and (max-width: 1200px) {
@@ -32,6 +35,10 @@ body{
     .navbar-brand img{
         width: 220px !important;
     }
+    .shoppingCartContainer{
+        width: 50% !important;
+        margin-left: 47%;
+    }
 }
 @media screen and (max-width: 768px) {
     .navbar-right {
@@ -45,6 +52,22 @@ body{
     .navbar-right {
         float: none !important;
         margin-right: -15px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .navbar-brand img{
+        width: 160px !important;
+    }
+    .navbar-right{
+        margin-top: 0% !important;
+    }
+    .carousel-inner{
+        height: 156px !important;
+        overflow: hidden;
+    }
+    .shoppingCartContainer{
+        width: 100% !important;
+        margin-left: 0%;
     }
 }
 
@@ -185,12 +208,14 @@ footer i{
     margin: auto;
     padding: 15px;
 }
+.prodsContainer{
+    margin-left: 2%;
+    width: 75%;
+    padding: 2%;
+}
 /*---mixItUp css---*/
 #productsContainer .mix{
     display: none;
-}
-#productsContainer{
-    padding: 0px;
 }
 .mix img{
     width: 100%;
@@ -255,9 +280,11 @@ footer i{
 }
 /*--- SHOPPING CART CSS ---*/
 .shoppingCartContainer{
+    width: 20%;
     background-color: lightgrey;
     border-radius: 5px;
-    margin-top: 2.8%;
+    margin-top: 3.7%;
+    margin-right: 0%;
 }
 .shoppingCartContainer h4{
     border-bottom: 2px dashed orange;
@@ -361,13 +388,4 @@ footer i{
 }
 .readMoreLink span{
     margin-top: 40px !important;
-}
-/*----- Sticky Div CSS -----*/
-#sticky {
-    color: #fff;
-}
-#sticky.stick {
-    position: fixed;
-    top: 0;
-    z-index: 10000;
 }
