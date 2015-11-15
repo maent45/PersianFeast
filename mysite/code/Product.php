@@ -124,28 +124,22 @@ class Product extends DataObject {
         //'<a href="#prepaylink'.$this->ID.'">Buy Online</a>'
         return ($this->Paypal == true) ? "<span class='item' data-item='" . $this->getItemPayPalData() . "'>Add Cart</span>" : "Find Store";
     }
+
     public function getShowPrice(){
-
-
-
-
-
-
         $span = '<i class="fa"></i>
                         <span></span>';
         if ($this->Price > 0){
             //fa-dollar
             $ourButton = '<i class="fa fa-dollar" style=""></i>
-                        <br/>
                         <span>'.$this->Price.'</span>';
             return SSPaypalBasic::addCartButton($this->Title,$this->Price,$this->InternalItemId,$ourButton);
-
         }
 
         return '<i class="fa"></i>
                         <span></span>';
         return $this->Price > 0  ? $price : $span;
     }
+
     public function getThumbnail()
     {
         if($this->PhotoID)
