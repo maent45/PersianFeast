@@ -255,6 +255,9 @@ footer i{
 .productImage :hover{
     cursor: pointer;
 }
+.productImage img {
+    height : 230px;
+}
 .productPriceContainer h3{
     margin: 10px;
 }
@@ -270,7 +273,7 @@ footer i{
     color: orange;
     font-size: 2.1em;
 }
-.addToCartDiv, .showDetailsCartDiv :hover{
+.addToCart, .showDetailsCartDiv :hover{
     cursor: pointer;
 }
 
