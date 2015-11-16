@@ -1,0 +1,16 @@
+blog = reverse order
+menu = ability to change font family
+blog = ability to set desired layout of blogs and images
+//---specific blog post need header
+blog page Font family can change
+//---recipe header minimum height css 
+//---recipe image size css to consistence
+having multiple image
+details modal want to add image for each
+//---products page want 3 column
+//---find store new page (modal instead of page)
+shopping cart will be fix position
+//---setting for Facebook and twitter
+//---home page put footer up
+//---remove the add card and price
+//---contact area want to add Fax number
