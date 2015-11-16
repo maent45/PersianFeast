@@ -15,10 +15,10 @@ class Page extends SiteTree {
 		return "<em>" . $tagName . "</em> " . $content . "; " . count($arguments) . " arguments.";
 	}
 
-	public function facebookLink(){
+	public function socialFacebook(){
 		return $this->getHomePage()->socialFacebook;
 	}
-	public function twitterLink(){
+	public function socialTwitter(){
 		return $this->getHomePage()->socialTwitter;
 	}
 	function getHomePage() {
