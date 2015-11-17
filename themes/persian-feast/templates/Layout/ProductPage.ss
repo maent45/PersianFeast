@@ -18,6 +18,8 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prodsContainer" id="productsContainer">
         <!-- loop all products!-->
         <% loop $Product %>
+
+
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mix product_filter_$CategoryID">
                     <a class="productImage" data-toggle="modal" data-target="#details_$ID">$getPhotoForTemplate.CroppedImage(450,280)</a>
                     <div class="productPriceContainer">
@@ -83,28 +85,33 @@
                                 <div class="modal-body retailInfoModal">
                                     <!--<h4>Location:</h4>
                                     <div id="map_canvas" style="width:100%;height:400px;">Google Map</div>-->
-                                    <% if $CategoryID == 3 %>
-                                        <p style="margin-left: 13px;">Thank you for choosing this product from our website.
-                                            Persian Feast online purchase in currently under construction.
-                                            <br/>
-                                            To purchase an item from our website, please use the <a href="/contact-us/">contact form</a> to place an order.
-                                            We will confirm the payment and delivery methods for now until our online shopping is operational.
-                                        </p>
-                                    <% else %>
-                                    <h4>Sold at the following Retail Stores:</h4>
-                                    <div class="col-lg-4 container prodRetailInfo">
-                                        <h5 style="font-weight: bold;">Commonsense Organics - Wellington</h5>
-                                        <h5>260 Wakefield Street, Wellington</h5>
-                                        <h5>Postal address: PO Box 19287</h5>
-                                        <h5>Courtenay Place, Wellington 6149</h5>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <h5 style="font-weight: bold;">Commonsense Organics - Lower Hutt</h5>
-                                        <h5>37 Waterloo Rd, Lower Hutt</h5>
-                                        <h5>Postal address: PO Box 31592</h5>
-                                        <h5>Lower Hutt 5040</h5>
-                                    </div>
+                                    <% if $Paypal == 1 %>
+                                    <p style="margin-left: 13px;">Thank you for choosing this product from our website.
+                                        Persian Feast online purchase in currently under construction.
+                                        <br/>
+                                        To purchase an item from our website, please use the <a href="/contact-us/">contact form</a> to place an order.
+                                        We will confirm the payment and delivery methods for now until our online shopping is operational.
+                                    </p>
                                     <% end_if %>
+                                    <% if $Stores %>
+                                        <h4>Sold at the following Retail Stores:</h4>
+                                        <% loop $Stores %>
+                                            <% if Pos = 1 %>
+                                            <div class="col-lg-4 container prodRetailInfo">
+                                            <% else %>
+                                            <div class="col-lg-4">
+                                            <% end_if %>
+                                                <h5 style="font-weight: bold;">$StoreName</h5>
+                                                <h5>$Street</h5>
+                                                <h5>$PostalAddress</h5>
+                                                <h5>$Location</h5>
+                                            </div>
+                                        <% end_loop %>
+                                    <% end_if %>
+
+
+
+
                                 </div>
                             </div>
                             <!--modal content end!-->

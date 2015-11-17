@@ -72,8 +72,9 @@ class Product extends DataObject {
         $store = ListboxField::create('Stores', 'RetailInformation', RetailInformation::get()->map('ID', 'StoreName')->toArray())->setMultiple(true);
 
         $category = DropdownField::create('CategoryID','Category', Category::get()->map('ID', 'Title'));
-
+        $paypal = CheckboxField::create('Paypal','Online Ordering');
         $photo = UploadField::create('Photo','Photo')->setFolderName('Products');
+
 
         $fields->replaceField('Photo', $photo);
         $fields->insertBefore($photo,'InternalItemId');
@@ -81,6 +82,9 @@ class Product extends DataObject {
         //remove catogory
         $fields->removeByName('CategoryID');
         $fields->insertAfter($category,'InternalItemId');
+        $fields->insertAfter($paypal,'CategoryID');
+        //$fields->insertAfter($store, 'Paypal');
+
         $fields->insertAfter($store, 'CategoryID');
 
         $fields->renameField('InternalItemId',_t('Product.INTERNALITEMID','Item Id'));
@@ -130,8 +134,8 @@ class Product extends DataObject {
                         <span></span>';
         if ($this->Price > 0){
             //fa-dollar
-            $ourButton = '<i class="fa fa-dollar" style=""></i>
-                        <span>'.$this->Price.'</span>';
+            $ourButton = '<i class="fa " style=""></i>
+                        <span> $'.$this->Price.'</span>';
             return SSPaypalBasic::addCartButton($this->Title,$this->Price,$this->InternalItemId,$ourButton);
         }
 
