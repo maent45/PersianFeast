@@ -15,11 +15,11 @@ class RetailInformation extends DataObject
         'PostalAddress' => 'Varchar',
         'Location' => 'Varchar'
     );
-
+    /*
     private static $has_many = array(
         'Products' => 'Product'
     );
-
+    */
     private static $summary_fields = array(
         'StoreName' => 'StoreName',
         'Street' => 'Street',
