@@ -122,26 +122,20 @@ class Product extends DataObject {
     /**
      * Returns a hide class if element is meant to be showing
      */
-    public function getUsePaypal(){
+    public function getUsePaypalButton(){
 
-        //$paypal =  MiniCart::MiniCartItemShortcodeHandler($prams);
-        //'<a href="#prepaylink'.$this->ID.'">Buy Online</a>'
-        return ($this->Paypal == true) ? "<span class='item' data-item='" . $this->getItemPayPalData() . "'>Add Cart</span>" : "Find Store";
+            //fa-dollar
+            $ourButton = '<button class="btn btn-success">Add To Cart</button>';
+
+            return SSPaypalBasic::addCartButton($this->Title,$this->Price,$this->InternalItemId,$ourButton);
     }
 
     public function getShowPrice(){
-        $span = '<i class="fa"></i>
-                        <span></span>';
-        if ($this->Price > 0){
             //fa-dollar
-            $ourButton = '<i class="fa " style=""></i>
-                        <span> $'.$this->Price.'</span>';
-            return SSPaypalBasic::addCartButton($this->Title,$this->Price,$this->InternalItemId,$ourButton);
-        }
+            $spanInner = ($this->Price > 0) ? '$'.$this->Price:'';
+            return '<i class="fa"></i>
+                        <span>'.$spanInner.'</span>';
 
-        return '<i class="fa"></i>
-                        <span></span>';
-        return $this->Price > 0  ? $price : $span;
     }
 
     public function getThumbnail()

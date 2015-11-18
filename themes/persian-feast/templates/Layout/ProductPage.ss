@@ -87,11 +87,13 @@
                                     <div id="map_canvas" style="width:100%;height:400px;">Google Map</div>-->
                                     <% if $Paypal == 1 %>
                                     <p style="margin-left: 13px;">Thank you for choosing this product from our website.
-                                        Persian Feast online purchase in currently under construction.
+                                        Persian Feast online purchase is currently under construction.
                                         <br/>
                                         To purchase an item from our website, please use the <a href="/contact-us/">contact form</a> to place an order.
                                         We will confirm the payment and delivery methods for now until our online shopping is operational.
                                     </p>
+                                        <!-- online cart order button !-->
+
                                     <% end_if %>
                                     <% if $Stores %>
                                         <h4>Sold at the following Retail Stores:</h4>
