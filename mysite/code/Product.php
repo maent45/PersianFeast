@@ -122,7 +122,7 @@ class Product extends DataObject {
     /**
      * Returns a hide class if element is meant to be showing
      */
-    public function getUsePaypalButton(){
+    public function getPaypalButton(){
 
             //fa-dollar
             $ourButton = '<button class="btn btn-success">Add To Cart</button>';

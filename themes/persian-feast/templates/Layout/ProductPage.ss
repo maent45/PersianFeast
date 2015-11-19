@@ -91,6 +91,7 @@
                                         <br/>
                                         To purchase an item from our website, please use the <a href="/contact-us/">contact form</a> to place an order.
                                         We will confirm the payment and delivery methods for now until our online shopping is operational.
+                                        $getPaypalButton
                                     </p>
                                         <!-- online cart order button !-->
 
@@ -122,12 +123,12 @@
                 </div>
         <% end_loop %>
     </div>
-    <!-- shopping cart paypal start!
+    <!-- shopping cart paypal start! !-->
     <div id="sticky-anchor"></div>
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 shoppingCartContainer" id="sticky">
         <i class="fa fa-shopping-cart pull-left" style="font-size: 2em; margin-top: 13px; color: orange;"></i><h4>Your Shopping Cart</h4>
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" id="item">
-            <!-- append item!
+            <!-- append item!!-->
             <table width="250" id="shoppingCart">
                 <tr>
                     <td><span style="color: black">Item Name:</span></td>
@@ -137,7 +138,7 @@
             </table>
         </div>
 
-        <!--- subtotals container
+        <!--- subtotals container !-->
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 subtotalsContainer">
             <button id="checkOut" class="btn btn-default pull-right">Check Out</button>
         </div>
