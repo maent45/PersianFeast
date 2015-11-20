@@ -38,6 +38,7 @@ class Product extends DataObject {
 
     private static $summary_fields = array(
         'Thumbnail' => 'Thumbnail',
+        'Description' => 'Description',
         'Title' => 'Title',
         'Category.Title' => 'Category',
         //'Price' => 'Price'
