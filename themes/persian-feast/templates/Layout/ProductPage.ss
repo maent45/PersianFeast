@@ -97,8 +97,17 @@
 
                                     <% end_if %>
                                     <% if $Stores %>
-                                        <h4>Sold at the following Retail Stores:</h4>
+
+
                                         <% loop $Stores %>
+
+                                            <% if $HTag %>
+                                                <h4>$HTag</h4>
+                                            <% end_if %>
+
+                                            <!--
+                                            $Debug
+                                            !-->
                                             <% if Pos = 1 %>
                                             <div class="col-lg-4 container prodRetailInfo">
                                             <% else %>

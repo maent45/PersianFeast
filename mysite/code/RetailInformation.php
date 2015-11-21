@@ -14,7 +14,7 @@ class RetailInformation extends DataObject
         'Street' => 'Text',
         'PostalAddress' => 'Varchar(255)',
         'Location' => 'Varchar(255)',
-        'h4Tag'=> 'Varchar(255)'
+        'HTag'=> 'Varchar(255)'
     );
     /*
     private static $has_many = array(
@@ -35,7 +35,7 @@ class RetailInformation extends DataObject
         $labels['Street'] = _t('RetailInformation.Street', 'Street');
         $labels['PostalAddress'] = _t('RetailInformation.PostalAddress', 'PostalAddress');
         $labels['Location'] = _t('RetailInformation.StoreName', 'Location');
-        $labels['h4Tag'] = _t('RetailInformation.h4Tag', 'Header (leave empty) unless this is a main item');
+        $labels['HTag'] = _t('RetailInformation.HTag', 'Header (leave empty) unless this is a main item');
         return $labels;
     }
 
