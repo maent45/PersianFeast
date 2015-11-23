@@ -102,7 +102,9 @@
                                         <% loop $Stores %>
 
                                             <% if $HTag %>
-                                                <h4>$HTag</h4>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                    <h4>$HTag</h4>
+                                                </div>
                                             <% end_if %>
 
                                             <!--
