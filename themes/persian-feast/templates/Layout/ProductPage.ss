@@ -1,10 +1,3 @@
-<div class="container">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <p>$ProductMainDescription</p>
-    </div>
-</div>
-
-
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 productsContainerControls">
     <button class="btn btn-warning filter active" data-filter="all" type="button">All</button>
     <!--loop our category as buttons!-->
@@ -86,11 +79,11 @@
                                     <!--<h4>Location:</h4>
                                     <div id="map_canvas" style="width:100%;height:400px;">Google Map</div>-->
                                     <% if $Paypal == 1 %>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <h4>Purchse Online</h4>
+                                        </div>
                                     <p style="margin-left: 13px;">Thank you for choosing this product from our website.
-                                        Persian Feast online purchase is currently under construction.
                                         <br/>
-                                        To purchase an item from our website, please use the <a href="/contact-us/">contact form</a> to place an order.
-                                        We will confirm the payment and delivery methods for now until our online shopping is operational.
                                         $getPaypalButton
                                     </p>
                                         <!-- online cart order button !-->
@@ -150,9 +143,23 @@
         </div>
 
         <!--- subtotals container !-->
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 subtotalsContainer">
-            <button id="checkOut" class="btn btn-default pull-right">Check Out</button>
-        </div>
+        <form  method="post" action="https://sandbox.paypal.com/cgi-bin/webscr" >
+            <input type="hidden" name="business" value="luke@hardiman.co.nz">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="notify_url" value="http://www.domain.com/PayPal_IPN_Process.php">
+            <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="txn_type" value="cart" />
+            <!--<input type="hidden" name="upload" value="1">!-->
+            <span id="cartItemsPaypal">
+            </span>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 subtotalsContainer">
+
+                <input type="submit" name="submit" class="btn btn-default pull-right">Check Out</input>
+            </div>
+        </form>
         <!-- shopping cart paypal END!-->
+
+
+        </div>
     </div>
 </div>

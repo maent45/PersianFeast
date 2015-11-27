@@ -128,7 +128,7 @@ class Product extends DataObject {
             //fa-dollar
             $ourButton = '<button class="btn btn-success">Add To Cart</button>';
 
-            return SSPaypalBasic::addCartButton($this->Title,$this->Price,$this->InternalItemId,$ourButton);
+            return SSPaypalBasic::addCartButton($this->Title,$this->Price,$this->InternalItemId,$ourButton , true);
     }
 
     public function getShowPrice(){

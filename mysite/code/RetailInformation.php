@@ -14,7 +14,8 @@ class RetailInformation extends DataObject
         'Street' => 'Text',
         'PostalAddress' => 'Varchar(255)',
         'Location' => 'Varchar(255)',
-        'HTag'=> 'Varchar(255)'
+        'HTag'=> 'Varchar(255)',
+        'SortID'=>'Int'
     );
     /*
     private static $has_many = array(
