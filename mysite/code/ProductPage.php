@@ -11,7 +11,8 @@ class ProductPage extends Page
         'PaypalApiUsername' => 'text',
         'PaypalApiPassword' => 'text',
         'PaypalApiSignature' => 'text',
-        'Sandbox' => 'Boolean'
+        'Sandbox' => 'Boolean',
+        'OnlineOrder' => 'text'
     );
     public function getCMSFields()
     {
@@ -26,6 +27,7 @@ class ProductPage extends Page
 
             //add our form elements
             $fields->addFieldToTab("Root.Content.Main", new TextareaField('ProductMainDescription', 'Main Description :'));
+            $fields->addFieldToTab("Root.Content.Main", new TextareaField('OnlineOrder', 'Online Order Description :'));
 
             /*--- remove the default HTML editor section from CMS ---*/
             $fields->removeFieldFromTab("Root.Main", "Content");
@@ -95,6 +97,7 @@ class ProductPage_Controller extends Page_Controller
         $params = $this->getURLParams();
         if (is_numeric($params['ID']) &&
             $stores = RetailInformation::get()->filter(array('StoreID' => (int)$params['ID'], 'Hidden' => false))
+                //->sort('SortID','desc')
         ) {
             $data = array(
                 'RetailInformation' => $stores
@@ -106,7 +109,7 @@ class ProductPage_Controller extends Page_Controller
     public function RetailInformations()
     {
         //RetailInformation
-        return RetailInformation::get()->sort('SortOrder');
+        return RetailInformation::get()->sort('SortID');
     }
 
     public function Categories() {

@@ -67,7 +67,7 @@
                     </div><!--modal end!-->
 
                     <!-- Product Store Modal -->
-                    <div id="storeModal_$ID" class="modal fade" role="dialog">
+                    <div id="storeModal_$ID" class="modal fade itemPurchase" role="dialog">
                         <div class="modal-dialog modal-lg">
                             <!-- Modal content start -->
                             <div class="modal-content">
@@ -82,7 +82,8 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <h4>Purchse Online</h4>
                                         </div>
-                                    <p style="margin-left: 13px;">Thank you for choosing this product from our website.
+                                    <p style="margin-left: 13px;">
+                                        Thank you for choosing this product from our website. Ordering detail information goes here
                                         <br/>
                                         $getPaypalButton
                                     </p>
@@ -145,10 +146,10 @@
         <!--- subtotals container !-->
         <form  method="post" action="https://sandbox.paypal.com/cgi-bin/webscr" >
             <input type="hidden" name="business" value="luke@hardiman.co.nz">
-            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="currency_code" value="NZD">
             <input type="hidden" name="notify_url" value="http://www.domain.com/PayPal_IPN_Process.php">
             <input type="hidden" name="cmd" value="_cart">
-            <input type="hidden" name="txn_type" value="cart" />
+
             <!--<input type="hidden" name="upload" value="1">!-->
             <span id="cartItemsPaypal">
             </span>
