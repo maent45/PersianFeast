@@ -73,53 +73,21 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Purchase Options</h4>
+                                    <h4 class="modal-title">Ordering Online</h4>
                                 </div>
                                 <div class="modal-body retailInfoModal">
                                     <!--<h4>Location:</h4>
                                     <div id="map_canvas" style="width:100%;height:400px;">Google Map</div>-->
-                                    <% if $Paypal == 1 %>
+
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <h4>Purchse Online</h4>
                                         </div>
                                     <p style="margin-left: 13px;">
-                                        Thank you for choosing this product from our website. Ordering detail information goes here
+                                        Shipping info goes here.....
                                         <br/>
                                         $getPaypalButton
                                     </p>
                                         <!-- online cart order button !-->
-
-                                    <% end_if %>
-                                    <% if $Stores %>
-
-
-                                        <% loop $Stores %>
-
-                                            <% if $HTag %>
-                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                    <h4>$HTag</h4>
-                                                </div>
-                                            <% end_if %>
-
-                                            <!--
-                                            $Debug
-                                            !-->
-                                            <% if Pos = 1 %>
-                                            <div class="col-lg-4 container prodRetailInfo">
-                                            <% else %>
-                                            <div class="col-lg-4">
-                                            <% end_if %>
-                                                <h5 style="font-weight: bold;">$StoreName</h5>
-                                                <h5>$Street</h5>
-                                                <h5>$PostalAddress</h5>
-                                                <h5>$Location</h5>
-                                            </div>
-                                        <% end_loop %>
-                                    <% end_if %>
-
-
-
-
                                 </div>
                             </div>
                             <!--modal content end!-->
