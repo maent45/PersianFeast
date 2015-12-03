@@ -20,7 +20,7 @@
                         <p style="min-height: 10px;">$Description.LimitCharacters(55,'....')</p>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prodItemDivDesc">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-toggle="modal" data-target="#storeModal_$ID">
-                                <i class="fa fa-building-o"></i>
+                                <i class="fa fa-shopping-cart"></i>
                                 <p>Purchase</p>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
