@@ -111,21 +111,22 @@
             </table>
         </div>
 
-        <!--- subtotals container !-->
+        <!--- subtotals container
         <form  method="post" action="https://sandbox.paypal.com/cgi-bin/webscr" >
             <input type="hidden" name="business" value="luke@hardiman.co.nz">
             <input type="hidden" name="currency_code" value="NZD">
             <input type="hidden" name="notify_url" value="http://www.domain.com/PayPal_IPN_Process.php">
             <input type="hidden" name="cmd" value="_cart">
-
+        </form>
+        !-->
             <!--<input type="hidden" name="upload" value="1">!-->
             <span id="cartItemsPaypal">
             </span>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 subtotalsContainer">
 
-                <input type="submit" name="submit" class="btn btn-default pull-right">Check Out</input>
+                <button id="checkOut" class="btn btn-default pull-right">Check Out</button>
             </div>
-        </form>
+
         <!-- shopping cart paypal END!-->
 
 
