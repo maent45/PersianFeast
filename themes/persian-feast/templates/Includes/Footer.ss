@@ -1,8 +1,3 @@
-<!-- border before footer -->
-<div style="height: 1px; background-color: rgb(198,104,18); width: 73%; margin: auto; margin-top: 2%;">
-
-</div>
-
 <!-------------------footer------------------------>
 <footer class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
     <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
