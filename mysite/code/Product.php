@@ -134,8 +134,7 @@ class Product extends DataObject {
     public function getShowPrice(){
             //fa-dollar
             $spanInner = ($this->Price > 0) ? '$'.$this->Price:'';
-            return '<i class="fa"></i>
-                        <span>'.$spanInner.'</span>';
+            return '<span>'.$spanInner.'</span>';
 
     }
 

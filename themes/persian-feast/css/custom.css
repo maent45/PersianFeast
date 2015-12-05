@@ -21,6 +21,15 @@ body{
         width: 20% !important;
     }
 }
+@media screen and (max-width: 1367px) {
+    .productImage img{
+        height: 230px !important;
+    }
+    .shoppingCartContainer{
+        margin-top: 2.4% !important;
+        padding: 5px; !important;
+    }
+}
 @media screen and (max-width: 1331px) {
     .prodsContainer{
         width: 80% !important;
