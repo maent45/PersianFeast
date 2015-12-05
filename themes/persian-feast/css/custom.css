@@ -6,9 +6,24 @@ body{
 }
 /*==================================================================INDEX PAGE CSS=====================================================================*/
 /*mobile resolution css*/
+@media screen and (max-width: 1740px) {
+    .prodsContainer{
+        margin-left: 15% !important;
+    }
+}
+@media screen and (max-width: 1567px) {
+    .prodsContainer{
+        margin-left: 10% !important;
+    }
+}
 @media screen and (max-width: 1470px) {
     .shoppingCartContainer{
         width: 20% !important;
+    }
+}
+@media screen and (max-width: 1331px) {
+    .prodsContainer{
+        width: 80% !important;
     }
 }
 @media screen and (max-width: 1330px) {
@@ -170,10 +185,12 @@ body{
 }
 /*==========FOOTER CSS=========*/
 footer{
-    margin-top: 0.8%;
+    margin-top: 1.2%;
     width: 85% !important;
     margin-left: 7.5%;
     padding: 0.2%;
+    padding-top: 1%;
+    border-top: 1px solid rgb(198,104,18);
 }
 footer h5{
     font-weight: bold;
@@ -209,7 +226,9 @@ footer i{
     padding: 15px;
 }
 .prodsContainer{
-
+    padding: 0px;
+    margin-left: 17%;
+    width: 65%;
 }
 /*---mixItUp css---*/
 #productsContainer .mix{
@@ -219,7 +238,6 @@ footer i{
     width: 100%;
     margin-top: 30px;
 }
-
 
 .prodItemDiv{
     text-align: center;
@@ -238,7 +256,7 @@ footer i{
 }
 .prodItemDivDesc{
     border: 1px solid lightgrey;
-    padding: 3.5%;
+    padding: 1.5%;
 }
 .prodItemDivDesc i:hover{
     cursor: pointer;
@@ -254,7 +272,7 @@ footer i{
     cursor: pointer;
 }
 .productImage img {
-    height : 230px;
+    height : 290px;
 }
 .productPriceContainer h3{
     margin: 10px;
@@ -274,6 +292,29 @@ footer i{
 .addToCart, .showDetailsCartDiv :hover{
     cursor: pointer;
 }
+.prod-modal-inner-left img{
+    width: 100% !important;
+}
+.prod-modal-inner-right-price{
+    color: #555 !important;
+    border-left: 0px !important;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 7%;
+}
+.prod-modal-inner-right-desc{
+    margin-top: 8%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-left: 0px !important;
+    border-top: 1px solid lightgrey;
+}
+.prod-modal-inner-right span{
+    margin-left: 1.8%;
+}
+.cart-btn{
+    margin-top: 5%;
+    margin-left: 3%;
+}
 
 /*** just temporary area for paypal cart.... nice work maen great commenting ***/
 #paypal_holder {
@@ -281,10 +322,10 @@ footer i{
 }
 /*--- SHOPPING CART CSS ---*/
 .shoppingCartContainer{
-    width: 30%;
+    width: auto;
     background-color: lightgrey;
     border-radius: 5px;
-    margin-top: 3.7%;
+    margin-top: 1.6%;
     margin-right: 0%;
 }
 .shoppingCartContainer h4{
@@ -372,7 +413,7 @@ footer i{
     font-size: 1.5em;
     color: #5bc0de;
 }
-/*===============================RECIPES HOLDER PAGES CSS======dfdf==========================*/
+/*===============================RECIPES HOLDER PAGES CSS================================*/
 .recipeTitleHolder{
     height: 50px;
     margin-bottom: 2.9%;
