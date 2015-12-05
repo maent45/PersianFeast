@@ -7,20 +7,17 @@
     <!--<button class="btn btn-warning filter" data-filter=".catThree" type="button">Category 3</button>-->
 </div>
 
-<div class="container">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prodsContainer" id="productsContainer">
-        <!-- loop all products!-->
+        <!-- loop all products!  CroppedImage(450,280)-->
         <% loop $Product %>
-
-
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mix product_filter_$CategoryID">
-                    <a class="productImage" data-toggle="modal" data-target="#details_$ID">$getPhotoForTemplate.CroppedImage(450,280)</a>
+                    <a class="productImage img-responsive" data-toggle="modal" data-target="#details_$ID">$getPhotoForTemplate</a>
                     <div class="productPriceContainer">
                         <h3>$Title</h3>
                         <p style="min-height: 10px;">$Description.LimitCharacters(55,'....')</p>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 prodItemDivDesc">
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-toggle="modal" data-target="#storeModal_$ID">
-                                <i class="fa fa-building-o"></i>
+                                <i class="fa fa-shopping-cart"></i>
                                 <p>Purchase</p>
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -78,20 +75,33 @@
                                 <div class="modal-body retailInfoModal">
                                     <!--<h4>Location:</h4>
                                     <div id="map_canvas" style="width:100%;height:400px;">Google Map</div>-->
-                                    <% if $Paypal == 1 %>
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <h4>Purchse Online</h4>
+                                        <div class="col-lg-12">
+                                            <div class="col-lg-6 prod-modal-inner-left">
+                                                $getPhotoForTemplate
+                                                $getPaypalButton
+                                            </div>
+                                            <div class="col-lg-6 prod-modal-inner-right" style="padding-top: 2% !important;">
+                                                <h4>$Title</h4>
+                                                <h4 class="prod-modal-inner-right-price">$getShowPrice</h4>
+                                                <p style="margin-left: 13px;">Thank you for choosing this product from our website.</p>
+                                                <!-- online cart order button !-->
+                                                <div class="col-lg-2">
+                                                    <label>Quantity</label>
+                                                </div>
+                                                <div class="col-lg-1">
+
+                                                </div>
+                                                <div class="col-lg-9">
+                                                    <span class="">
+                                                        <input class="form-control sslModuleQty" type="text" value="1" required min="1">
+                                                    </span>
+                                                </div>
+                                                <button class="btn btn-warning cart-btn addToCart"  data-qty="1" data-code="0" data-price="$Price" data-name="$Title">Add To Cart</button>
+                                                <h5 class="prod-modal-inner-right-desc">$HowToUse</h5>
+                                            </div>
                                         </div>
-                                    <p style="margin-left: 13px;">Thank you for choosing this product from our website.
-                                        <br/>
-                                        $getPaypalButton
-                                    </p>
-                                        <!-- online cart order button !-->
 
-                                    <% end_if %>
-                                    <% if $Stores %>
-
-
+                                    <!--<% if $Stores %>
                                         <% loop $Stores %>
 
                                             <% if $HTag %>
@@ -103,21 +113,9 @@
                                             <!--
                                             $Debug
                                             !-->
-                                            <% if Pos = 1 %>
-                                            <div class="col-lg-4 container prodRetailInfo">
-                                            <% else %>
-                                            <div class="col-lg-4">
-                                            <% end_if %>
-                                                <h5 style="font-weight: bold;">$StoreName</h5>
-                                                <h5>$Street</h5>
-                                                <h5>$PostalAddress</h5>
-                                                <h5>$Location</h5>
-                                            </div>
+
                                         <% end_loop %>
-                                    <% end_if %>
-
-
-
+                                    <% end_if %>-->
 
                                 </div>
                             </div>
@@ -127,6 +125,7 @@
                 </div>
         <% end_loop %>
     </div>
+
     <!-- shopping cart paypal start! !-->
     <div id="sticky-anchor"></div>
     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 shoppingCartContainer" id="sticky">
@@ -159,7 +158,5 @@
         </form>
         <!-- shopping cart paypal END!-->
 
-
-        </div>
     </div>
 </div>
