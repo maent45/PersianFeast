@@ -440,3 +440,16 @@ footer i{
 .readMoreLink span{
     margin-top: 40px !important;
 }
+
+/*---------------------REATAIL INFO PAGE CSS-----------------*/
+.shop-page-container{
+    padding: 0px;
+    width: 80%;
+}
+.store-holder-container{
+    min-height: 180px;
+    margin-top: 2%;
+}
+.store-holder-container h4{
+    color: rgb(198,104,18);
+}

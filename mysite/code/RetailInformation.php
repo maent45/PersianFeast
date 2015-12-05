@@ -71,11 +71,13 @@ class RetailInformation extends DataObject
 class RetailInformationPage extends Page
 {
     private static $db = array(
+        'TopSectionDesc' => 'Text'
     );
     public function getCMSFields()
     {
         /*--- adding fields to cms interface ---*/
         $fields = parent::getCMSFields();
+        $fields->addFieldToTab("Root.Main", new TextareaField('TopSectionDesc', 'Top Section Description'), 'Content');
         return $fields;
     }
 
@@ -84,8 +86,6 @@ class RetailInformationPage extends Page
 
 class RetailInformationPage_Controller extends Page_Controller
 {
-
-
     public function init()
     {
         parent::init();
