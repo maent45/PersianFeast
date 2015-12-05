@@ -66,3 +66,34 @@ class RetailInformation extends DataObject
         return new RequiredFields('Location');
     }*/
 }
+
+
+class RetailInformationPage extends Page
+{
+    private static $db = array(
+    );
+    public function getCMSFields()
+    {
+        /*--- adding fields to cms interface ---*/
+        $fields = parent::getCMSFields();
+        return $fields;
+    }
+
+
+}
+
+class RetailInformationPage_Controller extends Page_Controller
+{
+
+
+    public function init()
+    {
+        parent::init();
+    }
+
+    public function RetailInformation()
+    {
+        //return the products
+        return RetailInformation::get();
+    }
+}
