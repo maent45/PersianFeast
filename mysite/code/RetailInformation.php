@@ -36,7 +36,13 @@ class RetailInformation extends DataObject
         return $labels;
     }
 
-    //Increment the SortID to the next Value
+    //Increment the SortID to the next Value based on the ID
+    function onBeforeWrite() {
+        parent::onBeforeWrite();
+        if (!$this->SortID) {
+            $this->SortID = RetailInformation::get()->sort('ID')->last()->ID + 1;
+        }
+    }
 
 }
 
