@@ -44,10 +44,10 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<!-- border underneath navbar -->
+<!-- border underneath navbar
 <div style="height: 1px; background-color: rgb(198,104,18); width: 73%; margin: auto;">
 
-</div>
+</div> -->
 
 <!--
 <div class="container" style="margin-top: 10px;">

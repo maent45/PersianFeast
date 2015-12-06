@@ -115,6 +115,7 @@ body{
     border-color: transparent;
     width: 84.6%;
     margin: auto;
+    border-bottom: 1px solid rgb(198,104,18);
 }
 .navbar-nav>li>a{
     margin-top: 30px;
@@ -200,6 +201,7 @@ footer{
     padding: 0.2%;
     padding-top: 1%;
     border-top: 1px solid rgb(198,104,18);
+    border-top-width: 80% !important;
 }
 footer h5{
     font-weight: bold;
@@ -442,13 +444,18 @@ footer i{
 }
 
 /*---------------------REATAIL INFO PAGE CSS-----------------*/
+.shop-page-header{
+    margin-left: 15.5%;
+    width: 80%;
+    margin-bottom: 2%;
+}
 .shop-page-container{
     padding: 0px;
-    width: 80%;
+    width: 65%;
+    margin-bottom: 1%;
 }
 .store-holder-container{
-    min-height: 180px;
-    margin-top: 2%;
+    min-height: 120px;
 }
 .store-holder-container h4{
     color: rgb(198,104,18);
