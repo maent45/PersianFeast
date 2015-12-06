@@ -64,7 +64,8 @@ class Product extends DataObject {
     public function canCreate($member = null) {
         return true;
     }
-r {
+
+    public function getCMSFields() {
         $fields = parent::getCMSFields();
         //add paypal tab
 
