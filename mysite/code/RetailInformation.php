@@ -9,7 +9,7 @@
 class RetailInformation extends DataObject
 {
     private static $db = array(
-        //create new db columns
+        ///create new db columns
         'StoreName' => 'Varchar(255)',
         'Street' => 'Text',
         'PostalAddress' => 'Varchar(255)',
