@@ -41,7 +41,7 @@
 
 
 
-        </div><!-- /.navbar-collapse -->
+        </div><!-- /.navbar-collapse --->
     </div><!-- /.container-fluid -->
 </nav>
 <!-- border underneath navbar

@@ -10,7 +10,7 @@
             <% end_if %>
         </div>
 
-    <!--- temp fix for redirecting to product page --->
+    <!--- temp fix for redirecting to product page ---->
     <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <h4 style="font-weight: bold;"></h4>
     </div>-->
