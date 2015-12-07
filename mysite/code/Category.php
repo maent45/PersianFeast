@@ -8,7 +8,8 @@
  */
 class Category extends DataObject {
     private static $db = array (
-        'Title' => 'Varchar'
+        'Title' => 'Varchar',
+        'minBuy' => 'Currency'
        // 'SortOrder' => 'Int'
     );
 
