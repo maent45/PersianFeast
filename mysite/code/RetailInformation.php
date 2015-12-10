@@ -14,6 +14,8 @@ class RetailInformation extends DataObject
         'Street' => 'Text',
         'PostalAddress' => 'Varchar(255)',
         'Location' => 'Varchar(255)',
+        'ShopLink' => 'Varchar(255)',
+        'h4Tag' => 'Varchar(255)',
         'HTag'=> 'Varchar(255)',
         'SortID'=>'Int'
     );
@@ -32,6 +34,8 @@ class RetailInformation extends DataObject
         $labels['Street'] = _t('RetailInformation.Street', 'Street');
         $labels['PostalAddress'] = _t('RetailInformation.PostalAddress', 'PostalAddress');
         $labels['Location'] = _t('RetailInformation.StoreName', 'Location');
+        $labels['ShopLink'] = _t('RetailInformation.ShopLink', 'Vendor Link');
+        $labels['h4Tag'] = _t('RetailInformation.h4Tag', 'Sort Category');
         $labels['HTag'] = _t('RetailInformation.HTag', 'Header (leave empty) unless this is a main item');
         return $labels;
     }
@@ -50,13 +54,13 @@ class RetailInformation extends DataObject
 class RetailInformationPage extends Page
 {
     private static $db = array(
-        'TopSectionDesc' => 'Text'
+        'TopSectionDesc' => 'HTMLText'
     );
     public function getCMSFields()
     {
         /*--- adding fields to cms interface ---*/
         $fields = parent::getCMSFields();
-        $fields->addFieldToTab("Root.Main", new TextareaField('TopSectionDesc', 'Top Section Description'), 'Content');
+        $fields->addFieldToTab("Root.Main", new HtmlEditorField('TopSectionDesc', 'Top Section Description'), 'Content');
         return $fields;
     }
 

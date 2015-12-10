@@ -24,7 +24,7 @@
                     </div>
                 <% end_if %>
                 <div class="col-lg-4 col-md-4 col-sm-3 col-xs-6 store-holder-container">
-                    <h4>$StoreName</h4>
+                    <h4><a href="$ShopLink" target="_blank">$StoreName</a></h4>
                     <p>$Street</p>
                     <p>$PostalAddress</p>
                     <p>$Location</p>
