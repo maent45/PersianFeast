@@ -19,6 +19,7 @@ class RetailInformation extends DataObject
     );
 
     private static $summary_fields = array(
+        'SortID' => 'Sort',
         'StoreName' => 'StoreName',
         'Street' => 'Street',
         'PostalAddress' => 'PostalAddress',
