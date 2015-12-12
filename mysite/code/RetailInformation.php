@@ -30,6 +30,7 @@ class RetailInformation extends DataObject
 
     public function fieldLabels($includerelations = true)
     {
+
         $labels = parent::fieldLabels($includerelations);
         $labels['StoreName'] = _t('RetailInformation.StoreName', 'StoreName');
         $labels['Street'] = _t('RetailInformation.Street', 'Street');
@@ -38,16 +39,26 @@ class RetailInformation extends DataObject
         $labels['ShopLink'] = _t('RetailInformation.ShopLink', 'Vendor Link');
         $labels['h4Tag'] = _t('RetailInformation.h4Tag', 'Sort Category');
         $labels['HTag'] = _t('RetailInformation.HTag', 'Header (leave empty) unless this is a main item');
+
         return $labels;
     }
 
+    public function getCMSFields() {
+        $fields = parent::getCMSFields();
+        $sortID = TextField::create('SortID','Sort ID (list ordered by ID)',RetailInformation::get()->sort('ID')->last()->ID + 1);
+        $fields->replaceField('SortID', $sortID);
+        return $fields;
+    }
+
     //Increment the SortID to the next Value based on the ID
+    /*
     function onBeforeWrite() {
         parent::onBeforeWrite();
         if (!$this->SortID) {
             $this->SortID = RetailInformation::get()->sort('ID')->last()->ID + 1;
         }
     }
+    */
 
 }
 

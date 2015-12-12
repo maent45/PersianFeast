@@ -9,10 +9,13 @@
 class Category extends DataObject {
     private static $db = array (
         'Title' => 'Varchar',
-        'minBuy' => 'Currency'
+       // 'minBuy' => 'Currency',
+        'minQty' => 'Int'
        // 'SortOrder' => 'Int'
     );
-
+    private static $defaults = array(
+        'minQty' => 1
+    );
     private static $has_many = array (
         'Products' => 'Product'
     );
