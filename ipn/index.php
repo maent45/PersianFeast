@@ -1,10 +1,14 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL ^ E_NOTICE);
 /**
  * Created by PhpStorm.
  * User: luke
  * Date: 15/12/15
  * Time: 10:57 AM
  */
+
+//$req_dump = 'test';
 $req_dump = print_r($_REQUEST, TRUE);
 $fp = fopen('request.log', 'a');
 fwrite($fp, $req_dump);
@@ -18,7 +22,7 @@ define("DEBUG", 1);
 define("USE_SANDBOX", 1);
 
 
-define("LOG_FILE", "/home/persianfeast/public_html/ipn.log");
+define("LOG_FILE", "ipn.log");
 
 
 // Read POST data
