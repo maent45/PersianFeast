@@ -145,7 +145,8 @@
             <span id="cartItemsPaypal">
             </span>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 subtotalsContainer">
-                <span>Total :  $ <span id="cartItemsPaypalTotal"></span></span>
+                <div>Shipping :  <span id="cartItemsPaypalShipping" class="pull-right">$0.00</span></div>
+                <div>Total :   <span id="cartItemsPaypalTotal" class="pull-right"></span></div>
                 <button type="submit" id="checkOut" class="btn btn-default pull-right">Check Out</button>
             </div>
 
