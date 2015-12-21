@@ -37,24 +37,22 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <!--<h4 class="modal-title">$Title</h4>!-->
-                                    $getPhotoForTemplate
+                                    <h4>Product Description</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 ">
-
-                                    </div>
                                     <div class="col-lg-12 container">
-                                        <h4>Product</h4>
-                                        <h3>$Title</h3>
-                                        <p>$Description</p>
-                                        <hr/>
-                                        <h4>Description/Product Information</h4>
-                                        <p>$HowToUse</p>
-                                        <br/>
-                                        <!--<h4>Nutritional Information</h4>
-                                        <p>$Ingredients</p>-->
-                                        <br/>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 prod-desc-modal-inner-left">
+                                            $getPhotoForTemplate
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 prod-desc-modal-inner-right">
+                                            <h4>Product</h4>
+                                            <h3>$Title</h3>
+                                            <p>$Description</p>
+                                            <hr/>
+                                            <h4>Description/Product Information</h4>
+                                            <p>$HowToUse</p>
+                                            <br/>
+                                        </div>
                                     </div>
 
                                 </div>
