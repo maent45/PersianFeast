@@ -59,9 +59,6 @@ body{
     .navbar-brand img{
         width: 220px !important;
     }
-    .prod-desc-modal-inner-left img{
-        width: auto !important;
-    }
     .shoppingCartContainer{
         width: 50% !important;
         margin-left: 47%;
@@ -160,7 +157,7 @@ body{
 }
     /*-----------MODAL CSS----------*/
 .modal img {
-    width: 45%;
+    width: 45% !important;
 }
 .modal-body{
     overflow-y: auto;
@@ -325,14 +322,6 @@ footer i{
 .prod-modal-inner-right span{
     margin-left: 1.8%;
 }
-/*--- prod modal description area css ---*/
-.prod-desc-modal-inner-left img{
-    width: 100%;
-    margin-top: 0%;
-}
-.prod-desc-modal-inner-right h3, p{
-    margin-left: 3%;
-}
 .cart-btn{
     margin-top: 5%;
     margin-left: 3%;
@@ -454,7 +443,7 @@ footer i{
     margin-top: 40px !important;
 }
 
-/*---------------------REATAIL INFO PAGE CSS------------sdfsdf------*/
+/*---------------------REATAIL INFO PAGE CSS------------------*/
 .shop-page-header{
     margin-left: 15.5%;
     width: 80%;
