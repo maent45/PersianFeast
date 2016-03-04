@@ -25,7 +25,19 @@ class ThankYou_Controller extends Page_Controller {
     );
 
     public function index(SS_HTTPRequest $request) {
-        /*
+
+        return array(
+            'ThankYouMessage' => $this->stringReplace($request)
+
+        );
+    }
+
+    /**
+     * Replaces {paypal_headers} with actual details from postVars
+     */
+    function stringReplace($request) {
+
+        /* Possible tags to be replaced
          *  [mc_gross] => 15.50
             [protection_eligibility] => Ineligible
             [address_status] => unconfirmed
@@ -70,22 +82,16 @@ class ThankYou_Controller extends Page_Controller {
             [payment_gross] =>
             [auth] => -ssdadasdas
          */
-        //echo "test";
-        //$first_name = $request->postVar('first_name');
-        //$address_city = $request->postVar('address_city');
-        //$address_street = $request->postVar('address_street');
 
-       print_r($request);
-        return array(
-            'ThankYouMessage' => $this->record['Content']
+        $re = "/{(.*?)}/m";
 
-        );
-    }
+        $message = $this->record['Content'];
+        preg_match_all($re, $message, $theArray);
 
-    /**
-     * @todo regex {array} with above postVars
-     */
-    function stringReplace() {
+        foreach ($theArray[1] as $theArrayKey)
+            $message = str_replace($theArray[0],  $request->postVar(strip_tags($theArrayKey)), $message);
+
+        return $message;
 
     }
 
