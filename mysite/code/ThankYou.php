@@ -11,6 +11,36 @@ class ThankYou extends Page {
     /*--- adding fields to cms interface ---*/
     public function getCMSFields() {
         $fields = parent::getCMSFields();
+        $fields->addFieldToTab('Root.Main', HtmlEditorField::create('Content', 'Message')->setDescription('<strong>Valid Tags</strong>'.
+            '<br/>{mc_gross} => 15.50'.
+            '<br/>{protection_eligibility} => Ineligible'.
+            '<br/>{address_status} => unconfirmed'.
+            '<br/>{item_number1} => 0'.
+            '<br/>{payer_id} => 7UCRP4NVHRFV2'.
+            '<br/>{tax} => 0.00'.
+            '<br/>{address_street} => 123 Sample St'.
+            '<br/>{payment_date} => 02:46:44 Mar 04, 2016 PST'.
+            '<br/>{payment_status} => Pending'.
+            '<br/>{charset} => utf-8'.
+            '<br/>{address_zip} => 6004'.
+            '<br/>{mc_shipping} => 0.00'.
+            '<br/>{mc_handling} => 8.00'.
+            '<br/>{first_name} => Tony'.
+            '<br/>{address_country_code} => NZ'.
+            '<br/>{address_name} => Tony A'.
+            '<br/>{notify_version} => 3.8'.
+            '<br/>{payer_status} => verified'.
+            '<br/>{address_country} => New Zealand'.
+            '<br/>{num_cart_items} => 1'.
+            '<br/>{mc_handling1} => 0.00'.
+            '<br/>{address_city} => Wellington'.
+            '<br/>{payer_email} => test@test.com'.
+            '<br/>{txn_id} => 38B59417KJ6341056'.
+            '<br/>{txn_type} => cart'.
+            '<br/>{mc_currency} => NZD'.
+            '<br/>{residence_country} => NZ'
+      
+        ));
         return $fields;
     }
 
