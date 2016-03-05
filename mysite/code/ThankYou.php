@@ -56,6 +56,17 @@ class ThankYou_Controller extends Page_Controller {
 
     public function index(SS_HTTPRequest $request) {
 
+        $Purchase = new PurchaseOrders;
+
+        $Purchase->first_name = $request->postVar('first_name');
+        $Purchase->receiver_email = $request->postVar('receiver_email');
+        $Purchase->payment_date = $request->postVar('payment_date');
+        $Purchase->address_zip = $request->postVar('address_zip');
+        $Purchase->address_street = $request->postVar('address_street');
+        $Purchase->mc_gross = $request->postVar('mc_gross');
+        $Purchase->address_city = $request->postVar('address_city');
+
+        $Purchase->write();
         return array(
             'ThankYouMessage' => $this->stringReplace($request)
 
