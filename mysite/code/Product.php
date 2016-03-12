@@ -32,12 +32,12 @@ class Product extends DataObject {
         'Category' => 'Category',
         'Photo' => 'Image'
     );
-    public static $many_many = array(
+    public static $many_many = array (
         'Stores' => 'RetailInformation'
     );
 
     private static $summary_fields = array(
-        'Thumbnail' => 'Thumbnail',
+        'getThumbnail' => 'Thumbnail',
         'Description' => 'Description',
         'Title' => 'Title',
         'Category.Title' => 'Category',
@@ -45,13 +45,12 @@ class Product extends DataObject {
     );
     public function fieldLabels($includerelations = true) {
         $labels = parent::fieldLabels($includerelations);
-        $labels['Thumbnail'] = _t('Product.THUMBNAIL','Thumbnail');
+        $labels['Thumbnail'] = _t('Product.Thumbnail','Thumbnail');
         $labels['InternalItemId'] = _t('Product.INTERNALITEMID','Item Id');
         $labels['Title'] = _t('Product.TITLE','Title');
         //$labels['Price'] = _t('Product.PRICE','Price');
         return $labels;
     }
-
 
     public function canEdit($member = null) {
         return true;
@@ -69,15 +68,13 @@ class Product extends DataObject {
         $fields = parent::getCMSFields();
         //add paypal tab
 
-
         $store = ListboxField::create('Stores', 'RetailInformation', RetailInformation::get()->map('ID', 'StoreName')->toArray())->setMultiple(true);
 
         $category = DropdownField::create('CategoryID','Category', Category::get()->map('ID', 'Title'));
         $paypal = CheckboxField::create('Paypal','Online Ordering');
-        $photo = UploadField::create('Photo','Photo')->setFolderName('Products');
+        $photo = UploadField::create('Photo')->setFolderName('Products');
 
-
-        $fields->replaceField('Photo', $photo);
+//        $fields->replaceField('Photo', $photo);
         $fields->insertBefore($photo,'InternalItemId');
 
         //remove catogory
@@ -105,13 +102,13 @@ class Product extends DataObject {
 
         return $fields;
     }
-    public function getThumbnailForTemplate()
-    {
-        if($this->PhotoID)
-            return $this->Photo()->CMSThumbnail();
-        else
-            return '<img src="productcatalog/images/no-image-available-th.png" width="100" height="100" />';
-    }
+//    public function getThumbnailForTemplate()
+//    {
+//        if($this->PhotoID)
+//            return $this->Photo()->CMSThumbnail();
+//        else
+//            return '<img src="productcatalog/images/no-image-available-th.png" width="100" height="100" />';
+//    }
 
     /**
      * Returns a hide class if element is meant to be showing
@@ -124,35 +121,33 @@ class Product extends DataObject {
      * Returns a hide class if element is meant to be showing
      */
     public function getPaypalButton(){
+        //fa-dollar
+        $ourButton = '<button class="btn btn-success">Add To Cart</button>';
 
-            //fa-dollar
-            $ourButton = '<button class="btn btn-success">Add To Cart</button>';
-
-            return SSPaypalBasic::addCartButton($this->Title,$this->Price,$this->InternalItemId,$ourButton , true);
+        return SSPaypalBasic::addCartButton($this->Title,$this->Price,$this->InternalItemId,$ourButton , true);
     }
 
     public function getShowPrice(){
-            //fa-dollar
-            $spanInner = ($this->Price > 0) ? '$'.$this->Price:'';
-            return '<span>'.$spanInner.'</span>';
-
+        //fa-dollar
+        $spanInner = ($this->Price > 0) ? '$'.$this->Price:'';
+        return '<span>'.$spanInner.'</span>';
     }
 
     public function getThumbnail()
     {
-        if($this->PhotoID)
-            return $this->Photo()->CMSThumbnail();
+        if($this->Photo()->exists())
+            return $this->Photo()->SetWidth(100);
         else
             return _t('Product.NOIMAGE','(No Image)');
     }
 
-    public function getPhotoForTemplate()
-    {
-        if($this->PhotoID)
-            return $this->Photo()->setWidth(300);
-        else
-            return '<img src="productcatalog/images/no-image-available-th.png" width="300" height="300" />';
-    }
+//    public function getPhotoForTemplate()
+//    {
+//        if($this->PhotoID)
+//            return $this->Photo()->setWidth(300);
+//        else
+//            return '<img src="productcatalog/images/no-image-available-th.png" width="300" height="300" />';
+//    }
 
     //Add an SQL index for the URLSegment
     static $indexes = array(

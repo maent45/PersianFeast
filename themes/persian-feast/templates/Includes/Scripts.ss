@@ -14,21 +14,11 @@
 <script>
     $(document).ready(function(){
 
+        $('div.shoppingCartContainer').css('display', 'none');
+
         $('.dropdown').hover(function(){
           $('.dropdown-toggle', this).trigger('click');
         });
-
-        /*$(".dropDownSubLink").hide();
-
-        $(".parentLink").hover(function(){
-            $(".dropDownSubLink").show();
-        });*/
-
-
-        /*$(".nav a").on("click", function(){
-            $(".nav").find(".active").removeClass("active");
-            $(this).parent().addClass("active");
-        });*/
 
         /*--- SCRIPT FOR SHOWING ACTIVE LINKS ---*/
         var url = window.location;
@@ -39,6 +29,38 @@
         $('ul.nav a').filter(function() {
             return this.href == url;
         }).parent().addClass('active');
+
+        // move shopping cart to right
+        $('button.addToCart').each(function() {
+            $(this).on('click', function() {
+                $('div.shoppingCartContainer').css('display', 'block');
+
+                $('div.prodsContainer').removeClass('col-lg-12 col-md-12 col-sm-12 col-xs-12').addClass('col-lg-9 col-md-9 col-sm-7 col-xs-12');
+                $('div.mix').removeClass('col-sm-6').addClass('col-sm-8');
+                $('a.productImage img').css({'width':'250px','height':'250px'});
+                $('div.productPriceContainer').css('width', '250px');
+            });
+        });
+
+        // sticky shopping cart
+        var browser_window = $(window);
+        var shopping_cart = $('div.shoppingCartContainer');
+        var shopping_cart_anchor = $('div.shopping_cart_anchor');
+
+        browser_window.scroll(function(){
+            var window_top = browser_window.scrollTop();
+            var shopping_cart_anchor_top = shopping_cart_anchor.offset().top;
+
+            if (window_top > shopping_cart_anchor_top) {
+                shopping_cart.css('margin-top', '0px');
+                shopping_cart.addClass('stick');
+                shopping_cart_anchor.height(shopping_cart.height());
+            } else {
+                shopping_cart.css('margin-top', '20px');
+                shopping_cart.removeClass('stick');
+                shopping_cart_anchor.height(0);
+            }
+        });
 
     });
 </script>

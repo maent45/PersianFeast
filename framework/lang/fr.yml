@@ -24,7 +24,6 @@ fr:
     FROMCOMPUTER: 'Choisissez des fichiers de votre ordinateur'
     FROMCOMPUTERINFO: 'Télécharger depuis votre ordinateur'
     TOTAL: Total
-    TOUPLOAD: 'Choisissez les fichiers à télécharger…'
     UPLOADINPROGRESS: 'Patientez s''il vous plaît… téléchargement en cours '
     UPLOADOR: OU
   BBCodeParser:
@@ -170,7 +169,6 @@ fr:
     TEXT2: 'lien de réinitialisation de mot de passe'
     TEXT3: pour
   Form:
-    CSRF_FAILED_MESSAGE: "Il semble qu'il y ait eu un problème technique. Veuillez cliquez sur le bouton Retour, raffraîchir votre navigateur, et essayer à nouveau"
     FIELDISREQUIRED: '{name} requis'
     SubmitBtnLabel: Envoyer
     VALIDATIONCREDITNUMBER: 'Vérifiez que vous avez bien saisi votre numéro de carte bleue {number}.'
@@ -235,7 +233,6 @@ fr:
     many_many_Members: Membres
   GroupImportForm:
     Help1: '<p>Importer un ou plusieurs groupe(s) au format <em>CSV</em> (comma-separated values). <small><a href="#" class="toggle-advanced">Montrer l''usage avancé</a></small></p>'
-    Help2: "<div class=\"advanced\">\n<h4>Utilisation avancée</h4>\n<ul>\n<li>Colonnes autorisées&nbsp;: <em>%s</em></li>\n<li>Les utilisateurs existants sont retrouvés avec leur <em>Code</em> unique et les registres sont mis à jour avec les nouvelles valeurs du fichier importé.</li>\n<li>Des hiérarchies de groupes peuvent être créées à l’aide de la colonne <em>ParentCode</em>.</li>\n<li>Les autorisations sont assignées par la colonne <em>PermissionCode</em>. Les autorisations actuelles ne sont pas modifiées.</li>\n</ul>\n</div>"
     ResultCreated: '{count} groupes créés'
     ResultDeleted: '%d groupes supprimés'
     ResultUpdated: '%d groupes mises à jour'
@@ -253,9 +250,9 @@ fr:
     CAPTIONTEXT: 'Légende'
     CSSCLASS: 'Alignement / Style'
     CSSCLASSCENTER: 'Centré'
-    CSSCLASSLEFT: 'A gauche, avec texte à la ligne.'
+    CSSCLASSLEFT: 'À gauche, avec texte autour.'
     CSSCLASSLEFTALONE: 'Sur la gauche seulement'
-    CSSCLASSRIGHT: 'a droite, avec texte à la ligne.'
+    CSSCLASSRIGHT: 'À droite, avec texte autour.'
     DETAILS: Détails
     EMAIL: 'Adresse email'
     FILE: Fichier
@@ -265,15 +262,12 @@ fr:
     FROMWEB: 'Du web'
     FindInFolder: 'Trouver dans un dossier'
     IMAGEALT: 'Texte alternatif (alt)'
-    IMAGEALTTEXT: 'Texte alternatif (alt) - s''affiche si l''image ne peut être affichée.'
-    IMAGEALTTEXTDESC: 'Proposé aux lecteurs d’écran ou si l’image ne peut pas être affichée'
     IMAGEDIMENSIONS: Dimensions
     IMAGEHEIGHTPX: Hauteur
     IMAGETITLE: 'Texte du titre (tooltip) - informations à propos de l''image'
     IMAGETITLETEXT: 'Texte du titre (info-bulle)'
     IMAGETITLETEXTDESC: 'Autres informations à propos de l’image'
     IMAGEWIDTHPX: Largeur
-    INSERTMEDIA: 'Insérer un support audiovisuel'
     LINK: 'Lien'
     LINKANCHOR: 'Ancre sur cette page'
     LINKDESCR: 'Description du lien'
@@ -286,7 +280,6 @@ fr:
     PAGE: Page
     URL: URL
     URLNOTANOEMBEDRESOURCE: 'L’URL {url} n’a pas pu être utilisée comme ressource média.'
-    UpdateMEDIA: 'Mettre à jour le support audiovisuel'
   Image:
     PLURALNAME: Fichiers
     SINGULARNAME: Fichier
@@ -298,20 +291,14 @@ fr:
   LeftAndMain:
     CANT_REORGANISE: 'Vous n’avez pas l’autorisation de modifier les pages de premier niveau. Vos modifications n’ont pas été enregistrées.'
     DELETED: Supprimé.
-    DropdownBatchActionsDefault: Actions
     HELP: Aide
-    PAGETYPE: 'Type de page&nbsp;:'
     PERMAGAIN: 'Vous avez été déconnecté du CMS. Si vous voulez vous reconnecter, entrez un nom d''utilisateur et un mot de passe ci-dessous.'
-    PERMALREADY: 'Désolé, mais vous ne pouvez pas accéder à cette partie du CMS. Si vous voulez changer d''identité, faites le ci-dessous'
-    PERMDEFAULT: 'Saisissez votre adresse de courriel et votre mot de passe pour accéder au CMS.'
-    PLEASESAVE: 'Enregistrez la page s’il vous plaît&nbsp;: elle ne pouvait pas être mise à jour car elle n’avait pas encore été sauvegardée.'
     PreviewButton: Aperçu
     REORGANISATIONSUCCESSFUL: 'L’arbre du site a été bien réorganisé.'
     SAVEDUP: Enregistré.
     ShowAsList: 'lister'
     TooManyPages: 'Trop de pages'
     ValidationError: 'Erreur de validation'
-    VersionUnknown: inconnu
   LeftAndMain_Menu_ss:
     Hello: Bonjour
     LOGOUT: 'Déconnexion'
@@ -389,7 +376,6 @@ fr:
     Toggle: 'Afficher l’aide de mise en forme'
   MemberImportForm:
     Help1: '<p>Importer les membres au format<em>CSV format</em> (comma-separated values). <small><a href="#" class="toggle-advanced">Afficher l''usage avancé.</a></small></p>'
-    Help2: "<div class=\"advanced\">\n<h4>Utilisation avancée</h4>\n<ul>\n<li>Colonnes autorisées&nbsp;: <em>%s</em></li>\n<li>Les utilisateurs existants sont retrouvés avec leur <em>Code</em> unique et les registres sont mis à jour avec les nouvelles valeurs du fichier importé.</li>\n<li>Des groupes peuvent être assignés à l’aide de la colonne <em>Groups</em>. Les groupes sont identifiés par leur <em>Code</em>, plusieurs groupes peuvent être indiqués en les séparant par des virgules. L’appartenance actuelle aux groupes n’est pas modifiée.</li>\n</ul>\n</div>"
     ResultCreated: '{count} membres créés'
     ResultDeleted: '%d membres supprimés'
     ResultNone: 'Aucun changements'
@@ -453,7 +439,6 @@ fr:
     SINGULARNAME: Rôle
     Title: Titre
   PermissionRoleCode:
-    PLURALNAME: 'Codes des autorisations liées au rôle'
     SINGULARNAME: 'Code de l’autorisation liée au rôle'
   Permissions:
     PERMISSIONS_CATEGORY: 'Rôles et autorisations d’accès'

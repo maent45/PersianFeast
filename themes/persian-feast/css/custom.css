@@ -6,99 +6,86 @@ body{
 }
 /*==================================================================INDEX PAGE CSS=====================================================================*/
 /*mobile resolution css*/
-@media screen and (max-width: 1740px) {
-    .prodsContainer{
-        margin-left: 15% !important;
-    }
-}
-@media screen and (max-width: 1567px) {
-    .prodsContainer{
-        margin-left: 10% !important;
-    }
-}
-@media screen and (max-width: 1470px) {
-    .shoppingCartContainer{
-        width: 20% !important;
-    }
-}
-@media screen and (max-width: 1367px) {
-    .productImage img{
-        height: 230px !important;
-    }
-    .shoppingCartContainer{
-        margin-top: 2.4% !important;
-        padding: 5px; !important;
-    }
-}
-@media screen and (max-width: 1331px) {
-    .prodsContainer{
-        width: 80% !important;
-    }
-}
-@media screen and (max-width: 1330px) {
-    .shoppingCartContainer{
-        width: 30% !important;
-        margin-left: 68%;
-    }
-    .prodsContainer{
-        margin-top: 0% !important;
-        margin-left: 0% !important;
-        padding: 0%;
-        width: 100% !important;
-    }
-}
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1200px) {
     .carousel-inner{
         height: auto !important;
     }
     .blogArchiveContainer{
         margin-left: 5%;
     }
-}
-@media screen and (max-width: 992px) {
-    .navbar-brand img{
-        width: 220px !important;
+    .productImage img {
+        height : 300px;
+        width: 300px;
     }
-    .shoppingCartContainer{
-        width: 50% !important;
-        margin-left: 47%;
+    .productPriceContainer{
+        width: 300px;
+    }
+    .shoppingCartContainer {
+        width: auto !important;
+    }
+}
+@media screen and (min-width: 992px) {
+    .navbar-right {
+        right: 0px !important;
+    }
+    .navbar-brand img {
+        width: 200px !important;
+        top: 0px !important;
+    }
+    .productImage img {
+        width: 240px;
+        height: 240px;
+    }
+    .productPriceContainer {
+        width: 240px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .navbar-brand img {
+        top: 10px;
+    }
+    .navbar-right {
+        right: 65px;
+    }
+}
+@media screen and (min-width: 310px) {
+    .navbar-brand img{
+        width: 120px;
+        position: relative;
+        bottom: 10px;
+    }
+    .productImage img {
+        width: 270px;
+        height: 270px;
+    }
+    .productPriceContainer{
+        width: 270px;
+    }
+    .shoppingCartContainer {
+        width: 260px;
     }
 }
 @media screen and (max-width: 768px) {
-    .navbar-right {
-        margin-right: 30px !important;
+    .shoppingCartContainer {
+        position: relative;
+        left: 125%;
     }
-}
-@media screen and (max-width: 768px) {
-    .navbar-brand img{
-        width: 150px !important;
-    }
-    .navbar-right {
-        float: none !important;
-        margin-right: -15px;
-    }
-}
-@media screen and (max-width: 500px) {
-    .navbar-brand img{
-        width: 160px !important;
-    }
-    .navbar-right{
-        margin-top: 0% !important;
-    }
-    .carousel-inner{
-        height: 156px !important;
-        overflow: hidden;
-    }
-    .shoppingCartContainer{
-        width: 100% !important;
-        margin-left: 0%;
+    footer {
+        display: none;
     }
 }
 
+.navbar-default .navbar-toggle {
+    border-color: #ddd;
+    border: 0;
+    background: transparent;
+    top: 15px;
+}
+.navbar-default .navbar-toggle:hover {
+    background: transparent;
+}
 .navbar-brand img{
-    width: 230px;
     position: relative;
-    bottom: 10px;
 }
 .navbar{
     padding-bottom: 20px;
@@ -107,7 +94,8 @@ body{
     font-weight: bold;
 }
 .navbar-right{
-    margin-top: 2.3%;
+    margin-top: 20px;
+    position: relative;
 }
 .navbar-nav>li{
     color: #222 !important;
@@ -157,9 +145,14 @@ body{
 .homePageParagraph{
     text-align: center;
 }
-    /*-----------MODAL CSS----------*/
-.modal img {
-    width: 45% !important;
+/*-----------MODAL CSS----------*/
+.modal-dialog {
+    text-align: left;
+}
+.modal-body img {
+    margin-top: 0px;
+    height: 300px;
+    width: 300px;
 }
 .modal-body{
     overflow-y: auto;
@@ -192,7 +185,6 @@ body{
     margin-top: 1%;
 }
 .carousel-inner{
-    height: 540px;
     overflow: hidden;
 }
 /*==========FOOTER CSS=========*/
@@ -240,18 +232,19 @@ footer i{
 }
 .prodsContainer{
     padding: 0px;
-    margin-left: 17%;
-    width: 65%;
 }
 /*---mixItUp css---*/
 #productsContainer .mix{
     display: none;
+    text-align: center;
 }
-.mix img{
-    width: 100%;
-    margin-top: 30px;
+.products_wrapper {
+    margin-top: 50px;
+    padding: 0px;
 }
-
+.products_wrapper img {
+    margin-top: 20px;
+}
 .prodItemDiv{
     text-align: center;
     margin-bottom: 3%;
@@ -271,21 +264,17 @@ footer i{
     border: 1px solid lightgrey;
     padding: 1.5%;
 }
-.prodItemDivDesc i:hover{
+.prodItemDivDesc i:hover {
     cursor: pointer;
 }
-.productPriceContainer{
+.productPriceContainer {
     border: 1px solid lightgray;
     text-align: center;
-    margin-bottom: 0px !important;
     height: auto;
-    width: auto;
+    margin: auto;
 }
 .productImage :hover{
     cursor: pointer;
-}
-.productImage img {
-    height : 330px;
 }
 .productPriceContainer h3{
     margin: 10px;
@@ -304,9 +293,6 @@ footer i{
 }
 .addToCart, .showDetailsCartDiv :hover{
     cursor: pointer;
-}
-.prod-modal-inner-left img{
-    width: 100% !important;
 }
 .prod-modal-inner-right-price{
     color: #555 !important;
@@ -334,19 +320,26 @@ footer i{
     position: fixed; float: left;
 }
 /*--- SHOPPING CART CSS ---*/
+.shopping_cart_anchor {
+    right: 10px;
+}
+.stick {
+    position: fixed;
+    top: 0px;
+}
 .shoppingCartContainer{
-    width: auto;
     background-color: lightgrey;
     border-radius: 5px;
-    margin-top: 1.6%;
+    margin-top: 20px;
     margin-right: 0%;
+    padding: 0px;
 }
 .shoppingCartContainer h4{
     border-bottom: 2px dashed orange;
     padding: 10px;
 }
 .subtotalsContainer{
-    padding: 5px;
+    padding: 10px;
     border-top: 2px dashed orange;
 }
 .shoppingCartContainer i{

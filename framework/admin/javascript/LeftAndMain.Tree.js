@@ -105,7 +105,10 @@
 									SiblingIDs: siblingIDs
 								},
 								success: function() {
-									$('.cms-edit-form :input[name=ParentID]').val(newParentID);
+									// We only need to update the ParentID if the current page we're on is the page being moved
+									if ($('.cms-edit-form :input[name=ID]').val() == nodeID) {
+										$('.cms-edit-form :input[name=ParentID]').val(newParentID);
+									}
 									self.updateNodesFromServer([nodeID]);
 								},
 								statusCode: {
@@ -178,6 +181,8 @@
 								var isAllowed = (
 									// Don't allow moving the root node
 									movedNode.data('id') !== 0 
+									// Archived pages can't be moved
+									&& !movedNode.hasClass('status-archived')
 									// Only allow moving node inside the root container, not before/after it
 									&& (!isMovedOntoContainer || data.p == 'inside')
 									// Children are generally allowed on parent
@@ -250,7 +255,7 @@
 			 */
 			createNode: function(html, data, callback) {
 				var self = this, 
-					parentNode = data.ParentID ? self.getNodeByID(data.ParentID) : false,
+					parentNode = data.ParentID !== void 0 ? self.getNodeByID(data.ParentID) : false, // Explicitly check for undefined as 0 is a valid ParentID
 					newNode = $(html);
 				
 				// Extract the state for the new node from the properties taken from the provided HTML template.
@@ -445,7 +450,13 @@
 			 * 	(Array)
 			 */
 			getSelectedIDs: function() {
-				return $.map($(this).jstree('get_checked'), function(el, i) {return $(el).data('id');});
+				return $(this)
+					.jstree('get_checked')
+					.not('.disabled')
+					.map(function() {
+						return $(this).data('id');
+					})
+					.get();
 			}
 		});
 		
@@ -479,27 +490,6 @@
 			 */
 			getID: function() {
 				return this.data('id');
-			}
-		});
-		
-		$('.cms-content-batchactions input[name=view-mode-batchactions]').entwine({
-			onmatch: function() {
-				// set active by default
-				this.redraw();
-				this._super();
-			},
-			onunmatch: function() {
-				this._super();
-			},
-			onclick: function(e) {
-				this.redraw();
-			},
-			redraw: function(type) {
-				if(window.debug) console.log('redraw', this.attr('class'), this.get(0));
-				
-				$('.cms-tree')
-					.toggleClass('draggable', !this.is(':checked'))
-					.toggleClass('multiple', this.is(':checked'));
 			}
 		});
 	});
