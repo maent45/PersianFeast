@@ -10,7 +10,10 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="$AbsoluteBaseURL">
-                <img class="img-responsive" src="$ThemeDir/images/logos/persianfeast_logo_sml.png">
+                <%--<img class="img-responsive" src="$ThemeDir/images/logos/persianfeast_logo_sml.png">--%>
+                <% loop $getHomePageImg %>
+                    $Logo
+                <% end_loop %>
             </a>
         </div>
 

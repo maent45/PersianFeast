@@ -41,12 +41,9 @@ class ProductPage extends Page
 
             return $fields;
     }
-
-
 }
 
-class ProductPage_Controller extends Page_Controller
-{
+class ProductPage_Controller extends Page_Controller {
 
     //Allow our 'show' and 'category' functions as a URL actions
     private static $allowed_actions = array(
@@ -64,10 +61,12 @@ class ProductPage_Controller extends Page_Controller
 
         //Requirements::css('productcatalog/css/productcatalog.css');
     }
+
     public function Product() {
         //return the products
         return Product::get();
     }
+
     // show one product
     public function show() {
         $params = $this->getURLParams();
@@ -79,6 +78,7 @@ class ProductPage_Controller extends Page_Controller
             return $this->Customise($data);
         }
     }
+
     // show all products of one category
     public function category() {
         $params = $this->getURLParams();
@@ -114,7 +114,6 @@ class ProductPage_Controller extends Page_Controller
 
     public function Categories() {
         return Category::get()->sort('SortOrder');
-
     }
 
     public function canEdit($member = null)
@@ -131,7 +130,5 @@ class ProductPage_Controller extends Page_Controller
     {
         return true;
     }
-
-
 }
 

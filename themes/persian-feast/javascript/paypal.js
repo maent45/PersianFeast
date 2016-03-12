@@ -27,10 +27,6 @@ $(document).ready(function () {
         alert("Sorry not complete yet.");
     });
 
-
-
-
-
 });
 
 //bind to non existing class

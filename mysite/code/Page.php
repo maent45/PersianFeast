@@ -21,8 +21,14 @@ class Page extends SiteTree {
 	public function socialTwitter(){
 		return $this->getHomePage()->socialTwitter;
 	}
+	public function siteLogo() {
+		return $this->getHomePageImg()->Logo;
+	}
 	function getHomePage() {
 		return DataObject::get_one('HomePage');
+	}
+	function getHomePageImg() {
+		return HomePage::get();
 	}
 
 }

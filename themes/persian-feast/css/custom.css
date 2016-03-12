@@ -74,6 +74,12 @@ body{
         display: none;
     }
 }
+@media screen and (max-width: 480px) {
+    .shoppingCartContainer {
+        position: relative;
+        left: 35%;
+    }
+}
 
 .navbar-default .navbar-toggle {
     border-color: #ddd;

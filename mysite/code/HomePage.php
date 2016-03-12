@@ -9,10 +9,15 @@ class HomePage extends Page {
         'socialFacebook' => 'text',
         'socialTwitter' => 'text'
     );
+
     static $many_many = array(
         'Banners' => 'Banners'
-
     );
+
+    private static $has_one = array (
+        'Logo' => 'Image'
+    );
+
     /*--- restrict user from adding other pages ---*/
     static $allowed_children = array('');
 
@@ -40,6 +45,9 @@ class HomePage extends Page {
         $gridField = new GridField("Banner", "Main Page Banners", $this->Banners(), $gridFieldConfig);
         $fields->addFieldToTab("Root.Banners.Banner", $gridField);
 
+        //logo
+        $fields->addFieldToTab("Root.Logo", new UploadField('Logo'));
+
         //social fields
         $fields->addFieldToTab("Root.SocialLinks", new TextField('socialFacebook', 'Facebook Link'));
         $fields->addFieldToTab("Root.SocialLinks", new TextField('socialTwitter', 'Twitter Link'));
@@ -61,8 +69,6 @@ class HomePage extends Page {
 
     /*--- disable for this page to be a root page ---*/
     private static $can_be_root = true;
-
-
 
 }
 
