@@ -12,8 +12,8 @@
  * @property string $RememberLoginToken
  * @property string $TempIDHash
  * @property string $TempIDExpired
- * @property int $NumVisit @deprecated 4.0
- * @property string $LastVisited @deprecated 4.0
+ * @property int $NumVisit
+ * @property string $LastVisited Date and time of last visit
  * @property string $AutoLoginHash
  * @property string $AutoLoginExpired
  * @property string $PasswordEncryption
@@ -35,8 +35,8 @@ class Member extends DataObject implements TemplateGlobalProvider {
 		'TempIDExpired' => 'SS_Datetime', // Expiry of temp login
 		'Password' => 'Varchar(160)',
 		'RememberLoginToken' => 'Varchar(160)', // Note: this currently holds a hash, not a token.
-		'NumVisit' => 'Int', // @deprecated 4.0
-		'LastVisited' => 'SS_Datetime', // @deprecated 4.0
+		'NumVisit' => 'Int',
+		'LastVisited' => 'SS_Datetime',
 		'AutoLoginHash' => 'Varchar(160)', // Used to auto-login the user on password reset
 		'AutoLoginExpired' => 'SS_Datetime',
 		// This is an arbitrary code pointing to a PasswordEncryptor instance,
@@ -61,9 +61,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 
 	private static $has_one = array();
 
-	private static $has_many = array(
-		'LoggedPasswords' => 'MemberPassword',
-	);
+	private static $has_many = array();
 
 	private static $many_many = array();
 
@@ -82,24 +80,6 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 * @var boolean
 	 */
 	private static $notify_password_change = false;
-
-	/**
-	 * Flag whether or not member visits should be logged (count only)
-	 *
-	 * @deprecated 4.0
-	 * @var bool
-	 * @config
-	 */
-	private static $log_last_visited = true;
-
-	/**
-	 * Flag whether we should count number of visits
-	 *
-	 * @deprecated 4.0
-	 * @var bool
-	 * @config
-	 */
-	private static $log_num_visits = true;
 
 	/**
 	 * All searchable database columns
@@ -140,7 +120,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 		'TempIDHash',
 		'TempIDExpired',
 		'Salt',
-		'NumVisit', // @deprecated 4.0
+		'NumVisit'
 	);
 
 	/**
@@ -224,10 +204,10 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	private static $temp_id_lifetime = 259200;
 
 	/**
-	 * @deprecated 4.0 Use the "Member.session_regenerate_id" config setting instead
+	 * @deprecated 3.2 Use the "Member.session_regenerate_id" config setting instead
 	 */
 	public static function set_session_regenerate_id($bool) {
-		Deprecation::notice('4.0', 'Use the "Member.session_regenerate_id" config setting instead');
+		Deprecation::notice('3.2', 'Use the "Member.session_regenerate_id" config setting instead');
 		self::config()->session_regenerate_id = $bool;
 	}
 
@@ -274,11 +254,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 
 		// Ensure this user is in the admin group
 		if(!$admin->inGroup($adminGroup)) {
-			// Add member to group instead of adding group to member
-			// This bypasses the privilege escallation code in Member_GroupSet
-			$adminGroup
-				->DirectMembers()
-				->add($admin);
+			$admin->Groups()->add($adminGroup);
 		}
 
 		return $admin;
@@ -301,11 +277,11 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 * RewriteCond %{HTTP_COOKIE} !SS_LOGGED_IN=1
 	 * </pre>
 	 *
-	 * @deprecated 4.0 Use the "Member.login_marker_cookie" config setting instead
+	 * @deprecated 3.2 Use the "Member.login_marker_cookie" config setting instead
 	 * @param $cookieName string The name of the cookie to set.
 	 */
 	public static function set_login_marker_cookie($cookieName) {
-		Deprecation::notice('4.0', 'Use the "Member.login_marker_cookie" config setting instead');
+		Deprecation::notice('3.2', 'Use the "Member.login_marker_cookie" config setting instead');
 		self::config()->login_marker_cookie = $cookieName;
 	}
 
@@ -328,6 +304,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 
 		$e = PasswordEncryptor::create_for_algorithm($this->PasswordEncryption);
 		if(!$e->check($this->Password, $password, $this->Salt, $this)) {
+			$iidentifierField =
 			$result->error(_t (
 				'Member.ERRORWRONGCRED',
 				'The provided details don\'t seem to be correct. Please try again.'
@@ -346,7 +323,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 * @return ValidationResult
 	 */
 	public function canLogIn() {
-		$result = ValidationResult::create();
+		$result = new ValidationResult();
 
 		if($this->isLockedOut()) {
 			$result->error(
@@ -378,7 +355,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 * quirky problems (such as using the Windmill 0.3.6 proxy).
 	 */
 	public static function session_regenerate_id() {
-		if(!self::config()->session_regenerate_id) return;
+		if(!self::$session_regenerate_id) return;
 
 		// This can be called via CLI during testing.
 		if(Director::is_cli()) return;
@@ -395,11 +372,11 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 * Get the field used for uniquely identifying a member
 	 * in the database. {@see Member::$unique_identifier_field}
 	 *
-	 * @deprecated 4.0 Use the "Member.unique_identifier_field" config setting instead
+	 * @deprecated 3.2 Use the "Member.unique_identifier_field" config setting instead
 	 * @return string
 	 */
 	public static function get_unique_identifier_field() {
-		Deprecation::notice('4.0', 'Use the "Member.unique_identifier_field" config setting instead');
+		Deprecation::notice('3.2', 'Use the "Member.unique_identifier_field" config setting instead');
 		return Member::config()->unique_identifier_field;
 	}
 
@@ -407,11 +384,11 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 * Set the field used for uniquely identifying a member
 	 * in the database. {@see Member::$unique_identifier_field}
 	 *
-	 * @deprecated 4.0 Use the "Member.unique_identifier_field" config setting instead
+	 * @deprecated 3.2 Use the "Member.unique_identifier_field" config setting instead
 	 * @param $field The field name to set as the unique field
 	 */
 	public static function set_unique_identifier_field($field) {
-		Deprecation::notice('4.0', 'Use the "Member.unique_identifier_field" config setting instead');
+		Deprecation::notice('3.2', 'Use the "Member.unique_identifier_field" config setting instead');
 		Member::config()->unique_identifier_field = $field;
 	}
 
@@ -433,20 +410,20 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 * Set the number of days that a password should be valid for.
 	 * Set to null (the default) to have passwords never expire.
 	 *
-	 * @deprecated 4.0 Use the "Member.password_expiry_days" config setting instead
+	 * @deprecated 3.2 Use the "Member.password_expiry_days" config setting instead
 	 */
 	public static function set_password_expiry($days) {
-		Deprecation::notice('4.0', 'Use the "Member.password_expiry_days" config setting instead');
+		Deprecation::notice('3.2', 'Use the "Member.password_expiry_days" config setting instead');
 		self::config()->password_expiry_days = $days;
 	}
 
 	/**
 	 * Configure the security system to lock users out after this many incorrect logins
 	 *
-	 * @deprecated 4.0 Use the "Member.lock_out_after_incorrect_logins" config setting instead
+	 * @deprecated 3.2 Use the "Member.lock_out_after_incorrect_logins" config setting instead
 	 */
 	public static function lock_out_after_incorrect_logins($numLogins) {
-		Deprecation::notice('4.0', 'Use the "Member.lock_out_after_incorrect_logins" config setting instead');
+		Deprecation::notice('3.2', 'Use the "Member.lock_out_after_incorrect_logins" config setting instead');
 		self::config()->lock_out_after_incorrect_logins = $numLogins;
 	}
 
@@ -470,7 +447,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 		// This lets apache rules detect whether the user has logged in
 		if(Member::config()->login_marker_cookie) Cookie::set(Member::config()->login_marker_cookie, 1, 0);
 
-		$this->addVisit();
+		$this->NumVisit++;
 
 		if($remember) {
 			// Store the hash and give the client the cookie with the token.
@@ -481,6 +458,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 			Cookie::set('alc_enc', $this->ID . ':' . $token, 90, null, null, null, true);
 		} else {
 			$this->RememberLoginToken = null;
+			Cookie::set('alc_enc', null);
 			Cookie::force_expiry('alc_enc');
 		}
 
@@ -488,7 +466,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 		$this->registerSuccessfulLogin();
 
 		// Don't set column if its not built yet (the login might be precursor to a /dev/build...)
-		if(array_key_exists('LockedOutUntil', DB::field_list('Member'))) {
+		if(array_key_exists('LockedOutUntil', DB::fieldList('Member'))) {
 			$this->LockedOutUntil = null;
 		}
 
@@ -498,19 +476,6 @@ class Member extends DataObject implements TemplateGlobalProvider {
 
 		// Audit logging hook
 		$this->extend('memberLoggedIn');
-	}
-
-	/**
-	 * @deprecated 4.0
-	 */
-	public function addVisit() {
-		if($this->config()->log_num_visits) {
-			Deprecation::notice(
-				'4.0',
-				'Member::$NumVisit is deprecated. From 4.0 onwards you should implement this as a custom extension'
-			);
-			$this->NumVisit++;
-		}
 	}
 
 	/**
@@ -588,7 +553,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 			$member->RememberLoginToken = $hash;
 			Cookie::set('alc_enc', $member->ID . ':' . $token, 90, null, null, false, true);
 
-			$member->addVisit();
+			$member->NumVisit++;
 			$member->write();
 
 			// Audit logging hook
@@ -610,6 +575,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 		$this->extend('memberLoggedOut');
 
 		$this->RememberLoginToken = null;
+		Cookie::set('alc_enc', null); // // Clear the Remember Me cookie
 		Cookie::force_expiry('alc_enc');
 
 		// Switch back to live in order to avoid infinite loops when
@@ -655,12 +621,10 @@ class Member extends DataObject implements TemplateGlobalProvider {
 			$generator = new RandomGenerator();
 			$token = $generator->randomToken();
 			$hash = $this->encryptWithUserSettings($token);
-		} while(DataObject::get_one('Member', array(
-			'"Member"."AutoLoginHash"' => $hash
-		)));
+		} while(DataObject::get_one('Member', "\"AutoLoginHash\" = '$hash'"));
 
 		$this->AutoLoginHash = $hash;
-		$this->AutoLoginExpired = date('Y-m-d H:i:s', time() + (86400 * $lifetime));
+		$this->AutoLoginExpired = date('Y-m-d', time() + (86400 * $lifetime));
 
 		$this->write();
 
@@ -676,28 +640,31 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 */
 	public function validateAutoLoginToken($autologinToken) {
 		$hash = $this->encryptWithUserSettings($autologinToken);
-		$member = self::member_from_autologinhash($hash, false);
+
+		$member = DataObject::get_one(
+			'Member',
+			"\"AutoLoginHash\"='" . $hash . "' AND \"AutoLoginExpired\" > " . DB::getConn()->now()
+		);
+
 		return (bool)$member;
 	}
 
 	/**
 	 * Return the member for the auto login hash
 	 *
-	 * @param string $hash The hash key
 	 * @param bool $login Should the member be logged in?
-	 *
-	 * @return Member the matching member, if valid
 	 * @return Member
 	 */
-	public static function member_from_autologinhash($hash, $login = false) {
+	public static function member_from_autologinhash($RAW_hash, $login = false) {
+		$SQL_hash = Convert::raw2sql($RAW_hash);
 
-		$nowExpression = DB::get_conn()->now();
-		$member = DataObject::get_one('Member', array(
-			"\"Member\".\"AutoLoginHash\"" => $hash,
-			"\"Member\".\"AutoLoginExpired\" > $nowExpression" // NOW() can't be parameterised
-		));
+		$member = DataObject::get_one(
+			'Member',
+			"\"AutoLoginHash\"='" . $SQL_hash . "' AND \"AutoLoginExpired\" > " . DB::getConn()->now()
+		);
 
-		if($login && $member) $member->logIn();
+		if($login && $member)
+			$member->logIn();
 
 		return $member;
 	}
@@ -746,7 +713,6 @@ class Member extends DataObject implements TemplateGlobalProvider {
 		));
 
 		$fields->removeByName(static::config()->hidden_fields);
-		$fields->removeByName('LastVisited');
 		$fields->removeByName('FailedLoginCount');
 
 
@@ -786,6 +752,13 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	}
 
 	/**
+	 * Returns true if the current member is a repeat visitor who has logged in more than once.
+	 */
+	public static function is_repeat_member() {
+		return Cookie::get("PastMember") ? true : false;
+	}
+
+	/**
 	 * Get the ID of the current logged in user
 	 *
 	 * @return int Returns the ID of the current logged in user or 0.
@@ -809,10 +782,8 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 * @return string Returns a random password.
 	 */
 	public static function create_new_password() {
-		$words = Config::inst()->get('Security', 'word_list');
-
-		if($words && file_exists($words)) {
-			$words = file($words);
+		if(file_exists(Security::get_word_list())) {
+			$words = file(Security::get_word_list());
 
 			list($usec, $sec) = explode(' ', microtime());
 			srand($sec + ((float) $usec * 100000));
@@ -840,16 +811,19 @@ class Member extends DataObject implements TemplateGlobalProvider {
 		// but rather a last line of defense against data inconsistencies.
 		$identifierField = Member::config()->unique_identifier_field;
 		if($this->$identifierField) {
-
 			// Note: Same logic as Member_Validator class
-			$filter = array("\"$identifierField\"" => $this->$identifierField);
-			if($this->ID) {
-				$filter[] = array('"Member"."ID" <> ?' => $this->ID);
-			}
-			$existingRecord = DataObject::get_one('Member', $filter);
-
+			$idClause = ($this->ID) ? sprintf(" AND \"Member\".\"ID\" <> %d", (int)$this->ID) : '';
+			$existingRecord = DataObject::get_one(
+				'Member',
+				sprintf(
+					"\"%s\" = '%s' %s",
+					$identifierField,
+					Convert::raw2sql($this->$identifierField),
+					$idClause
+				)
+			);
 			if($existingRecord) {
-				throw new ValidationException(ValidationResult::create(false, _t(
+				throw new ValidationException(new ValidationResult(false, _t(
 					'Member.ValidationIdentifierFailed',
 					'Can\'t overwrite existing member #{id} with identical identifier ({name} = {value}))',
 					'Values in brackets show "fieldname = value", usually denoting an existing email address',
@@ -916,50 +890,27 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	public function onAfterWrite() {
 		parent::onAfterWrite();
 
-		Permission::flush_permission_cache();
-
 		if($this->isChanged('Password')) {
 			MemberPassword::log($this);
 		}
 	}
 
-	public function onAfterDelete() {
-		parent::onAfterDelete();
-
-		//prevent orphaned records remaining in the DB
-		$this->deletePasswordLogs();
-	}
-
 	/**
-	 * Delete the MemberPassword objects that are associated to this user
-	 *
-	 * @return self
-	 */
-	protected function deletePasswordLogs() {
-		foreach ($this->LoggedPasswords() as $password) {
-			$password->delete();
-			$password->destroy();
-		}
-		return $this;
-	}
-
-	/**
-	 * Filter out admin groups to avoid privilege escalation,
 	 * If any admin groups are requested, deny the whole save operation.
 	 *
 	 * @param Array $ids Database IDs of Group records
-	 * @return boolean True if the change can be accepted
+	 * @return boolean
 	 */
 	public function onChangeGroups($ids) {
+		// Filter out admin groups to avoid privilege escalation,
 		// unless the current user is an admin already OR the logged in user is an admin
-		if(Permission::check('ADMIN') || Permission::checkMember($this, 'ADMIN')) {
+		if(!(Permission::check('ADMIN') || Permission::checkMember($this, 'ADMIN'))) {
+			$adminGroups = Permission::get_groups_by_permission('ADMIN');
+			$adminGroupIDs = ($adminGroups) ? $adminGroups->column('ID') : array();
+			return count(array_intersect($ids, $adminGroupIDs)) == 0;
+		} else {
 			return true;
 		}
-
-		// If there are no admin groups in this set then it's ok
-		$adminGroups = Permission::get_groups_by_permission('ADMIN');
-		$adminGroupIDs = ($adminGroups) ? $adminGroups->column('ID') : array();
-		return count(array_intersect($ids, $adminGroupIDs)) == 0;
 	}
 
 
@@ -990,9 +941,8 @@ class Member extends DataObject implements TemplateGlobalProvider {
 		if(is_numeric($group)) {
 			$groupCheckObj = DataObject::get_by_id('Group', $group);
 		} elseif(is_string($group)) {
-			$groupCheckObj = DataObject::get_one('Group', array(
-				'"Group"."Code"' => $group
-			));
+			$SQL_group = Convert::raw2sql($group);
+			$groupCheckObj = DataObject::get_one('Group', "\"Code\" = '{$SQL_group}'");
 		} elseif($group instanceof Group) {
 			$groupCheckObj = $group;
 		} else {
@@ -1017,13 +967,12 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 * @param string Title of the group
 	 */
 	public function addToGroupByCode($groupcode, $title = "") {
-		$group = DataObject::get_one('Group', array(
-			'"Group"."Code"' => $groupcode
-		));
+		$group = DataObject::get_one('Group', "\"Code\" = '" . Convert::raw2sql($groupcode). "'");
 
 		if($group) {
 			$this->Groups()->add($group);
-		} else {
+		}
+		else {
 			if(!$title) $title = $groupcode;
 
 			$group = new Group();
@@ -1102,7 +1051,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 */
 	public static function get_title_sql($tableName = 'Member') {
 		// This should be abstracted to SSDatabase concatOperator or similar.
-		$op = (DB::get_conn() instanceof MSSQLDatabase) ? " + " : " || ";
+		$op = (DB::getConn() instanceof MSSQLDatabase) ? " + " : " || ";
 
 		$format = self::config()->title_format;
 		if ($format) {
@@ -1163,8 +1112,11 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	public function getDateFormat() {
 		if($this->getField('DateFormat')) {
 			return $this->getField('DateFormat');
+		} elseif($this->getField('Locale')) {
+			require_once 'Zend/Date.php';
+			return Zend_Locale_Format::getDateFormat($this->Locale);
 		} else {
-			return Config::inst()->get('i18n', 'date_format');
+			return i18n::get_date_format();
 		}
 	}
 
@@ -1178,8 +1130,11 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	public function getTimeFormat() {
 		if($this->getField('TimeFormat')) {
 			return $this->getField('TimeFormat');
+		} elseif($this->getField('Locale')) {
+			require_once 'Zend/Date.php';
+			return Zend_Locale_Format::getTimeFormat($this->Locale);
 		} else {
-			return Config::inst()->get('i18n', 'time_format');
+			return i18n::get_time_format();
 		}
 	}
 
@@ -1192,7 +1147,6 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 * Use {@link DirectGroups()} to only retrieve the group relations without inheritance.
 	 *
 	 * @todo Push all this logic into Member_GroupSet's getIterator()?
-	 * @return Member_Groupset
 	 */
 	public function Groups() {
 		$groups = Member_GroupSet::create('Group', 'Group_Members', 'GroupID', 'MemberID');
@@ -1255,7 +1209,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 	 *
 	 * @param array $groups Groups to consider or NULL to use all groups with
 	 *                      CMS permissions.
-	 * @return SS_Map Returns a map of all members in the groups given that
+	 * @return SQLMap Returns a map of all members in the groups given that
 	 *                have CMS permissions.
 	 */
 	public static function mapInCMSGroups($groups = null) {
@@ -1272,12 +1226,13 @@ class Member extends DataObject implements TemplateGlobalProvider {
 				$perms = array_unique(array_merge($perms, array_keys($cmsPerms)));
 			}
 
-			$permsClause = DB::placeholders($perms);
+			$SQL_perms = "'" . implode("', '", Convert::raw2sql($perms)) . "'";
+
 			$groups = DataObject::get('Group')
-				->innerJoin("Permission", '"Permission"."GroupID" = "Group"."ID"')
-				->where(array(
-					"\"Permission\".\"Code\" IN ($permsClause)" => $perms
-				));
+				->innerJoin(
+					"Permission",
+					"\"Permission\".\"GroupID\" = \"Group\".\"ID\" AND \"Permission\".\"Code\" IN ($SQL_perms)"
+				);
 		}
 
 		$groupIDList = array();
@@ -1290,17 +1245,14 @@ class Member extends DataObject implements TemplateGlobalProvider {
 			$groupIDList = $groups;
 		}
 
-		$members = Member::get()
-			->innerJoin("Group_Members", '"Group_Members"."MemberID" = "Member"."ID"')
-			->innerJoin("Group", '"Group"."ID" = "Group_Members"."GroupID"');
-		if($groupIDList) {
-			$groupClause = DB::placeholders($groupIDList);
-			$members = $members->where(array(
-				"\"Group\".\"ID\" IN ($groupClause)" => $groupIDList
-			));
-		}
+		$filterClause = ($groupIDList)
+			? "\"GroupID\" IN (" . implode( ',', $groupIDList ) . ")"
+			: "";
 
-		return $members->sort('"Member"."Surname", "Member"."FirstName"')->map();
+		return Member::get()->where($filterClause)->sort("\"Surname\", \"FirstName\"")
+			->innerJoin("Group_Members", "\"MemberID\"=\"Member\".\"ID\"")
+			->innerJoin("Group", "\"Group\".\"ID\"=\"GroupID\"")
+			->map();
 	}
 
 
@@ -1359,21 +1311,19 @@ class Member extends DataObject implements TemplateGlobalProvider {
 				_t('Member.INTERFACELANG', "Interface Language", 'Language of the CMS'),
 				i18n::get_existing_translations()
 			));
-
 			$mainFields->removeByName($self->config()->hidden_fields);
-			$mainFields->makeFieldReadonly('LastVisited');
 
 			if( ! $self->config()->lock_out_after_incorrect_logins) {
 				$mainFields->removeByName('FailedLoginCount');
 			}
 
+			$mainFields->makeFieldReadonly('LastVisited');
+
+			$fields->removeByName('Subscriptions');
 
 			// Groups relation will get us into logical conflicts because
 			// Members are displayed within  group edit form in SecurityAdmin
 			$fields->removeByName('Groups');
-
-			// Members shouldn't be able to directly view/edit logged passwords
-			$fields->removeByName('LoggedPasswords');
 
 			if(Permission::check('EDIT_PERMISSIONS')) {
 				$groupsMap = array();
@@ -1391,7 +1341,6 @@ class Member extends DataObject implements TemplateGlobalProvider {
 							_t('Member.ADDGROUP', 'Add group', 'Placeholder text for a dropdown')
 						)
 				);
-
 
 				// Add permission field (readonly to avoid complicated group assignment logic).
 				// This should only be available for existing records, as new records start
@@ -1604,15 +1553,14 @@ class Member extends DataObject implements TemplateGlobalProvider {
 		if(self::config()->lock_out_after_incorrect_logins) {
 			// Keep a tally of the number of failed log-ins so that we can lock people out
 			$this->FailedLoginCount = $this->FailedLoginCount + 1;
+			$this->write();
 
 			if($this->FailedLoginCount >= self::config()->lock_out_after_incorrect_logins) {
 				$lockoutMins = self::config()->lock_out_delay_mins;
 				$this->LockedOutUntil = date('Y-m-d H:i:s', time() + $lockoutMins*60);
-				$this->FailedLoginCount = 0;
+				$this->write();
 			}
 		}
-		$this->extend('registerFailedLogin');
-		$this->write();
 	}
 
 	/**
@@ -1625,6 +1573,7 @@ class Member extends DataObject implements TemplateGlobalProvider {
 			$this->write();
 		}
 	}
+
 	/**
 	 * Get the HtmlEditorConfig for this user to be used in the CMS.
 	 * This is set by the group. If multiple configurations are set,
@@ -1655,6 +1604,8 @@ class Member extends DataObject implements TemplateGlobalProvider {
 		return array(
 			'CurrentMember' => 'currentUser',
 			'currentUser',
+			'PastMember' => 'is_repeat_member',
+			'IsRepeatMember' => 'is_repeat_member',
 		);
 	}
 }
@@ -1666,33 +1617,27 @@ class Member extends DataObject implements TemplateGlobalProvider {
  * @subpackage security
  */
 class Member_GroupSet extends ManyManyList {
+	public function __construct($dataClass, $joinTable, $localKey, $foreignKey, $extraFields = array()) {
+		// Bypass the many-many constructor
+		DataList::__construct($dataClass);
 
-	protected function linkJoinTable() {
-		// Do not join the table directly
-		if($this->extraFields) {
-			user_error('Member_GroupSet does not support many_many_extraFields', E_USER_ERROR);
-		}
+		$this->joinTable = $joinTable;
+		$this->localKey = $localKey;
+		$this->foreignKey = $foreignKey;
+		$this->extraFields = $extraFields;
 	}
 
 	/**
 	 * Link this group set to a specific member.
-	 *
-	 * Recursively selects all groups applied to this member, as well as any
-	 * parent groups of any applied groups
-	 *
-	 * @param array|integer $id (optional) An ID or an array of IDs - if not provided, will use the current
-	 * ids as per getForeignID
-	 * @return array Condition In array(SQL => parameters format)
 	 */
 	public function foreignIDFilter($id = null) {
 		if ($id === null) $id = $this->getForeignID();
 
 		// Find directly applied groups
 		$manyManyFilter = parent::foreignIDFilter($id);
-		$query = new SQLQuery('"Group_Members"."GroupID"', '"Group_Members"', $manyManyFilter);
-		$groupIDs = $query->execute()->column();
+		$groupIDs = DB::query('SELECT "GroupID" FROM "Group_Members" WHERE ' . $manyManyFilter)->column();
 
-		// Get all ancestors, iteratively merging these into the master set
+		// Get all ancestors
 		$allGroupIDs = array();
 		while($groupIDs) {
 			$allGroupIDs = array_merge($allGroupIDs, $groupIDs);
@@ -1701,59 +1646,16 @@ class Member_GroupSet extends ManyManyList {
 		}
 
 		// Add a filter to this DataList
-		if(!empty($allGroupIDs)) {
-			$allGroupIDsPlaceholders = DB::placeholders($allGroupIDs);
-			return array("\"Group\".\"ID\" IN ($allGroupIDsPlaceholders)" => $allGroupIDs);
-		} else {
-			return array('"Group"."ID"' => 0);
+		if($allGroupIDs) {
+			return "\"Group\".\"ID\" IN (" . implode(',', $allGroupIDs) .")";
+		}
+		else {
+			return "\"Group\".\"ID\" = 0";
 		}
 	}
 
 	public function foreignIDWriteFilter($id = null) {
-		// Use the ManyManyList::foreignIDFilter rather than the one
-		// in this class, otherwise we end up selecting all inherited groups
 		return parent::foreignIDFilter($id);
-	}
-
-	public function add($item, $extraFields = null) {
-		// Get Group.ID
-		$itemID = null;
-		if(is_numeric($item)) {
-			$itemID = $item;
-		} else if($item instanceof Group) {
-			$itemID = $item->ID;
-		}
-
-		// Check if this group is allowed to be added
-		if($this->canAddGroups(array($itemID))) {
-			parent::add($item, $extraFields);
-		}
-	}
-
-	/**
-	 * Determine if the following groups IDs can be added
-	 *
-	 * @param array $itemIDs
-	 * @return boolean
-	 */
-	protected function canAddGroups($itemIDs) {
-		if(empty($itemIDs)) {
-			return true;
-		}
-		$member = $this->getMember();
-		return empty($member) || $member->onChangeGroups($itemIDs);
-	}
-
-	/**
-	 * Get foreign member record for this relation
-	 *
-	 * @return Member
-	 */
-	protected function getMember() {
-		$id = $this->getForeignID();
-		if($id) {
-			return DataObject::get_by_id('Member', $id);
-		}
 	}
 }
 
@@ -1846,9 +1748,8 @@ class Member_Validator extends RequiredFields {
 		$valid = parent::php($data);
 
 		$identifierField = Member::config()->unique_identifier_field;
-		$member = DataObject::get_one('Member', array(
-			"\"$identifierField\"" => $data[$identifierField]
-		));
+		$SQL_identifierField = Convert::raw2sql($data[$identifierField]);
+		$member = DataObject::get_one('Member', "\"$identifierField\" = '{$SQL_identifierField}'");
 
 		// if we are in a complex table field popup, use ctf[childID], else use ID
 		if(isset($_REQUEST['ctf']['childID'])) {

@@ -28,7 +28,7 @@ class PaginatedList extends SS_ListDecorator {
 			throw new Exception('The request must be readable as an array.');
 		}
 
-		$this->setRequest($request);
+		$this->request = $request;
 		parent::__construct($list);
 	}
 
@@ -65,10 +65,9 @@ class PaginatedList extends SS_ListDecorator {
 	}
 
 	/**
-	 * Set the number of items displayed per page. Set to zero to disable paging.
+	 * Set the number of items displayed per page.
 	 *
 	 * @param int $length
-	 * @return $this
 	 */
 	public function setPageLength($length) {
 		$this->pageLength = $length;
@@ -78,8 +77,7 @@ class PaginatedList extends SS_ListDecorator {
 	/**
 	 * Sets the current page.
 	 *
-	 * @param int $page Page index beginning with 1
-	 * @return $this
+	 * @param int $page
 	 */
 	public function setCurrentPage($page) {
 		$this->pageStart = ($page - 1) * $this->getPageLength();
@@ -92,14 +90,13 @@ class PaginatedList extends SS_ListDecorator {
 	 * @return int
 	 */
 	public function getPageStart() {
-		$request = $this->getRequest();
 		if ($this->pageStart === null) {
 			if(
-				$request
-				&& isset($request[$this->getPaginationGetVar()])
-				&& $request[$this->getPaginationGetVar()] > 0
+				$this->request 
+				&& isset($this->request[$this->getPaginationGetVar()])
+				&& $this->request[$this->getPaginationGetVar()] > 0
 			) {
-				$this->pageStart = (int)$request[$this->getPaginationGetVar()];
+				$this->pageStart = (int)$this->request[$this->getPaginationGetVar()];
 			} else {
 				$this->pageStart = 0;
 			}
@@ -185,11 +182,10 @@ class PaginatedList extends SS_ListDecorator {
 	 * @return IteratorIterator
 	 */
 	public function getIterator() {
-		$pageLength = $this->getPageLength();
-		if($this->limitItems && $pageLength) {
+		if($this->limitItems) {
 			$tmptList = clone $this->list;
 			return new IteratorIterator(
-				$tmptList->limit($pageLength, $this->getPageStart())
+				$tmptList->limit($this->getPageLength(), $this->getPageStart())
 			);
 		} else {
 			return new IteratorIterator($this->list);
@@ -329,20 +325,14 @@ class PaginatedList extends SS_ListDecorator {
 	 * @return int
 	 */
 	public function CurrentPage() {
-		$pageLength = $this->getPageLength();
-		return $pageLength
-			? floor($this->getPageStart() / $pageLength) + 1
-			: 1;
+		return floor($this->getPageStart() / $this->getPageLength()) + 1;
 	}
 
 	/**
 	 * @return int
 	 */
 	public function TotalPages() {
-		$pageLength = $this->getPageLength();
-		return $pageLength
-			? ceil($this->getTotalItems() / $pageLength)
-			: min($this->getTotalItems(), 1);
+		return ceil($this->getTotalItems() / $this->getPageLength());
 	}
 
 	/**
@@ -382,13 +372,10 @@ class PaginatedList extends SS_ListDecorator {
 	 * @return int
 	 */
 	public function LastItem() {
-		$pageLength = $this->getPageLength();
-		if(!$pageLength) {
-			return $this->getTotalItems();
-		} elseif ($start = $this->getPageStart()) {
-			return min($start + $pageLength, $this->getTotalItems());
+		if ($start = $this->getPageStart()) {
+			return min($start + $this->getPageLength(), $this->getTotalItems());
 		} else {
-			return min($pageLength, $this->getTotalItems());
+			return min($this->getPageLength(), $this->getTotalItems());
 		}
 	}
 
@@ -432,29 +419,6 @@ class PaginatedList extends SS_ListDecorator {
 		if ($this->NotFirstPage()) {
 			return HTTP::setGetVar($this->getPaginationGetVar(), $this->getPageStart() - $this->getPageLength());
 		}
-	}
-
-	/**
-	 * Returns the total number of items in the list
-	 */
-	public function TotalItems() {
-		return $this->getTotalItems();
-	}
-
-	/**
-	 * Set the request object for this list
-	 *
-	 * @param SS_HTTPRequest
-	 */
-	public function setRequest($request) {
-		$this->request = $request;
-	}
-
-	/**
-	 * Get the request object for this list
-	 */
-	public function getRequest() {
-		return $this->request;
 	}
 
 }

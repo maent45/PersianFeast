@@ -23,6 +23,7 @@ class Product extends DataObject {
         //'FeaturedProduct' => 'Boolean',
         'Hidden' => 'Boolean',
         'Paypal' => 'Boolean',
+        'Weight' => 'Decimal',
         'Price' => 'Currency(8,2)'
 
         //'URLSegment' => 'Varchar(255)'
@@ -92,7 +93,7 @@ class Product extends DataObject {
         $fields->renameField('Stores', _t('Product.RETAILINFORMATION', 'Retail Information'));
 
         $fields->renameField('Photo',_t('Product.PHOTO','Photo'));
-
+        $fields->renameField('Weight',_t('Product.WEIGHT','Weight'));
         $fields->renameField('Description',_t('Product.DESCRIPTION','Description'));
         $fields->renameField('SortOrder',_t('Product.SORTORDER','Sort Order'));
 
@@ -174,6 +175,8 @@ class Product extends DataObject {
         );
         return json_encode($prams);
     }
+
+  
 
 
 }

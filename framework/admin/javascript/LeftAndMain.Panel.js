@@ -29,80 +29,13 @@
 			WidthExpanded: null,
 			
 			WidthCollapsed: null,
-
-			/**
-			 * @func canSetCookie
-			 * @return {boolean}
-			 * @desc Before trying to set a cookie, make sure $.cookie and the element's id are both defined.
-			 */
-			canSetCookie: function () {
-				return $.cookie !== void 0 && this.attr('id') !== void 0;
-			},
-
-			/**
-			 * @func getPersistedCollapsedState
-			 * @return {boolean|undefined} - Returns true if the panel is collapsed, false if expanded. Returns undefined if there is no cookie set.
-			 * @desc Get the collapsed state of the panel according to the cookie.
-			 */
-			getPersistedCollapsedState: function () {
-				var isCollapsed, cookieValue;
-
-				if (this.canSetCookie()) {
-					cookieValue = $.cookie('cms-panel-collapsed-' + this.attr('id'));
-
-					if (cookieValue !== void 0 && cookieValue !== null) {
-						isCollapsed = cookieValue === 'true';
-					}
-				}
-
-				return isCollapsed;
-			},
-
-			/**
-			 * @func setPersistedCollapsedState
-			 * @param {boolean} newState - Pass true if you want the panel to be collapsed, false for expanded.
-			 * @desc Set the collapsed value of the panel, stored in cookies.
-			 */
-			setPersistedCollapsedState: function (newState) {
-				if (this.canSetCookie()) {
-					$.cookie('cms-panel-collapsed-' + this.attr('id'), newState, { path: '/', expires: 31 });
-				}
-			},
-
-			/**
-			 * @func clearPersistedState
-			 * @desc Remove the cookie responsible for maintaing the collapsed state.
-			 */
-			clearPersistedCollapsedState: function () {
-				if (this.canSetCookie()) {
-					$.cookie('cms-panel-collapsed-' + this.attr('id'), '', { path: '/', expires: -1 });
-				}
-			},
-
-			/**
-			 * @func getInitialCollapsedState
-			 * @return {boolean} - Returns true if the the panel is collapsed, false if expanded.
-			 * @desc Get the initial collapsed state of the panel. Check if a cookie value is set then fall back to checking CSS classes.
-			 */
-			getInitialCollapsedState: function () {
-				var isCollapsed = this.getPersistedCollapsedState();
-
-				// Fallback to getting the state from the default CSS class
-				if (isCollapsed === void 0) {
-					isCollapsed = this.hasClass('collapsed');
-				}
-
-				return isCollapsed;
-			},
-
+			
 			onadd: function() {
-				var collapsedContent, container;
-
 				if(!this.find('.cms-panel-content').length) throw new Exception('Content panel for ".cms-panel" not found');
 				
 				// Create default controls unless they already exist.
 				if(!this.find('.cms-panel-toggle').length) {
-					container = $("<div class='cms-panel-toggle south'></div>")
+					var container = $("<div class='cms-panel-toggle south'></div>")
 						.append('<a class="toggle-expand" href="#"><span>&raquo;</span></a>')
 						.append('<a class="toggle-collapse" href="#"><span>&laquo;</span></a>');
 						
@@ -113,51 +46,52 @@
 				this.setWidthExpanded(this.find('.cms-panel-content').innerWidth());
 				
 				// Assumes the collapsed width is indicated by the toggle, or by an optionally collapsed view
-				collapsedContent = this.find('.cms-panel-content-collapsed');
+				var collapsedContent = this.find('.cms-panel-content-collapsed');
 				this.setWidthCollapsed(collapsedContent.length ? collapsedContent.innerWidth() : this.find('.toggle-expand').innerWidth());
 
+				// Set inital collapsed state, either from cookie or from default CSS classes
+				var collapsed, cookieCollapsed;
+				if($.cookie && this.attr('id')) {
+					cookieCollapsed = $.cookie('cms-panel-collapsed-' + this.attr('id'));
+					if(typeof cookieCollapsed != 'undefined' && cookieCollapsed != null) collapsed = (cookieCollapsed == 'true');
+				} 
+				if(typeof collapsed == 'undefined') collapsed = jQuery(this).hasClass('collapsed');
+
 				// Toggle visibility
-				this.togglePanel(!this.getInitialCollapsedState(), true, false);
+				this.togglePanel(!collapsed, true);
 				
 				this._super();
 			},
-
 			/**
-			 * @func togglePanel
-			 * @param doExpand {boolean} - true to expand, false to collapse.
-			 * @param silent {boolean} - true means that events won't be fired, which is useful for the component initialization phase.
-			 * @param doSaveState - if false, the panel's state will not be persisted via cookies.
-			 * @desc Toggle the expanded / collapsed state of the panel.
+			 * @param {Boolean} TRUE to expand, FALSE to collapse.
+			 * @param {Boolean} TRUE means that events won't be fired, which is useful for the component initialization phase.
 			 */
-			togglePanel: function(doExpand, silent, doSaveState) {
-				var newWidth, collapsedContent;
-
+			togglePanel: function(bool, silent) {
 				if(!silent) {
-					this.trigger('beforetoggle.sspanel', doExpand);
-					this.trigger(doExpand ? 'beforeexpand' : 'beforecollapse');
+					this.trigger('beforetoggle.sspanel', bool);
+					this.trigger(bool ? 'beforeexpand' : 'beforecollapse');
 				}
 
-				this.toggleClass('collapsed', !doExpand);
-				newWidth = doExpand ? this.getWidthExpanded() : this.getWidthCollapsed();
+				this.toggleClass('collapsed', !bool);
+				var newWidth = bool ? this.getWidthExpanded() : this.getWidthCollapsed();
 				
 				this.width(newWidth); // the content panel width always stays in "expanded state" to avoid floating elements
 				
 				// If an alternative collapsed view exists, toggle it as well
-				collapsedContent = this.find('.cms-panel-content-collapsed');
+				var collapsedContent = this.find('.cms-panel-content-collapsed');
 				if(collapsedContent.length) {
-					this.find('.cms-panel-content')[doExpand ? 'show' : 'hide']();
-					this.find('.cms-panel-content-collapsed')[doExpand ? 'hide' : 'show']();
+					this.find('.cms-panel-content')[bool ? 'show' : 'hide']();
+					this.find('.cms-panel-content-collapsed')[bool ? 'hide' : 'show']();
 				}
 
-				if (doSaveState !== false) {
-					this.setPersistedCollapsedState(!doExpand);
-				}
+				// Save collapsed state in cookie
+				if($.cookie && this.attr('id')) $.cookie('cms-panel-collapsed-' + this.attr('id'), !bool, {path: '/', expires: 31});
 
 				// TODO Fix redraw order (inner to outer), and re-enable silent flag
 				// to avoid multiple expensive redraws on a single load.
 				// if(!silent) {
-					this.trigger('toggle', doExpand);
-					this.trigger(doExpand ? 'expand' : 'collapse');
+					this.trigger('toggle', bool);
+					this.trigger(bool ? 'expand' : 'collapse');
 				// }
 			},
 			
@@ -190,22 +124,14 @@
 		$('.cms-panel .toggle-expand').entwine({
 			onclick: function(e) {
 				e.preventDefault();
-				e.stopPropagation();
-
 				this.getPanel().expandPanel();
-
-				this._super(e);
 			}
 		});
 		
 		$('.cms-panel .toggle-collapse').entwine({
 			onclick: function(e) {
-				e.preventDefault();
-				e.stopPropagation();
-
 				this.getPanel().collapsePanel();
-
-				this._super(e);
+				return false;
 			}
 		});
 
@@ -213,7 +139,6 @@
 			// Expand CMS' centre pane, when the pane itself is clicked somewhere
 			onclick: function(e) {
 				this.expandPanel();
-				this._super(e);
 			}
 		});
 	});

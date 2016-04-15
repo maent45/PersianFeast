@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Allows visibility of a group of fields to be toggled.
  *
@@ -7,21 +6,17 @@
  * @subpackage fields-structural
  */
 class ToggleCompositeField extends CompositeField {
+
 	/**
 	 * @var bool
 	 */
 	protected $startClosed = true;
 
 	/**
-	 * @var int
+	 * @var $int
 	 */
 	protected $headingLevel = 3;
 
-	/**
-	 * @param string $name
-	 * @param string $title
-	 * @param array|FieldList $children
-	 */
 	public function __construct($name, $title, $children) {
 		$this->name = $name;
 		$this->title = $title;
@@ -29,46 +24,30 @@ class ToggleCompositeField extends CompositeField {
 		parent::__construct($children);
 	}
 
-	/**
-	 * @param array $properties
-	 *
-	 * @return HTMLText
-	 */
 	public function FieldHolder($properties = array()) {
 		Requirements::javascript(FRAMEWORK_DIR . '/thirdparty/jquery/jquery.js');
 		Requirements::javascript(FRAMEWORK_DIR . '/thirdparty/jquery-ui/jquery-ui.js');
 		Requirements::javascript(FRAMEWORK_DIR . '/thirdparty/jquery-entwine/dist/jquery.entwine-dist.js');
 		Requirements::javascript(FRAMEWORK_DIR . '/javascript/ToggleCompositeField.js');
+		Requirements::css(FRAMEWORK_DIR . '/thirdparty/jquery-ui-themes/smoothness/jquery.ui.css');
 
-		Requirements::css(FRAMEWORK_DIR . '/thirdparty/jquery-ui-themes/smoothness/jquery-ui.css');
-
-		$context = $this;
-
-		if(count($properties)) {
-			$context = $this->customise($properties);
-		}
-
-		return $context->renderWith($this->getTemplates());
+		$obj = $properties ? $this->customise($properties) : $this;
+		return $obj->renderWith($this->getTemplates());
 	}
 
-	/**
-	 * {@inheritdoc}
-	 */
 	public function getAttributes() {
-		$attributes = array(
-			'id' => $this->id(),
-			'class' => $this->extraClass(),
-		);
-
 		if($this->getStartClosed()) {
-			$attributes['class'] .= ' ss-toggle ss-toggle-start-closed';
+			$class = 'ss-toggle ss-toggle-start-closed';
 		} else {
-			$attributes['class'] .= ' ss-toggle';
+			$class = 'ss-toggle';
 		}
 
 		return array_merge(
 			$this->attributes,
-			$attributes
+			array(
+				'id'    => $this->id(),
+				'class' => $class . ' ' . $this->extraClass()
+			)
 		);
 	}
 
@@ -80,15 +59,13 @@ class ToggleCompositeField extends CompositeField {
 	}
 
 	/**
-	 * Controls whether the field is open or closed by default. By default the field is closed.
+	 * Controls whether the field is open or closed by default. By default the
+	 * field is closed.
 	 *
-	 * @param bool $startClosed
-	 *
-	 * @return $this
+	 * @param bool $bool
 	 */
-	public function setStartClosed($startClosed) {
-		$this->startClosed = (bool) $startClosed;
-
+	public function setStartClosed($bool) {
+		$this->startClosed = (bool) $bool;
 		return $this;
 	}
 
@@ -100,13 +77,12 @@ class ToggleCompositeField extends CompositeField {
 	}
 
 	/**
-	 * @param int $headingLevel
-	 *
-	 * @return $this
+	 * @param int $level
 	 */
-	public function setHeadingLevel($headingLevel) {
-		$this->headingLevel = $headingLevel;
-
+	public function setHeadingLevel($level) {
+		$this->headingLevel = $level;
 		return $this;
 	}
+
 }
+

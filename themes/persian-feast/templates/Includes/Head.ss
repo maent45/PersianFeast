@@ -8,9 +8,29 @@
     <meta name="author" content="">
 
 	<title>$Title</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="$ThemeDir/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="$ThemeDir/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="$ThemeDir/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="$ThemeDir/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="$ThemeDir/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="$ThemeDir/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="$ThemeDir/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="$ThemeDir/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="$ThemeDir/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="$ThemeDir/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="$ThemeDir/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="$ThemeDir/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="$ThemeDir/fav/favicon-16x16.png">
+    <link rel="manifest" href="$ThemeDir/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="$ThemeDir/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="$ThemeDir/css/bootstrap.min.css">
     <link rel="stylesheet" href="$ThemeDir/css/custom.css">
     <link rel="stylesheet" href="$ThemeDir/css/font-awesome/css/font-awesome.min.css">
+    
     <!--------------google font------------------>
     <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 </head>

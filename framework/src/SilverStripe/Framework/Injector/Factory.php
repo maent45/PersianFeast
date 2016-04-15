@@ -4,9 +4,6 @@ namespace SilverStripe\Framework\Injector;
 
 /**
  * A factory which is used for creating service instances.
- *
- * @package framework
- * @subpackage injector
  */
 interface Factory {
 

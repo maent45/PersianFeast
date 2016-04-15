@@ -37,7 +37,7 @@
 		 * As they're disabled, any changes won't be submitted (which is intended behaviour),
 		 * checking all boxes is purely presentational.
 		 */
-		$('.permissioncheckboxset .checkbox[value=ADMIN]').entwine({
+		$('#Permissions .checkbox[value=ADMIN]').entwine({
 			onmatch: function() {
 				this.toggleCheckboxes();
 
@@ -56,8 +56,7 @@
 			 * Function: toggleCheckboxes
 			 */
 			toggleCheckboxes: function() {
-				var self = this,
-					checkboxes = this.parents('.field:eq(0)').find('.checkbox').not(this);
+				var self = this, checkboxes = this.parents('.field:eq(0)').find('.checkbox').not(this);
 				
 				if(this.is(':checked')) {
 					checkboxes.each(function() {

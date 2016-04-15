@@ -18,7 +18,7 @@ class CMSProfileController extends LeftAndMain {
 		$this->setCurrentPageID(Member::currentUserID());
 
 		$form = parent::getEditForm($id, $fields);
-
+		
 		if($form instanceof SS_HTTPResponse) {
 			return $form;
 		}
@@ -45,25 +45,25 @@ class CMSProfileController extends LeftAndMain {
 		}
 
 		$form->addExtraClass('member-profile-form root-form cms-edit-form center');
-
+		
 		return $form;
 	}
 
 	public function canView($member = null) {
-		if(!$member && $member !== false) $member = Member::currentUser();
-
+		if(!$member && $member !== FALSE) $member = Member::currentUser();
+		
 		// cms menus only for logged-in members
 		if(!$member) return false;
-
-		// Check they can access the CMS and that they are trying to edit themselves
+		
+		// Only check for generic CMS permissions
 		if(
-			Permission::checkMember($member, "CMS_ACCESS")
-			&& $member->ID === Member::currentUserID()
+			!Permission::checkMember($member, "CMS_ACCESS_LeftAndMain")
+			&& !Permission::checkMember($member, "CMS_ACCESS_CMSMain")
 		) {
-			return true;
+			return false;
 		}
-
-		return false;
+		
+		return true;
 	}
 
 	public function save($data, $form) {
@@ -82,7 +82,7 @@ class CMSProfileController extends LeftAndMain {
 			$response->addHeader('X-Reload', true);
 			$response->addHeader('X-ControllerURL', $this->Link());
 		}
-
+		
 		return $response;
 	}
 

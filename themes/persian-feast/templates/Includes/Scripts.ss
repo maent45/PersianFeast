@@ -31,6 +31,7 @@
         }).parent().addClass('active');
 
         // move shopping cart to right
+       /*
         $('button.addToCart').each(function() {
             $(this).on('click', function() {
                 $('div.shoppingCartContainer').css('display', 'block');
@@ -41,7 +42,7 @@
                 $('div.productPriceContainer').css('width', '250px');
             });
         });
-
+        */
         // sticky shopping cart
         var browser_window = $(window);
         var shopping_cart = $('div.shoppingCartContainer');

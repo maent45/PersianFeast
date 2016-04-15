@@ -19,9 +19,8 @@ require_once 'i18nSSLegacyAdapter.php';
  *
  * Templates:
  * <code>
- * <%t MyNamespace.MYENTITY 'My default natural language value' %>
- * <%t MyNamespace.MYENTITY 'Counting %s things' s=$ThingsCount %>
- * <%t MyNamespace.MYENTITY 'Counting {count} things' count=$ThingsCount %>
+ * <% _t('MyNamespace.MYENTITY', 'My default natural language value') %>
+ * <% sprintf(_t('MyNamespace.MYENTITY','Counting %s things'),$ThingsCount) %>
  * </code>
  *
  * Javascript (see framework/javascript/i18n.js):
@@ -85,13 +84,13 @@ class i18n extends Object implements TemplateGlobalProvider, Flushable {
 	 * @config
 	 * @var string
 	 */
-	private static $date_format = 'yyyy-MM-dd';
+	private static $date_format;
 
 	/**
 	 * @config
 	 * @var string
 	 */
-	private static $time_format = 'H:mm';
+	private static $time_format;
 
 	/**
 	 * @var array Array of priority keys to instances of Zend_Translate, mapped by name.
@@ -138,57 +137,57 @@ class i18n extends Object implements TemplateGlobalProvider, Flushable {
 	 *
 	 * @see Requirements::process_i18n_javascript()
 	 *
-	 * @deprecated 4.0 Use the "i18n.js_i18n" config setting instead
+	 * @deprecated 3.2 Use the "i18n.js_i18n" config setting instead
 	 * @param bool $bool
 	 */
 	public static function set_js_i18n($bool) {
-		Deprecation::notice('4.0', 'Use the "i18n.js_i18n" config setting instead');
+		Deprecation::notice('3.2', 'Use the "i18n.js_i18n" config setting instead');
 		Config::inst()->update('i18n', 'js_i18n', $bool);
 	}
 
 	/**
-	 * @deprecated 4.0 Use the "i18n.js_i18n" config setting instead
+	 * @deprecated 3.2 Use the "i18n.js_i18n" config setting instead
 	 * @return bool
 	 */
 	public static function get_js_i18n() {
-		Deprecation::notice('4.0', 'Use the "i18n.js_i18n" config setting instead');
+		Deprecation::notice('3.2', 'Use the "i18n.js_i18n" config setting instead');
 		return Config::inst()->get('i18n', 'js_i18n');
 	}
 
 	/**
-	 * @deprecated 4.0 Use the "i18n.date_format" config setting instead
+	 * @deprecated 3.2 Use the "i18n.date_format" config setting instead
 	 * @param string ISO date format
 	 */
 	public static function set_date_format($format) {
-		Deprecation::notice('4.0', 'Use the "i18n.date_format" config setting instead');
+		Deprecation::notice('3.2', 'Use the "i18n.date_format" config setting instead');
 		Config::inst()->update('i18n', 'date_format', $format);
 	}
 
 	/**
-	 * @deprecated since version 4.0
 	 * @return string ISO date format
 	 */
 	public static function get_date_format() {
-		Deprecation::notice('4.0', 'Use the "i18n.date_format" config setting instead');
-		return Config::inst()->get('i18n', 'date_format');
+		require_once 'Zend/Date.php';
+		$dateFormat = Config::inst()->get('i18n', 'date_format');
+		return ($dateFormat) ? $dateFormat : Zend_Locale_Format::getDateFormat(self::get_locale());
 	}
 
 	/**
-	 * @deprecated 4.0 Use the "i18n.time_format" config setting instead
+	 * @deprecated 3.2 Use the "i18n.time_format" config setting instead
 	 * @param string ISO time format
 	 */
 	public static function set_time_format($format) {
-		Deprecation::notice('4.0', 'Use the "i18n.time_format" config setting instead');
+		Deprecation::notice('3.2', 'Use the "i18n.time_format" config setting instead');
 		Config::inst()->update('i18n', 'time_format', $format);
 	}
 
 	/**
-	 * @deprecated since version 4.0
 	 * @return string ISO time format
 	 */
 	public static function get_time_format() {
-		Deprecation::notice('4.0', 'Use the "i18n.time_format" config setting instead');
-		return Config::inst()->get('i18n', 'time_format');
+		require_once 'Zend/Date.php';
+		$timeFormat = Config::inst()->get('i18n', 'time_format');
+		return ($timeFormat) ? $timeFormat : Zend_Locale_Format::getTimeFormat(self::get_locale());
 	}
 
 	/**
@@ -1100,10 +1099,6 @@ class i18n extends Object implements TemplateGlobalProvider, Flushable {
 			'name' => 'Dutch',
 			'native' => 'Nederlands'
 		),
-		'nl_BE' => array(
-			'name' => 'Dutch (Belgium)',
-			'native' => 'Nederlands (Belgi&euml;)'
-		),
 		'en_NZ' => array(
 			'name' => 'English (NZ)',
 			'native' => 'English (NZ)'
@@ -1135,10 +1130,6 @@ class i18n extends Object implements TemplateGlobalProvider, Flushable {
 		'fr_FR' => array(
 			'name' => 'French',
 			'native' => 'fran&ccedil;ais'
-		),
-		'fr_BE' => array(
-			'name' => 'French (Belgium)',
-			'native' => 'Fran&ccedil;ais (Belgique)'
 		),
 		'gd_GB' => array(
 			'name' => 'Gaelic',
@@ -2235,11 +2226,10 @@ class i18n extends Object implements TemplateGlobalProvider, Flushable {
 	/**
 	 * Get a list of locales (code => language and country)
 	 *
-	 * @deprecated since version 4.0
 	 * @return list of languages in the form 'code' => 'name'
 	 */
 	public static function get_locale_list() {
-		Deprecation::notice('4.0', 'Use the "i18n.all_locales" config setting instead');
+		Deprecation::notice('3.2', 'Use the "i18n.all_locales" config setting instead');
 		return (array)Config::inst()->get('i18n', 'all_locales');
 	}
 

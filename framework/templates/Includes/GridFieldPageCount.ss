@@ -1,6 +1,6 @@
 <span class="pagination-records-number">
-	<%t Pagination.View 'View' is 'Verb. Example: View 1 of 2' %>
+	<% _t('Pagination.View', 'View', 'Verb. Example: View 1 of 2') %>
 	{$FirstShownRecord}&ndash;{$LastShownRecord}
-	<%t TableListField_PageControls_ss.OF 'of' is 'Example: View 1 of 2' %> 
+	<% _t('TableListField_PageControls_ss.OF', 'of', 'Example: View 1 of 2') %> 
 	$NumRecords
 </span>

@@ -240,13 +240,7 @@ table.ss-gridfield-table {
 
 
 
-/**
- * DEPRECATED:
- * .cms-content-tools will be removed in 4.0
- * Use .cms-content-filters instead.
- *
- * Fix for model admin filter styling 
- */
+//fix for model admin filter styling 
 .ModelAdmin .cms-content-fields .cms-content-tools .cms-panel-content {
 	.cms-search-form {
 		overflow:hidden;

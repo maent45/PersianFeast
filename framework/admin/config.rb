@@ -13,16 +13,10 @@ output_style = :compact
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true
 
-# Disable comments in the output. We want admin comments to be verbose.
+# disable comments in the output. We want admin comments
+# to be verbose 
 line_comments = false
 
-# Disable asset cache buster. Using :none doesn't work in some versions of compass.
-asset_cache_buster do |http_path, real_path|
-	nil
-end
-
-sourcemap = true
-
-sass_options = { :unix_newlines => true }
+asset_cache_buster :none
 
 Encoding.default_external = "utf-8"

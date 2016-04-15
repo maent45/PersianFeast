@@ -1,4 +1,4 @@
-<ul $AttributesHTML>
+<ul id="$ID" class="$extraClass">
 	<% if $Options.Count %>
 		<% loop $Options %>
 			<li class="$Class">

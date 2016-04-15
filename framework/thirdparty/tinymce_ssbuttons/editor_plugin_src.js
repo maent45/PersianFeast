@@ -70,16 +70,7 @@
 										+ '[/embed]';
 					el.replaceWith(shortCode);
 				});
-
-				// Insert outerHTML in order to retain all nodes incl. <script>
-				// tags which would've been filtered out with jQuery.html().
-				// Note that <script> tags might be sanitized separately based on editor config.
-				o.content = '';
-				content.each(function() {
-					if(this.outerHTML !== undefined) {
-						o.content += this.outerHTML;
-					}
-				});
+				o.content = jQuery('<div />').append(content).html(); // Little hack to get outerHTML string
 			});
 
 			var shortTagRegex = /(.?)\[embed(.*?)\](.+?)\[\/\s*embed\s*\](.?)/gi;

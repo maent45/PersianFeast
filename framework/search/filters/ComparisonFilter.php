@@ -38,11 +38,17 @@ abstract class ComparisonFilter extends SearchFilter {
 	 */
 	protected function applyOne(DataQuery $query) {
 		$this->model = $query->applyRelation($this->relation);
+		$value = $this->getDbFormattedValue();
 
-		$predicate = sprintf("%s %s ?", $this->getDbName(), $this->getOperator());
-		return $query->where(array(
-			$predicate => $this->getDbFormattedValue()
-		));
+		if(is_numeric($value)) {
+			$filter = sprintf("%s %s %s",
+				$this->getDbName(), $this->getOperator(), Convert::raw2sql($value));
+		} else {
+			$filter = sprintf("%s %s '%s'",
+				$this->getDbName(), $this->getOperator(), Convert::raw2sql($value));
+		}
+
+		return $query->where($filter);
 	}
 
 	/**
@@ -54,11 +60,17 @@ abstract class ComparisonFilter extends SearchFilter {
 	 */
 	protected function excludeOne(DataQuery $query) {
 		$this->model = $query->applyRelation($this->relation);
+		$value = $this->getDbFormattedValue();
 
-		$predicate = sprintf("%s %s ?", $this->getDbName(), $this->getInverseOperator());
-		return $query->where(array(
-			$predicate => $this->getDbFormattedValue()
-		));
+		if(is_numeric($value)) {
+			$filter = sprintf("%s %s %s",
+				$this->getDbName(), $this->getInverseOperator(), Convert::raw2sql($value));
+		} else {
+			$filter = sprintf("%s %s '%s'",
+				$this->getDbName(), $this->getInverseOperator(), Convert::raw2sql($value));
+		}
+
+		return $query->where($filter);
 	}
 
 	public function isEmpty() {

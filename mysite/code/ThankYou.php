@@ -2,9 +2,7 @@
 
 class ThankYou extends Page {
 
-    private static $db = array(
-        'Message' => 'HTMLText'
-    );
+   
 
 
 

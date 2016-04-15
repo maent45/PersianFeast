@@ -1,7 +1,5 @@
 de:
   AssetAdmin:
-    ALLOWEDEXTS: 'Erlaubte Dateiendungen'
-    HIDEALLOWEDEXTS: 'Verberge erlaubte Dateiendungen'
     NEWFOLDER: Neuer Ordner
     SHOWALLOWEDEXTS: 'Erlaubte Dateitypen anzeigen'
   AssetTableField:
@@ -9,14 +7,12 @@ de:
     DIM: Dimensionen
     FILENAME: Dateiname
     FOLDER: Ordner
-    HEIGHT: Höhe
     LASTEDIT: 'Letzte Änderung'
     OWNER: Eigentümer
     SIZE: 'Größe'
     TITLE: Titel
     TYPE: 'Typ'
     URL: URL
-    WIDTH: Breite
   AssetUploadField:
     ChooseFiles: 'Dateien auswählen'
     DRAGFILESHERE: 'Dateien hier ablegen'
@@ -27,9 +23,8 @@ de:
     FILES: Dateien
     FROMCOMPUTER: 'Dateien auf Ihrem Computer auswählen'
     FROMCOMPUTERINFO: 'Von Ihrem Computer hochladen'
-    REMOVEINFO: 'Entferne diese Datei aus dem Feld'
     TOTAL: Insgesamt
-    TOUPLOAD: 'Dateien für den Upload auswählen...'
+    TOUPLOAD: 'Dateien für den Upload wählen...'
     UPLOADINPROGRESS: 'Bitte warten sie... Upload im Gang'
     UPLOADOR: oder
   BBCodeParser:
@@ -75,24 +70,10 @@ de:
     ACCESSALLINTERFACES: 'Zugriff auf alle Bereiche des CMS'
     ACCESSALLINTERFACESHELP: 'Hebt alle bereichspezifischen Berechtigungen auf.'
     SAVE: Speichern
-  CMSMemberLoginForm:
-    BUTTONFORGOTPASSWORD: 'Passwort vergessen?'
-    BUTTONLOGIN: 'Wieder einloggen'
-    BUTTONLOGOUT: 'Abmelden'
-    PASSWORDEXPIRED: '<p>Ihr Passwort ist abgelaufen. <a target="_top" href="{link}">Bitte wählen Sie ein neues Passwort.</a></p>'
   CMSPageHistoryController_versions_ss:
     PREVIEW: 'Vorschau der Webseite'
-  CMSPagesController_Tools_ss:
-    FILTER: Filter
   CMSProfileController:
     MENUTITLE: 'Mein Profil'
-  CMSSecurity:
-    INVALIDUSER: '<p>Ungültiger Benutzer. <a target="_top" href="{link}">Bitte melden Sie sich hier an</a> um fortzufahren.</p>'
-    LoginMessage: '<p>Wenn Sie ungespeicherte Arbeiten haben, können Sie wieder weiterarbeiten indem Sie sich unterhalb einloggen.</p>'
-    SUCCESS: Erfolg
-    SUCCESSCONTENT: '<p>Login erfolgreich. Falls Sie nicht automatisch weitergeleitet werden, bitte <a target="_top" href="{link}">hier klicken</a></p>'
-    TimedOutTitleAnonymous: 'Ihre Sitzung ist abgelaufen.'
-    TimedOutTitleMember: 'Hallo {name}!<br />Ihre Sitzung ist abgelaufen.'
   ChangePasswordEmail_ss:
     CHANGEPASSWORDTEXT1: 'Sie haben Ihr Passwort geändert für'
     CHANGEPASSWORDTEXT2: 'Sie können nun folgende Angaben benutzen um sich einzuloggen:'
@@ -104,15 +85,24 @@ de:
     YESANSWER: 'Ja'
   CheckboxFieldSetField:
     SOURCE_VALIDATION: 'Bitte wählen Sie aus der Liste. {value} ist kein gültiger Wert'
-  CheckboxSetField:
-    SOURCE_VALIDATION: 'Bitte wählen Sie aus der Liste. {value} ist kein gültiger Wert'
+  CMSMemberLoginForm:
+    BUTTONFORGOTPASSWORD: 'Passwort vergessen?'
+    BUTTONLOGIN: 'Wieder einloggen'
+    BUTTONLOGOUT: 'Abmelden'
+    PASSWORDEXPIRED: '<p>Ihr Passwort ist abgelaufen. <a target="_top" href="{link}">Bitte wählen Sie ein neues Passwort.</a></p>'
+  CMSSecurity:
+    INVALIDUSER: '<p>Ungültiger Benutzer. <a target="_top" href="{link}">Bitte melden Sie sich hier an</a> um fortzufahren.</p>'
+    LoginMessage: '<p>Wenn Sie ungespeicherte Arbeiten haben, können Sie wieder weiterarbeiten indem Sie sich unterhalb einloggen.</p>'
+    SUCCESS: Erfolg
+    SUCCESSCONTENT: '<p>Login erfolgreich. Falls Sie nicht automatisch weitergeleitet werden, bitte <a target="_top" href="{link}">hier klicken</a></p>'
+    TimedOutTitleAnonymous: 'Ihre Sitzung ist abgelaufen.'
+    TimedOutTitleMember: 'Hallo {name}!<br />Ihre Sitzung ist abgelaufen.'
   ConfirmedPasswordField:
     ATLEAST: 'Passwörter müssen mindestens {min} Zeichen lang sein.'
     BETWEEN: 'Passwörter müssen zwischen {min} und {max} Zeichen lang sein.'
-    MAXIMUM: 'Passwörter dürfen maximal {max} Zeichen lang sein.'
+    MAXIMUM: 'Passwörter dürfen maxinal {max} Zeichen lang sein.'
     SHOWONCLICKTITLE: 'Passwort ändern'
   ContentController:
-    DRAFT_SITE_ACCESS_RESTRICTION: 'Sie müssen sich mit dem CMS-Passwort anmelden, um unveröffentlichte oder archivierte Seiten sehen zu können. <a href="%s">Zur veröffentlichten Seite.</a>'
     NOTLOGGEDIN: 'Nicht eingeloggt'
   CreditCardField:
     FIRST: erste
@@ -152,7 +142,7 @@ de:
     INVALID_REQUEST: 'Ungültige Anfrage'
   DropdownField:
     CHOOSE: (Auswahl)
-    CHOOSESEARCH: '(Auswahl und Suche)'
+    CHOOSESEARCH: '(Auswählen oder Suchen)'
     SOURCE_VALIDATION: 'Bitte wählen Sie aus der Liste. {value} ist kein gültiger Wert'
   EmailField:
     VALIDATION: 'Bitte geben Sie eine E-Mail-Adresse ein'
@@ -201,7 +191,6 @@ de:
     TEXT2: 'Link zum Zurücksetzen des Passworts'
     TEXT3: für
   Form:
-    CSRF_EXPIRED_MESSAGE: 'Ihre Sitzung ist abgelaufen. Bitte schicken Sie das Formular erneut ab.'
     CSRF_FAILED_MESSAGE: 'Es gab ein technisches Problem. Bitte versuchen Sie es erneut, nachdem sie die vorherige Seite neu geladen haben.'
     FIELDISREQUIRED: '{name} muss ausgefüllt werden'
     SubmitBtnLabel: Los
@@ -212,6 +201,7 @@ de:
     VALIDATIONSTRONGPASSWORD: 'Passwörter müssen mindestens eine Zahl und ein alphanumerisches Zeichen enthalten'
     VALIDATOR: Prüfer
     VALIDCURRENCY: 'Bitte geben Sie einen korrekten Betrag ein'
+    CSRF_EXPIRED_MESSAGE: 'Ihre Sitzung ist abgelaufen. Bitte schicken Sie das Formular erneut ab.'
   FormField:
     Example: 'z.B. %s'
     NONE: keine
@@ -268,7 +258,7 @@ de:
     many_many_Members: Mitglieder
   GroupImportForm:
     Help1: '<p>Eine oder mehrere Gruppen im <em>CSV</em>-Format (kommaseparierte Werte) importieren. <small><a href="#" class="toggle-advanced">Erweiterte Nutzung</a></small></p>'
-    Help2: '<div class="advanced"><h4>Erweiterte Benutzung</h4><ul><li>Gültige Spalten: <em>%s</em></li><li>Bereits existierende Gruppen werden anhand ihres eindeutigen <em>Code</em> identifiziert und um neue Einträge aus der Importdatei erweitert.</li><li>Gruppenhierarchien können mittels der Spalte <em>ParentCode</em> erstellt werden.</li><li>Berechtigungen können in der Spalte <em>PermissionCode</em> hinzugefügt werden. Schon zugewiesene Berechtigungen werden nicht entfernt.</li></ul></div>'
+    Help2: "<div class=\"advanced\">\\n<h4>Erweiterte Benutzung</h4>\\n<ul>\\n<li>Gültige Spalten: <em>%s</em></li>\\n<li>Bereits existierende Gruppen werden anhand ihres eindeutigen <em>Code</em> identifiziert und um neue Einträge aus der Importdatei erweitert.</li>\\n\n<li>Hierarchien von Gruppen können über die Spalte <em>ParentCode</em> definiert werden.</li>\n<li>Berechtigungen können in der Spalte <em>PermissionCode</em> hinzugefügt werden.  Schon zugewiesene Berechtigungen werden nicht entfernt.</li>\\n</ul>\\n</div>"
     ResultCreated: '{count} Gruppe(n) wurden erstellt'
     ResultDeleted: '%d Gruppe(n) gelöscht'
     ResultUpdated: '%d Gruppe(n) aktualisiert'
@@ -300,12 +290,15 @@ de:
     FROMWEB: 'Aus dem Web'
     FindInFolder: 'In Ordner suchen'
     IMAGEALT: 'Alternativtext (alt)'
+    IMAGEALTTEXT: 'Alternativtext (alt) - erscheint, falls das Bild nicht angezeigt werden kann.'
+    IMAGEALTTEXTDESC: 'Wird von Screenreadern vorgelesen oder angezeigt, falls das Bild nicht angezeigt werden kann.'
     IMAGEDIMENSIONS: Dimensionen
     IMAGEHEIGHTPX: Höhe (px)
     IMAGETITLE: 'Titeltext (Tooltip) - für zusätzliche Informationen über das Bild'
     IMAGETITLETEXT: 'Titeltext (Tooltip)'
     IMAGETITLETEXTDESC: 'Weiterführende Informationen über das Bild'
     IMAGEWIDTHPX: Breite (px)
+    INSERTMEDIA: 'Medienobjekt einfügen'
     LINK: 'Verweis einfügen'
     LINKANCHOR: 'Anker auf dieser Seite'
     LINKDESCR: 'Beschreibung des Verweises'
@@ -316,9 +309,10 @@ de:
     LINKOPENNEWWIN: 'Verweis in neuem Fenster öffnen?'
     LINKTO: 'Verweis zu'
     PAGE: Seite
-    SUBJECT: 'E-Mail-Betreff'
     URL: URL
     URLNOTANOEMBEDRESOURCE: 'Die URL ''{url}'' konnte nicht in eine Medienquelle umgewandelt werden'
+    UpdateMEDIA: 'Medienobjekt aktualisieren'
+    SUBJECT: 'E-Mail-Betreff'
   Image:
     PLURALNAME: Dateien
     SINGULARNAME: Datei
@@ -330,22 +324,25 @@ de:
   LeftAndMain:
     CANT_REORGANISE: 'Sie besitzen nicht die benötigten Zugriffsrechte um Seiten der höchsten Ebene zu bearbeiten. Ihre Änderungen wurden nicht gespeichert.'
     DELETED: Gelöscht.
+    DropdownBatchActionsDefault: Aktionen
     HELP: Hilfe
+    PAGETYPE: 'Seitentyp:'
     PERMAGAIN: 'Sie wurden aus dem System ausgeloggt. Falls Sie sich wieder einloggen möchten, geben Sie bitte Benutzernamen und Passwort im untenstehenden Formular an.'
     PERMALREADY: 'Leider dürfen Sie diesen Teil des CMS nicht aufrufen. Wenn Sie sich als jemand anderes einloggen wollen, benutzen Sie bitte das nachstehende Formular.'
-    PERMDEFAULT: 'Sie müssen angemeldet sein, um auf diesen Bereich zugreifen zu können. Bitte geben Sie Ihre Zugangsdaten ein.'
+    PERMDEFAULT: 'Bitte wählen Sie eine Authentifizierungsmethode und geben Sie Ihre Benutzerdaten für den Zugang zum CMS ein.'
+    PLEASESAVE: 'Diese Seite konnte nicht aktualisiert werden weil sie noch nicht gespeichert wurde - bitte speichern.'
     PreviewButton: Vorschau
     REORGANISATIONSUCCESSFUL: 'Der Seitenbaum wurde erfolgreich sortiert.'
     SAVEDUP: Gespeichert.
     ShowAsList: 'als Liste zeigen'
     TooManyPages: 'Zu viele Seiten'
     ValidationError: 'Eingabefehler'
-    VersionUnknown: unbekannt
+    VersionUnknown: Unbekannt
   LeftAndMain_Menu_ss:
     Hello: Hallo
     LOGOUT: 'Abmelden'
   ListboxField:
-    SOURCE_VALIDATION: 'Bitte wählen Sie aus der Liste. %s ist kein gültiger Wert'
+    SOURCE_VALIDATION: 'Bitte wählen Sie aus der Liste. {value} ist kein gültiger Wert'
   LoginAttempt:
     Email: 'E-Mail-Adresse'
     IP: 'IP-Adresse'
@@ -421,7 +418,7 @@ de:
     Toggle: 'Hilfe zur Formatierung anzeigen'
   MemberImportForm:
     Help1: '<p>Mitglieder im <em>CSV</em>-Format (kommaseparierte Werte) importieren. <small><a href="#" class="toggle-advanced">Erweiterte Nutzung</a></small></p>'
-    Help2: '<div class="advanced"><h4>Erweiterte Benutzung</h4><ul><li>Gültige Spalten: <em>%s</em></li><li>Bereits existierende Benutzer werden anhand ihres eindeutigen <em>Code</em> identifiziert und um neue Einträge aus der Importdatei erweitert.</li><li>Gruppen können in der Spalte <em>Gruppen</em> hinzugefügt werden. Gruppen werden anhand ihres <em>Code</em> erkannt. Mehrere Gruppen werden Komma-separiert eingetragen. Schon zugewiesene Gruppen werden nicht entfernt.</li></ul></div>'
+    Help2: "<div class=\"advanced\">\n<h4>Erweiterte Benutzung</h4>\n<ul>\n<li>Gültige Spalten: <em>%s</em></li>\n<li>Bereits existierende Benutzer werden anhand ihres eindeutigen <em>Code</em> identifiziert und um neue Einträge aus der Importdatei erweitert.</li>\n<li>Gruppen können in der Spalte <em>Gruppen</em> hinzugefügt werden. Gruppen werden anhand ihres <em>Code</em> erkannt. Mehrere Gruppen werden Komma-separiert eingetragen. Schon zugewiesene Gruppen werden nicht entfernt.</li>\n</ul>\n</div>"
     ResultCreated: '{count} Mitglied(er) wurde(n) erstellt'
     ResultDeleted: '%d Mitglied(er) gelöscht'
     ResultNone: 'Keine Änderungen'
@@ -485,8 +482,8 @@ de:
     SINGULARNAME: Rolle
     Title: Titel
   PermissionRoleCode:
-    PLURALNAME: 'Berechtigungsrollencodes'
     PermsError: 'Kann Berechtigungen dem Code "%s" nicht hinzufügen (erfordert Administratorrechte)'
+    PLURALNAME: 'Berechtigungsrollencodes'
     SINGULARNAME: 'Berechtigungsrollencode'
   Permissions:
     PERMISSIONS_CATEGORY: 'Rollen und Zugriffsberechtigungen'
@@ -551,8 +548,6 @@ de:
     Print: Drucken
   TableListField_PageControls_ss:
     OF: von
-  TextField:
-    VALIDATEMAXLENGTH: 'Der für {name} eingegebene Wert darf nicht mehr als {maxLength} Zeichen lang sein'
   TimeField:
     VALIDATEFORMAT: 'Bitte geben Sie die Uhrzeit im korrekten Format ein ({format})'
   ToggleField:
@@ -588,3 +583,5 @@ de:
     UPLOADSINTO: 'speichert nach /{path}'
   Versioned:
     has_many_Versions: Versionen
+  CheckboxSetField:
+    SOURCE_VALIDATION: 'Bitte wählen Sie aus der Liste. {value} ist kein gültiger Wert'

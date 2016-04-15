@@ -1,0 +1,192 @@
+104.216.118.99
+vGNh0jbNdgKQkk9   
+[2016-03-23 18:30 Pacific/Auckland] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.sandbox.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 1065
+Content-Type: application/x-www-form-urlencoded
+Expect: 100-continue
+
+ for IPN payload: cmd=_notify-validate&mc_gross=46.00&protection_eligibility=Ineligible&address_status=unconfirmed&item_number1=9&tax=0.00&item_number2=10&payer_id=7UCRP4NVHRFV2&address_street=123+Sample+St&payment_date=22%3A21%3A54+Mar+22%2C+2016+PDT&payment_status=Pending&charset=windows-1252&address_zip=6004&mc_shipping=0.00&mc_handling=8.50&first_name=Tony&address_country_code=NZ&address_name=Tony+A&notify_version=3.8&custom=&payer_status=verified&address_country=New+Zealand&num_cart_items=2&mc_handling1=0.00&mc_handling2=0.00&address_city=Wellington&verify_sign=AiPC9BjkCyDFQXbSkoZcgqH3hpacAK93HFD-zb2ZyVKiTmXILMMyIbvc&payer_email=tony%40nzhost.me&mc_shipping1=0.00&mc_shipping2=0.00&tax1=0.00&tax2=0.00&txn_id=4AK432889L696104L&payment_type=instant&last_name=A&address_state=&item_name1=Organic+Hummus&receiver_email=luke%40hardiman.co.nz&item_name2=Organic+Hummus&quantity1=1&quantity2=4&pending_reason=unilateral&txn_type=cart&mc_gross_1=7.50&mc_currency=NZD&mc_gross_2=30.00&residence_country=NZ&test_ipn=1&transaction_subject=&payment_gross=&ipn_track_id=46a54030afe3
+[2016-03-23 18:30 Pacific/Auckland] HTTP response of validation request: HTTP/1.1 100 Continue
+
+HTTP/1.1 200 OK
+Date: Wed, 23 Mar 2016 05:22:00 GMT
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Set-Cookie: c9MWDuvPtT9GIMyPc3jwol1VSlO=OOSTJmt-jcjZVPh4Ma0k8scVrASH_f6q-OTxCTYY2bASmV7_nhWvvdy2UAeotiIOL5BTM7mqAjt3hz0RpKmqZyOz3jS4dnJCObxapLjX3IPuSsLtJAVdYju_cEk-Jiofv0jJknRhi6_VpOLvBtxoTqmBluhWVl_t9XzYLprilFOnRnHTdwDWxDywGIZZFtMNm7UpvYWbSIXLkfSzSJgo86q-jJIsQSBfaYae-3_x1Ka_GfcY4VfnmWDQ9XpuDN9-7LzYCZgkR9MQCmr21EAJuUbkprihFAEjnumhQBxvZfoaFJJAHzXz2kabuZ_XvCKrTAk-u-vEJuSEzfm-HqVAdwADVV_lrWLRnBj2NGWVeSSh0mTDRx5lL0f1tRUb-4PlWVR5oXv17guihk0d1dQDl9pKuT0PhiZbRAmtiK1vfwLa1pvv6mvOpfpHhLi; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 21-Mar-2026 05:22:00 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 23-Mar-2018 05:22:00 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.72.108.11.1458710520602776; path=/; expires=Fri, 16-Mar-46 05:22:00 GMT
+Vary: Accept-Encoding,User-Agent
+Connection: close
+HTTP_X_PP_AZ_LOCATOR: sandbox.slc
+Paypal-Debug-Id: f8ae89408ed39
+Set-Cookie: X-PP-SILOVER=name%3DSANDBOX3.WEB.1%26silo_version%3D1880%26app%3Dappdispatcher%26TIME%3D4163367510; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Strict-Transport-Security: max-age=14400
+Transfer-Encoding: chunked
+Content-Type: text/html; charset=UTF-8
+
+VERIFIED
+[2016-03-23 18:30 Pacific/Auckland] Verified IPN: cmd=_notify-validate&mc_gross=46.00&protection_eligibility=Ineligible&address_status=unconfirmed&item_number1=9&tax=0.00&item_number2=10&payer_id=7UCRP4NVHRFV2&address_street=123+Sample+St&payment_date=22%3A21%3A54+Mar+22%2C+2016+PDT&payment_status=Pending&charset=windows-1252&address_zip=6004&mc_shipping=0.00&mc_handling=8.50&first_name=Tony&address_country_code=NZ&address_name=Tony+A&notify_version=3.8&custom=&payer_status=verified&address_country=New+Zealand&num_cart_items=2&mc_handling1=0.00&mc_handling2=0.00&address_city=Wellington&verify_sign=AiPC9BjkCyDFQXbSkoZcgqH3hpacAK93HFD-zb2ZyVKiTmXILMMyIbvc&payer_email=tony%40nzhost.me&mc_shipping1=0.00&mc_shipping2=0.00&tax1=0.00&tax2=0.00&txn_id=4AK432889L696104L&payment_type=instant&last_name=A&address_state=&item_name1=Organic+Hummus&receiver_email=luke%40hardiman.co.nz&item_name2=Organic+Hummus&quantity1=1&quantity2=4&pending_reason=unilateral&txn_type=cart&mc_gross_1=7.50&mc_currency=NZD&mc_gross_2=30.00&residence_country=NZ&test_ipn=1&transaction_subject=&payment_gross=&ipn_track_id=46a54030afe3 
+[2016-04-06 18:43 Pacific/Auckland] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 1000
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&mc_gross=0.50&protection_eligibility=Ineligible&address_status=unconfirmed&item_number1=5&payer_id=9U7CKTNGZADRL&tax=0.00&address_street=147+Bing+Lucas+Drive&payment_date=23%3A34%3A11+Apr+05%2C+2016+PDT&payment_status=Pending&charset=windows-1252&address_zip=5028&mc_shipping=0.00&mc_handling=0.00&first_name=Luke&address_country_code=NZ&address_name=lukes-server&notify_version=3.8&custom=&payer_status=verified&address_country=New+Zealand&num_cart_items=1&mc_handling1=0.00&address_city=Tawa&verify_sign=AaZr1XixxwyOhsJirPw-kKsMO-5uA.WWrSJJpxDWdhIWvZBR77T3YHP1&payer_email=luke%40hardiman.co.nz&mc_shipping1=0.00&tax1=0.00&txn_id=01U95407WK3466023&payment_type=instant&payer_business_name=lukes-server&last_name=Hardiman&address_state=Wellington&item_name1=Dried+Barberries&receiver_email=t.assdi%40xtra.co.nz&quantity1=1&pending_reason=unilateral&txn_type=cart&mc_gross_1=0.50&mc_currency=NZD&residence_country=NZ&transaction_subject=&payment_gross=&ipn_track_id=a1e8ba4a95d06
+[2016-04-06 18:43 Pacific/Auckland] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: d883192e9884b
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: phx-origin-www-2.paypal.com
+Date: Wed, 06 Apr 2016 06:34:15 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=FvcYuwkP3GamGyr0bzc2PnTHiLfT2e7mQssFyL2MxZz8Lzuq14NVsLiIIt_35A7Ghckxb9wxZYSbVoWKkiCDeamfBPjLZKrDnpG3GQhpq92p6-6QlWOeVFNNT68Uk25lu92iMn9_XeqazrpM9P-RmMeSd_-nbCau7bGIGX2GVkbq5RWLb5oQtME2b3m52UbR_PTUPRvsO7l-LcBpHNkpPtqCyH18Ht0PvnDP-kp2sftnFKsqe0JxodRtm6vQFS20w1mz6-4jKE-iTdUItaqsLzIB7XIegJdFr93i-SzjkgLLIQ47spDu1t5DSj2z53S9HPwWfWLQHTw9-CAw2cYCofoGdJ73VntOHy1Nc0AG_FBS8iNAtj5cnm4djjrskQ828TKQx-ky-RJzwoy7lQ6jd1KV3-eraYSYnvG98RnDoMu0KXTc51d488qeYP4; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 04-Apr-2026 06:34:15 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 06-Apr-2018 06:34:15 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=name%3DLIVE3.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D3870098519%26HTTP_X_PP_AZ_LOCATOR%3D; Expires=Wed, 06 Apr 2016 07:04:15 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.190.9.198.1459924454624501; path=/; expires=Fri, 30-Mar-46 06:34:14 GMT
+Set-Cookie: AKDC=phx-origin-www-2.paypal.com; expires=Wed, 06-Apr-2016 07:04:15 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2016-04-06 18:43 Pacific/Auckland] Verified IPN: cmd=_notify-validate&mc_gross=0.50&protection_eligibility=Ineligible&address_status=unconfirmed&item_number1=5&payer_id=9U7CKTNGZADRL&tax=0.00&address_street=147+Bing+Lucas+Drive&payment_date=23%3A34%3A11+Apr+05%2C+2016+PDT&payment_status=Pending&charset=windows-1252&address_zip=5028&mc_shipping=0.00&mc_handling=0.00&first_name=Luke&address_country_code=NZ&address_name=lukes-server&notify_version=3.8&custom=&payer_status=verified&address_country=New+Zealand&num_cart_items=1&mc_handling1=0.00&address_city=Tawa&verify_sign=AaZr1XixxwyOhsJirPw-kKsMO-5uA.WWrSJJpxDWdhIWvZBR77T3YHP1&payer_email=luke%40hardiman.co.nz&mc_shipping1=0.00&tax1=0.00&txn_id=01U95407WK3466023&payment_type=instant&payer_business_name=lukes-server&last_name=Hardiman&address_state=Wellington&item_name1=Dried+Barberries&receiver_email=t.assdi%40xtra.co.nz&quantity1=1&pending_reason=unilateral&txn_type=cart&mc_gross_1=0.50&mc_currency=NZD&residence_country=NZ&transaction_subject=&payment_gross=&ipn_track_id=a1e8ba4a95d06 
+[2016-04-06 18:52 Pacific/Auckland] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 1134
+Content-Type: application/x-www-form-urlencoded
+Expect: 100-continue
+
+ for IPN payload: cmd=_notify-validate&mc_gross=0.10&protection_eligibility=Eligible&address_status=unconfirmed&item_number1=5&payer_id=9U7CKTNGZADRL&tax=0.00&address_street=147+Bing+Lucas+Drive&payment_date=23%3A43%3A06+Apr+05%2C+2016+PDT&payment_status=Pending&charset=windows-1252&address_zip=5028&mc_shipping=0.00&mc_handling=0.00&first_name=Luke&address_country_code=NZ&address_name=lukes-server&notify_version=3.8&custom=&payer_status=verified&business=t.assadi%40xtra.co.nz&address_country=New+Zealand&num_cart_items=1&mc_handling1=0.00&address_city=Tawa&verify_sign=Ax9ukSJhUjlJt3rX6OjZNVFKZtA4A9TFM670cnOAUT3XC3i5EqakupQ3&payer_email=luke%40hardiman.co.nz&mc_shipping1=0.00&tax1=0.00&txn_id=03F843066X576044W&payment_type=instant&payer_business_name=lukes-server&last_name=Hardiman&address_state=Wellington&item_name1=Dried+Barberries&receiver_email=t.assadi%40xtra.co.nz&shipping_discount=0.00&quantity1=1&insurance_amount=0.00&receiver_id=5J6TPTEANHESG&pending_reason=other&txn_type=cart&discount=0.00&mc_gross_1=0.10&mc_currency=NZD&residence_country=NZ&shipping_method=Default&transaction_subject=&payment_gross=&ipn_track_id=90fed1a45de8b
+[2016-04-06 18:52 Pacific/Auckland] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: 12dc8c67f79a
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-a-origin-www-2.paypal.com
+Date: Wed, 06 Apr 2016 06:43:19 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=5AcoJaxKMxMUHnNba7eMpO3t489e2lGHcvTGV3fQQUsm-Op_2plTuW1-aemn1JEs7rK0SD7fXACDKEsUbCqSyeVOJHoMDBkgI-qFlKU8SMqLhCnyob7xZdu4U9tuRvhvwCYJPFVvlIp0X-x_o_CF-tbRPzFrVG1fgAXMLlKzZsKjNPPbPzt-mSKNbOOvgivAR72JxM79SWI2hR_mdCtHmupI-zWt2kXXrZaemfXBTlob3QIYB6PiSfNwkyjDNn1IOnkUGLvjB3Fr2aYMja_LMVdn_rjpKpyhjBZfTi2mmfqPPN5pMtloSXKpcZ8m1Nj_5KHteInJ2NryL46H9HheKYtN8eckxrMiPW72LIIZyBDQrKOI-06BsitL-iC_yAAZXPDPYuL5DvS98bNr20N4EmcrE8mAavBbKut2PniOAvm0CSIqXH5tCSBU6b0; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 04-Apr-2026 06:43:19 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 06-Apr-2018 06:43:19 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=name%3DLIVE5.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D128975959%26HTTP_X_PP_AZ_LOCATOR%3D; Expires=Wed, 06 Apr 2016 07:13:19 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: AKDC=slc-a-origin-www-2.paypal.com; expires=Wed, 06-Apr-2016 07:13:19 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2016-04-06 18:52 Pacific/Auckland] Verified IPN: cmd=_notify-validate&mc_gross=0.10&protection_eligibility=Eligible&address_status=unconfirmed&item_number1=5&payer_id=9U7CKTNGZADRL&tax=0.00&address_street=147+Bing+Lucas+Drive&payment_date=23%3A43%3A06+Apr+05%2C+2016+PDT&payment_status=Pending&charset=windows-1252&address_zip=5028&mc_shipping=0.00&mc_handling=0.00&first_name=Luke&address_country_code=NZ&address_name=lukes-server&notify_version=3.8&custom=&payer_status=verified&business=t.assadi%40xtra.co.nz&address_country=New+Zealand&num_cart_items=1&mc_handling1=0.00&address_city=Tawa&verify_sign=Ax9ukSJhUjlJt3rX6OjZNVFKZtA4A9TFM670cnOAUT3XC3i5EqakupQ3&payer_email=luke%40hardiman.co.nz&mc_shipping1=0.00&tax1=0.00&txn_id=03F843066X576044W&payment_type=instant&payer_business_name=lukes-server&last_name=Hardiman&address_state=Wellington&item_name1=Dried+Barberries&receiver_email=t.assadi%40xtra.co.nz&shipping_discount=0.00&quantity1=1&insurance_amount=0.00&receiver_id=5J6TPTEANHESG&pending_reason=other&txn_type=cart&discount=0.00&mc_gross_1=0.10&mc_currency=NZD&residence_country=NZ&shipping_method=Default&transaction_subject=&payment_gross=&ipn_track_id=90fed1a45de8b 
+[2016-04-06 18:53 Pacific/Auckland] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 1136
+Content-Type: application/x-www-form-urlencoded
+Expect: 100-continue
+
+ for IPN payload: cmd=_notify-validate&mc_gross=0.50&protection_eligibility=Ineligible&address_status=unconfirmed&item_number1=5&payer_id=9U7CKTNGZADRL&tax=0.00&address_street=147+Bing+Lucas+Drive&payment_date=23%3A44%3A10+Apr+05%2C+2016+PDT&payment_status=Pending&charset=windows-1252&address_zip=5028&mc_shipping=0.00&mc_handling=0.00&first_name=Luke&address_country_code=NZ&address_name=lukes-server&notify_version=3.8&custom=&payer_status=verified&business=t.assadi%40xtra.co.nz&address_country=New+Zealand&num_cart_items=1&mc_handling1=0.00&address_city=Tawa&verify_sign=A8PiOurJ1pfGWJsUernojno.idsRAdboMA3hPEJFnxaBBMq3yPo5o26v&payer_email=luke%40hardiman.co.nz&mc_shipping1=0.00&tax1=0.00&txn_id=0L835285CA6875734&payment_type=instant&payer_business_name=lukes-server&last_name=Hardiman&address_state=Wellington&item_name1=Dried+Barberries&receiver_email=t.assadi%40xtra.co.nz&shipping_discount=0.00&quantity1=1&insurance_amount=0.00&receiver_id=5J6TPTEANHESG&pending_reason=other&txn_type=cart&discount=0.00&mc_gross_1=0.50&mc_currency=NZD&residence_country=NZ&shipping_method=Default&transaction_subject=&payment_gross=&ipn_track_id=79cc4ff7d900a
+[2016-04-06 18:53 Pacific/Auckland] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: f85098f01451e
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: phx-origin-www-2.paypal.com
+Date: Wed, 06 Apr 2016 06:44:22 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=3gng9tEm-XFSq_LPi1kAD6e5nn0DA1BbWg8pC-w88X8I6NLN0KReBRAYGOYA4KW8LlctOgGcX6oiCye3j4M7s0TAn_15C-cVYlKzKr66pQeXjvZBrPw8TR-LdFTNdK-UkWWJ7p87k5dztMlr1hFpSIh1Fd4G18VA7ED-9tIc-GZBxX3O0dN7qPfHXYw5vHiiRbjKDFqJZvoNIn9Y1_8p47S-McXwJ5dNXF31IdCPBK9lAOe0yfp-AG5eUzZHwYi3FLEjtfBed7TIlYlb3WpoMEKcuPRZqeoJxzNNv7T_SyxJ2i722c-4K9X-g1KPdyQHMaHcFxwx6MlBZcl8g2zWFiV4TRJE-kBtOWN3me5Ce9nlxsk5mwk70e7xGc0KF522P_19V1dquQlzIgSfgXub6CoUOuwEs9rFnFAGX3u3eYKNtffG7BFVQ2KACRO; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 04-Apr-2026 06:44:22 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 06-Apr-2018 06:44:22 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=name%3DLIVE3.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D1185940567%26HTTP_X_PP_AZ_LOCATOR%3D; Expires=Wed, 06 Apr 2016 07:14:22 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.190.9.187.1459925062083048; path=/; expires=Fri, 30-Mar-46 06:44:22 GMT
+Set-Cookie: AKDC=phx-origin-www-2.paypal.com; expires=Wed, 06-Apr-2016 07:14:22 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2016-04-06 18:53 Pacific/Auckland] Verified IPN: cmd=_notify-validate&mc_gross=0.50&protection_eligibility=Ineligible&address_status=unconfirmed&item_number1=5&payer_id=9U7CKTNGZADRL&tax=0.00&address_street=147+Bing+Lucas+Drive&payment_date=23%3A44%3A10+Apr+05%2C+2016+PDT&payment_status=Pending&charset=windows-1252&address_zip=5028&mc_shipping=0.00&mc_handling=0.00&first_name=Luke&address_country_code=NZ&address_name=lukes-server&notify_version=3.8&custom=&payer_status=verified&business=t.assadi%40xtra.co.nz&address_country=New+Zealand&num_cart_items=1&mc_handling1=0.00&address_city=Tawa&verify_sign=A8PiOurJ1pfGWJsUernojno.idsRAdboMA3hPEJFnxaBBMq3yPo5o26v&payer_email=luke%40hardiman.co.nz&mc_shipping1=0.00&tax1=0.00&txn_id=0L835285CA6875734&payment_type=instant&payer_business_name=lukes-server&last_name=Hardiman&address_state=Wellington&item_name1=Dried+Barberries&receiver_email=t.assadi%40xtra.co.nz&shipping_discount=0.00&quantity1=1&insurance_amount=0.00&receiver_id=5J6TPTEANHESG&pending_reason=other&txn_type=cart&discount=0.00&mc_gross_1=0.50&mc_currency=NZD&residence_country=NZ&shipping_method=Default&transaction_subject=&payment_gross=&ipn_track_id=79cc4ff7d900a 
+[2016-04-07 14:33 Pacific/Auckland] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 1109
+Content-Type: application/x-www-form-urlencoded
+Expect: 100-continue
+
+ for IPN payload: cmd=_notify-validate&mc_gross=0.10&protection_eligibility=Eligible&address_status=unconfirmed&item_number1=5&payer_id=9U7CKTNGZADRL&tax=0.00&address_street=147+Bing+Lucas+Drive&payment_date=23%3A43%3A07+Apr+05%2C+2016+PDT&payment_status=Completed&charset=windows-1252&address_zip=5028&mc_shipping=0.00&mc_handling=0.00&first_name=Luke&mc_fee=0.10&address_country_code=NZ&address_name=lukes-server&notify_version=3.8&custom=&payer_status=verified&address_country=New+Zealand&num_cart_items=1&mc_handling1=0.00&address_city=Tawa&verify_sign=AuDaAVgCqhHSqdSWkr8MFHqQJL3NAsZT7jZz3myrGGLkATAwqG.COWBj&payer_email=luke%40hardiman.co.nz&mc_shipping1=0.00&tax1=0.00&txn_id=03F843066X576044W&payment_type=instant&payer_business_name=lukes-server&last_name=Hardiman&address_state=Wellington&item_name1=Dried+Barberries&receiver_email=t.assadi%40xtra.co.nz&payment_fee=&shipping_discount=0.00&quantity1=1&insurance_amount=0.00&receiver_id=5J6TPTEANHESG&txn_type=cart&discount=0.00&mc_gross_1=0.10&mc_currency=NZD&residence_country=NZ&shipping_method=Default&transaction_subject=&payment_gross=&ipn_track_id=dc00b11719f67
+[2016-04-07 14:33 Pacific/Auckland] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Paypal-Debug-Id: 4c0858cc48
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-2.paypal.com
+Date: Thu, 07 Apr 2016 02:24:43 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=fBxWv1p3k9w2BjLw0sFweesE7-yDhTjeZ8-6gI3ih-6EQVfV4rBxFrVdeFTwJfgyNeVZlHbDuegsTcy8I9QcH6ptBWB-4rP2vi5skfrkbeyYlYyWu8l8Iy21Upqy3eQNF-xMehYDIaoTqkvDEYrrr7LR0sU5mtaq8_b9l3u0ZL00gQLLscaVVlD05YLYCTTTRN4g4ZoLyawR9Mej_9molw7W60_DxSa5TG33RnAOndu_f3muDDAHfsLeK1a0dlNaqFqssnDUkOrARyL7dxSC1eJ1jcepQL9aZb8XkYaix5cNwJufXuYH7xaZAt4frMwmqzuyNjmWWCQpLDx999Slb_vVeRmr5lAp9e92HW8bg1uwZ9mBN6GdUYSu_VAhGH49bd-EHpxHAQVh3IGrwpgY95MS_aI4BtM_otCF-HGEt9lHjoMtBcJj0zusmWO; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 05-Apr-2026 02:24:42 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 07-Apr-2018 02:24:42 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D3938714967%26HTTP_X_PP_AZ_LOCATOR%3D; Expires=Thu, 07 Apr 2016 02:54:43 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: AKDC=slc-b-origin-www-2.paypal.com; expires=Thu, 07-Apr-2016 02:54:43 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2016-04-07 14:33 Pacific/Auckland] Verified IPN: cmd=_notify-validate&mc_gross=0.10&protection_eligibility=Eligible&address_status=unconfirmed&item_number1=5&payer_id=9U7CKTNGZADRL&tax=0.00&address_street=147+Bing+Lucas+Drive&payment_date=23%3A43%3A07+Apr+05%2C+2016+PDT&payment_status=Completed&charset=windows-1252&address_zip=5028&mc_shipping=0.00&mc_handling=0.00&first_name=Luke&mc_fee=0.10&address_country_code=NZ&address_name=lukes-server&notify_version=3.8&custom=&payer_status=verified&address_country=New+Zealand&num_cart_items=1&mc_handling1=0.00&address_city=Tawa&verify_sign=AuDaAVgCqhHSqdSWkr8MFHqQJL3NAsZT7jZz3myrGGLkATAwqG.COWBj&payer_email=luke%40hardiman.co.nz&mc_shipping1=0.00&tax1=0.00&txn_id=03F843066X576044W&payment_type=instant&payer_business_name=lukes-server&last_name=Hardiman&address_state=Wellington&item_name1=Dried+Barberries&receiver_email=t.assadi%40xtra.co.nz&payment_fee=&shipping_discount=0.00&quantity1=1&insurance_amount=0.00&receiver_id=5J6TPTEANHESG&txn_type=cart&discount=0.00&mc_gross_1=0.10&mc_currency=NZD&residence_country=NZ&shipping_method=Default&transaction_subject=&payment_gross=&ipn_track_id=dc00b11719f67 
+[2016-04-07 14:43 Pacific/Auckland] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 1111
+Content-Type: application/x-www-form-urlencoded
+Expect: 100-continue
+
+ for IPN payload: cmd=_notify-validate&mc_gross=0.50&protection_eligibility=Ineligible&address_status=unconfirmed&item_number1=5&payer_id=9U7CKTNGZADRL&tax=0.00&address_street=147+Bing+Lucas+Drive&payment_date=23%3A44%3A10+Apr+05%2C+2016+PDT&payment_status=Completed&charset=windows-1252&address_zip=5028&mc_shipping=0.00&mc_handling=0.00&first_name=Luke&mc_fee=0.47&address_country_code=NZ&address_name=lukes-server&notify_version=3.8&custom=&payer_status=verified&address_country=New+Zealand&num_cart_items=1&mc_handling1=0.00&address_city=Tawa&verify_sign=A0NSJ5ZjmYOypmKI1K4QnqROQmEOAez.F.zJALEpqd87u5wdxmtpgNWq&payer_email=luke%40hardiman.co.nz&mc_shipping1=0.00&tax1=0.00&txn_id=0L835285CA6875734&payment_type=instant&payer_business_name=lukes-server&last_name=Hardiman&address_state=Wellington&item_name1=Dried+Barberries&receiver_email=t.assadi%40xtra.co.nz&payment_fee=&shipping_discount=0.00&quantity1=1&insurance_amount=0.00&receiver_id=5J6TPTEANHESG&txn_type=cart&discount=0.00&mc_gross_1=0.50&mc_currency=NZD&residence_country=NZ&shipping_method=Default&transaction_subject=&payment_gross=&ipn_track_id=e00460a14e84d
+[2016-04-07 14:43 Pacific/Auckland] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Paypal-Debug-Id: 31793a7a9df4
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-1.paypal.com
+Date: Thu, 07 Apr 2016 02:34:09 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=lwqwXP_J69B-jQNuWpw3-o_Wm4BhPeaMA20W0shvp8V-EdB2Ou6w5IEhVxH9sa7ylCR0HsV7cxQ2Ucpiw80wjYqL9jd2T73OEZiWPWjrpylsLxHu-tV2a_Z_ffP7oJnPJAYZnvtN50FDjlSRzNMoyL68E3jrWam2nvudED447Fir1CU8n8HbRNF03uYQrx-g0mB97_tfHsdT1Iamvw2BRv1dQGGFS0PwfEiWlAQhrtrcEC9KcpcpsuzeJzBQz_zTTxHQK-_hEyCTMmIF3jS65Eza92borq3MA--5aIFjFVAFmMZce1Rrv8wCm2GT3_wu7UVEAjBugPb8Qax3iUsVj6T8TgXNtsz9oDpygUx9hva2nkspPEVNpyPK4a38Wo17ddnwKnPO9WjqrRbV67A62wyVuwQeW0Dfr8m17bQ2NsUoTss0OYf0Jt_yFYC; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sun, 05-Apr-2026 02:34:09 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Sat, 07-Apr-2018 02:34:09 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dappdispatcher%26TIME%3D549913943%26HTTP_X_PP_AZ_LOCATOR%3D; Expires=Thu, 07 Apr 2016 03:04:09 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: AKDC=slc-b-origin-www-1.paypal.com; expires=Thu, 07-Apr-2016 03:04:09 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2016-04-07 14:43 Pacific/Auckland] Verified IPN: cmd=_notify-validate&mc_gross=0.50&protection_eligibility=Ineligible&address_status=unconfirmed&item_number1=5&payer_id=9U7CKTNGZADRL&tax=0.00&address_street=147+Bing+Lucas+Drive&payment_date=23%3A44%3A10+Apr+05%2C+2016+PDT&payment_status=Completed&charset=windows-1252&address_zip=5028&mc_shipping=0.00&mc_handling=0.00&first_name=Luke&mc_fee=0.47&address_country_code=NZ&address_name=lukes-server&notify_version=3.8&custom=&payer_status=verified&address_country=New+Zealand&num_cart_items=1&mc_handling1=0.00&address_city=Tawa&verify_sign=A0NSJ5ZjmYOypmKI1K4QnqROQmEOAez.F.zJALEpqd87u5wdxmtpgNWq&payer_email=luke%40hardiman.co.nz&mc_shipping1=0.00&tax1=0.00&txn_id=0L835285CA6875734&payment_type=instant&payer_business_name=lukes-server&last_name=Hardiman&address_state=Wellington&item_name1=Dried+Barberries&receiver_email=t.assadi%40xtra.co.nz&payment_fee=&shipping_discount=0.00&quantity1=1&insurance_amount=0.00&receiver_id=5J6TPTEANHESG&txn_type=cart&discount=0.00&mc_gross_1=0.50&mc_currency=NZD&residence_country=NZ&shipping_method=Default&transaction_subject=&payment_gross=&ipn_track_id=e00460a14e84d 

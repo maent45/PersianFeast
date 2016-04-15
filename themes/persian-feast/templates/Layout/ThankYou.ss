@@ -4,5 +4,5 @@
 	 !-->
 </div>
 <script>
-    window.localStorage.clear();
+
 </script>

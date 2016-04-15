@@ -4,9 +4,6 @@
  * Generic PhpUnitWrapper.
  * Originally intended for use with Composer based installations, but will work
  * with any fully functional autoloader.
- *
- * @package framework
- * @subpackage dev
  */
 class PhpUnitWrapper_Generic extends PhpUnitWrapper {
 
@@ -17,7 +14,7 @@ class PhpUnitWrapper_Generic extends PhpUnitWrapper {
 	public function getVersion() {
 		return PHPUnit_Runner_Version::id();
 	}
-
+	
 	protected $coverage = null;
 
 	protected static $test_name = 'SapphireTest';
@@ -25,14 +22,14 @@ class PhpUnitWrapper_Generic extends PhpUnitWrapper {
 	public static function get_test_name() {
 		return static::$test_name;
 	}
-
+	
 	/**
-	 * Overwrites beforeRunTests. Initiates coverage-report generation if
+	 * Overwrites beforeRunTests. Initiates coverage-report generation if 
 	 * $coverage has been set to true (@see setCoverageStatus).
 	 */
 	protected function beforeRunTests() {
-
-		if($this->getCoverageStatus()) {
+		
+		if($this->getCoverageStatus()) {			
 			$this->coverage = new PHP_CodeCoverage();
 			$coverage = $this->coverage;
 
@@ -51,7 +48,7 @@ class PhpUnitWrapper_Generic extends PhpUnitWrapper {
 			}
 
 			$filter->addFileToBlacklist(__FILE__, 'PHPUNIT');
-
+			
 			$coverage->start(self::get_test_name());
 		}
 	}
@@ -65,7 +62,7 @@ class PhpUnitWrapper_Generic extends PhpUnitWrapper {
 		if($this->getCoverageStatus()) {
 			$coverage = $this->coverage;
 			$coverage->stop();
-
+				
 			$writer = new PHP_CodeCoverage_Report_HTML();
 			$writer->process($coverage, ASSETS_PATH.'/code-coverage-report');
 		}

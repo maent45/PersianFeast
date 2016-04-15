@@ -17,7 +17,6 @@ abstract class StringField extends DBField {
 	 */
 	private static $casting = array(
 		"LimitCharacters" => "Text",
-		"LimitCharactersToClosestWord" => "Text",
 		'LimitWordCount' => 'Text',
 		'LimitWordCountXML' => 'HTMLText',
 		"LowerCase" => "Text",
@@ -41,7 +40,7 @@ abstract class StringField extends DBField {
 
 		parent::__construct($name);
 	}
-
+	
 	/**
 	 * Update the optional parameters for this field.
 	 * @param $options array of options
@@ -58,7 +57,7 @@ abstract class StringField extends DBField {
 			$this->nullifyEmpty = $options["nullifyEmpty"] ? true : false;
 		}
 	}
-
+	
 	/**
 	 * Set whether this field stores empty strings rather than converting
 	 * them to null.
@@ -84,9 +83,7 @@ abstract class StringField extends DBField {
 	 * @see core/model/fieldtypes/DBField#exists()
 	 */
 	public function exists() {
-		return $this->getValue() // All truthy values exist
-			|| (is_string($this->getValue()) && strlen($this->getValue())) // non-empty strings exist ('0' but not (int)0)
-			|| (!$this->getNullifyEmpty() && $this->getValue() === ''); // Remove this stupid exemption in 4.0
+		return ($this->value || $this->value == '0') || ( !$this->nullifyEmpty && $this->value === '');
 	}
 
 	/**
@@ -95,7 +92,7 @@ abstract class StringField extends DBField {
 	 */
 	public function prepValueForDB($value) {
 		if(!$this->nullifyEmpty && $value === '') {
-			return $value;
+			return DB::getConn()->prepStringForDB($value);
 		} else {
 			return parent::prepValueForDB($value);
 		}
@@ -107,7 +104,7 @@ abstract class StringField extends DBField {
 	public function forTemplate() {
 		return nl2br($this->XML());
 	}
-
+	
 	/**
 	 * Limit this field's content by a number of characters.
 	 * This makes use of strip_tags() to avoid malforming the
@@ -119,6 +116,7 @@ abstract class StringField extends DBField {
 	 */
 	public function LimitCharacters($limit = 20, $add = '...') {
 		$value = trim($this->value);
+
 		if($this->stat('escape_type') == 'xml') {
 			$value = strip_tags($value);
 			$value = html_entity_decode($value, ENT_COMPAT, 'UTF-8');
@@ -128,39 +126,10 @@ abstract class StringField extends DBField {
 		} else {
 			$value = (mb_strlen($value) > $limit) ? mb_substr($value, 0, $limit) . $add : $value;
 		}
-		return $value;
-	}
-    
-	/**
-	 * Limit this field's content by a number of characters and truncate
-	 * the field to the closest complete word. All HTML tags are stripped 
-	 * from the field.
-	 *
-	 * @param int $limit Number of characters to limit by
-	 * @param string $add Ellipsis to add to the end of truncated string
-	 * @return string
-	 */
-	public function LimitCharactersToClosestWord($limit = 20, $add = '...') {
-		// Strip HTML tags if they exist in the field
-		$this->value = strip_tags($this->value);
-
-		// Determine if value exceeds limit before limiting characters
-		$exceedsLimit = mb_strlen($this->value) > $limit;
-
-		// Limit to character limit
-		$value = $this->LimitCharacters($limit, '');
-
-		// If value exceeds limit, strip punctuation off the end to the last space and apply ellipsis
-		if($exceedsLimit) {
-			$value = html_entity_decode($value, ENT_COMPAT, 'UTF-8');
-
-			$value = rtrim(mb_substr($value, 0, mb_strrpos($value, " ")), "/[\.,-\/#!$%\^&\*;:{}=\-_`~()]\s") . $add;
-
-			$value = htmlspecialchars($value, ENT_COMPAT, 'UTF-8');
-		}
 
 		return $value;
 	}
+
 
 	/**
 	 * Limit this field's content by a number of words.
@@ -214,8 +183,8 @@ abstract class StringField extends DBField {
 
 	/**
 	 * Converts the current value for this StringField to uppercase.
-	 * @return string
-	 */
+	 * @return string 
+	 */ 
 	public function UpperCase() {
 		return mb_strtoupper($this->value);
 	}

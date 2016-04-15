@@ -60,7 +60,7 @@
 			//check the array of existing files to see if we are trying to upload a file that already exists
 			var that = this;
 			var config = this.options;
-			if (config.overwriteWarning && config.replaceFile) {
+			if (config.overwriteWarning) {
 				$.get(
 					config['urlFileExists'],
 					{'filename': data.files[0].name},
@@ -316,8 +316,6 @@
 						indicator.remove();
 					},
 					success: function(data, status, xhr) {
-						if (!data || $.isEmptyObject(data)) return;
-
 						self.fileupload('attach', {
 							files: data,
 							options: self.fileupload('option'),
@@ -515,11 +513,8 @@
 			},
 			toggleEditForm: function() {
 				var itemInfo = this.prev('.ss-uploadfield-item-info'), status = itemInfo.find('.ss-uploadfield-item-status');
-
-				var iframe = this.find('iframe').contents(),
-					saved = iframe.find('#Form_EditForm_error');
-
-				var text = "";
+				var iframe = this.find('iframe').contents(), saved=iframe.find('#Form_EditForm_error');
+				var text="";
 
 				if(this.height() === 0) {
 					text = ss.i18n._t('UploadField.Editing', "Editing ...");

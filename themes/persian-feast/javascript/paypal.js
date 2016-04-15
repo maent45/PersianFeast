@@ -46,17 +46,17 @@ function addToCart() {
         $(".shoppingCartContainer").show();
 
     //lets get the data
-    var data = $('.item', this).data('item');
+    var item = $('.item', this).data('data');
 
     //check the data
-    if (typeof data.title != "string" || typeof data.price != "string") {
-        console.log("data", data);
+    if (typeof item.title != "string" || typeof item.price != "string") {
+        console.log("data", item);
         throw new Error("Error missing data");
     }
 
 
     //add data to order
-    ordering[data.item_id] = data;
+    ordering[data.id] = item.id;
     /*
      <tr>
      <td width="70px"><p style="color: #555">Dried Barberries</p></td>
@@ -67,23 +67,24 @@ function addToCart() {
      */
     //append data to order this will be moved to another function
     /*
-    $('#item', $shoppingCartContainer).append('<p>' + data.title + '</p>');
-    $('#quantity', $shoppingCartContainer).append('<p>1</p><br/>');  //@todo count from ordering array
-    $('#price', $shoppingCartContainer).append('<p>' + data.price + '</p>');  //@todo complete total
-    $('#options', $shoppingCartContainer).append('<p><i class="fa fa-remove"></i></p>');  //@todo complete total
+     $('#item', $shoppingCartContainer).append('<p>' + data.title + '</p>');
+     $('#quantity', $shoppingCartContainer).append('<p>1</p><br/>');  //@todo count from ordering array
+     $('#price', $shoppingCartContainer).append('<p>' + data.price + '</p>');  //@todo complete total
+     $('#options', $shoppingCartContainer).append('<p><i class="fa fa-remove"></i></p>');  //@todo complete total
      */
     //Remove above soon just adding by table now
 
     //define our cart row
-    var cartRow = '<tr id="' + data.item_id + '">' +
-        '<td width="70px"><p style="color: #555">' + data.title + '</p></td>' +
+    var cartRow = '<tr id="' + item.id + '">' +
+        '<td width="70px"><p style="color: #555">' + item.title + '</p></td>' +
         '<td width="20" style="padding-left: 10px;"><p style="color: #555;">1</p></td>' +
-        '<td width="10" style="padding-left: 10px;"><p style="color: #555">$' + data.price + '</p></td>' +
-        '<td width="10"><i data-item_id="' + data.item_id + '" class="fa fa-remove cartRemove"></i></td>' +
+        '<td width="10" style="padding-left: 10px;"><p style="color: #555">$' + item.price + '</p></td>' +
+        '<td width="10"><i data-item_id="' + item.id + '" class="fa fa-remove cartRemove"></i></td>' +
         '</tr>';
     //append to last
     $("tr:last", $shoppingCart).after(cartRow);
 
-    console.log("paypal.js click adding", data);
-    console.log("paypal.js ordering", ordering);
+
+
+    $('#storeModal_' + item.id).hide();
 }

@@ -12,7 +12,6 @@
  * @subpackage validators
  */
 abstract class Validator extends Object {
-
 	/**
 	 * @var Form $form
 	 */

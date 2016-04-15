@@ -47,8 +47,6 @@ tr:
     ERRORNOTREC: 'Kullanıcı adı / şifre hatalı'
   Boolean:
     ANY: Herhangi
-    NOANSWER: 'Hayır'
-    YESANSWER: 'Evet'
   CMSMain:
     ACCESSALLINTERFACES: 'Tüm İYS arayüzlerine erişim'
     SAVE: Kaydet
@@ -58,9 +56,6 @@ tr:
     EMAIL: E-Posta
     HELLO: Merhaba
     PASSWORD: Parola
-  CheckboxField:
-    NOANSWER: 'Hayır'
-    YESANSWER: 'Evet'
   ConfirmedPasswordField:
     SHOWONCLICKTITLE: 'Parola Değiştir'
   CreditCardField:
@@ -92,7 +87,6 @@ tr:
     TEXT2: 'şifre sıfırlama linki'
     TEXT3: için
   Form:
-    SubmitBtnLabel: Başla
     VALIDATIONNOTUNIQUE: 'Girilen değer benzersiz olmalıdır'
     VALIDATIONPASSWORDSDONTMATCH: 'Şifre tekrarı hatalı'
     VALIDATIONPASSWORDSNOTEMPTY: 'Şifreler boş geçilemez'
@@ -139,7 +133,11 @@ tr:
   LeftAndMain:
     DELETED: Silinmiş.
     HELP: Yardım
+    PAGETYPE: 'Sayfa tipi:'
     PERMAGAIN: 'İYS yönetiminden çıkış yaptınız.  Eğer tekrar giriş yapmak isterseniz, aşağıya kullanıcı adı ve şifrenizi giriniz.'
+    PERMALREADY: 'Üzgünüm ama İYS''nin bu bölümüne erişim hakkınız yok. Başka bir kullanıcı olarak giriş yapmak istiyorsanız aşağıdan bunu yapabilirsiniz'
+    PERMDEFAULT: 'İYS erişimi için eposta adresinizi ve parolanızı giriniz.e kolaylık sağlama'
+    PLEASESAVE: 'Lütfen Sayfayı Kaydedin: Bu sayfa henüz kaydedilmediği için güncellenemedi.'
     PreviewButton: Önizleme
     SAVEDUP: Kaydedildi.
   LoginAttempt:

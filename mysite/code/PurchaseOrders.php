@@ -12,15 +12,21 @@ class PurchaseOrders extends DataObject
         'address_zip' => 'Varchar(255)',
         'first_name' => 'Varchar(255)',
         'address_city'=> 'Varchar(255)',
-        'receiver_email'=>'Varchar(255)'
+        'receiver_email'=>'Varchar(255)',
+        'cart_items' => 'Varchar(255)'
+
     );
 
     private static $summary_fields = array(
-        'receiver_email' => 'Email',
-        'payment_date' => 'PaymentDate'
+        'payment_date' => 'PaymentDate',
+        'payer_id' => 'ID',
+        'cart_items' => 'Ordered Items',
+        'mc_gross' => '$'
     );
 
-
+    public static $many_many = array (
+        'Products' => 'OrderDetails'
+    );
 
     public function getCMSFields() {
         $fields = parent::getCMSFields();
@@ -28,4 +34,37 @@ class PurchaseOrders extends DataObject
     }
 
 
+}
+
+class OrderDetails extends DataObject
+{
+    private static $db = array (
+        'Title' => 'Varchar',
+        'Description' => 'text',
+        'Price' => 'Currency(8,2)',
+        'Qnty' => 'Varchar(255)'
+        //'URLSegment' => 'Varchar(255)'
+    );
+
+    private static $has_one = array (
+        'Category' => 'Category',
+        'Photo' => 'Image'
+    );
+
+    private static $summary_fields = array(
+        'getThumbnail' => 'Thumbnail',
+        'Title' => 'Title',
+        'Description' => 'Description',
+        'Category.Title' => 'Category',
+        'Qnty' => 'Qnty',
+        'Price' => 'Price'
+    );
+
+    public function getThumbnail()
+    {
+        if($this->Photo()->exists())
+            return $this->Photo()->SetWidth(100);
+        else
+            return _t('Product.NOIMAGE','(No Image)');
+    }
 }
